@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.ketayao.common.hibernate4.test.PriorityComparatorTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.431 sec

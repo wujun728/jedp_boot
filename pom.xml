@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.jun.plugin</groupId>
+  <artifactId>jun_plugin</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>jun_plugin_activemq</module>
+  	<module>jun_plugin_activiti</module>
+  	
+  	<module>jun_plugin_apache_commons_cli</module>
+  	<module>jun_plugin_camel</module> 
+  	<module>jun_plugin_dao_hibernate</module>
+  	<module>jun_plugin_designpattern</module>
+  	<module>jun_plugin_email</module>
+  	<module>jun_plugin_hibernate</module>
+  	<module>jun_plugin_itext</module>
+  	<module>jun_plugin_jdk</module>
+  	<module>jun_plugin_jsoup</module>
+  	<module>jun_plugin_lucene</module>
+  	<module>jun_plugin_mybatis</module>
+  	<module>jun_plugin_demo</module>
+  	<module>jun_plugin_poi</module>
+  	<module>jun_plugin_spring</module>
+  	<module>jun_plugin_spring_data_jpa</module>
+  	<module>jun_plugin_test</module>
+  	
+  	<module>jun_plugin_web</module>
+  	<module>jun_plugin_web_chart</module>
+  	<module>jun_plugin_jbpm</module>
+  </modules>
+</project>

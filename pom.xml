@@ -10,21 +10,43 @@
   	
   	<module>jun_plugin_apache_commons_cli</module>
   	<module>jun_plugin_camel</module> 
+  	<module>jun_plugin_core</module> 
+  	
   	<module>jun_plugin_dao_hibernate</module>
+  	<module>jun_plugin_dbutil</module>
+  	<module>jun_plugin_demo</module>
   	<module>jun_plugin_designpattern</module>
   	<module>jun_plugin_email</module>
   	<module>jun_plugin_hibernate</module>
+  	<module>jun_plugin_bootsrtap</module>
+  	<module>jun_plugin_doubbo</module>
+  	<module>jun_plugin_html5</module>
+  	<module>jun_plugin_httpclient</module> 
+  	<module>jun_plugin_jquery</module>
+  	<module>jun_plugin_memcached</module>
+  	<module>jun_plugin_mongodb</module>
+  	<module>jun_plugin_redis</module>
+  	<module>jun_plugin_struts</module>
+  	<module>jun_plugin_webservice</module>
+  	<module>jun_plugin_ehcache</module>
+  	<module>jun_plugin_jdbc</module>
+  	<module>jun_plugin_shiro</module>
+  	<module>jun_plugin_kafka</module>
+  	<module>jun_plugin_sso</module>
+  	<module>jun_plugin_springboot</module>
   	<module>jun_plugin_itext</module>
+  	<module>jun_plugin_jbpm</module>
   	<module>jun_plugin_jdk</module>
   	<module>jun_plugin_jsoup</module>
   	<module>jun_plugin_lucene</module>
   	<module>jun_plugin_mybatis</module>
-  	<module>jun_plugin_demo</module>
+  	
   	<module>jun_plugin_poi</module>
+  	<module>jun_plugin_spider</module>
   	<module>jun_plugin_spring</module>
   	<module>jun_plugin_spring_data_jpa</module>
   	<module>jun_plugin_test</module>
-  	<module>jun_plugin_jbpm</module>
+  	<module>jun_plugin_threads</module>
   	<module>jun_plugin_utils</module>
   	
   	<module>jun_plugin_web_servlet</module>

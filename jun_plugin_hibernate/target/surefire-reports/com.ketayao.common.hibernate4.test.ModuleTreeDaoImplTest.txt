@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.ketayao.common.hibernate4.test.ModuleTreeDaoImplTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec

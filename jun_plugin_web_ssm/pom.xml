@@ -5,5 +5,5 @@
 	<artifactId>jun_plugin</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>jun_web_ssh</artifactId>
+  <artifactId>jun_plugin_web_ssm</artifactId>
 </project>

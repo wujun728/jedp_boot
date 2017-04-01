@@ -10,8 +10,6 @@ import java.util.List;
 
 /**
  * 	
- * @author 	<a href="mailto:ketayao@gmail.com">ketayao</a>
- * @since   2013年7月30日 下午2:59:24
  */
 public class PackageUtils {
 	

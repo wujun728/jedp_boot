@@ -25,6 +25,8 @@
   	<module>jun_plugin_spring_data_jpa</module>
   	<module>jun_plugin_test</module>
   	<module>jun_plugin_jbpm</module>
+  	<module>jun_plugin_utils</module>
+  	
   	<module>jun_plugin_webapp</module>
   </modules>
 </project>

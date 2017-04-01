@@ -7,4 +7,12 @@
   </parent>
   <artifactId>jun_plugin_web</artifactId>
   <packaging>war</packaging>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>central</name>
+            <url>http://central.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
 </project>

@@ -7,4 +7,40 @@
   </parent>
   <artifactId>jun_plugin_webservlet</artifactId>
   <packaging>war</packaging>
+  
+  
+<dependencies>  
+
+<!-- junit -->
+<dependency>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>4.12</version>
+	<scope>test</scope>
+</dependency>
+
+<dependency>
+	<groupId>commons-dbutils</groupId>
+	<artifactId>commons-dbutils</artifactId>
+	<version>1.6</version>
+</dependency>
+
+
+<!-- servlet -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.1.0</version>
+	<scope>provided</scope>
+</dependency>
+
+<dependency>
+	<groupId>javax.servlet</groupId>
+	<artifactId>jstl</artifactId>
+	<version>1.2</version>
+</dependency>
+
+</dependencies>
+
+
 </project>

@@ -5,14 +5,5 @@
 	<artifactId>jun_plugin</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>jun_plugin_webapp</artifactId>
-  <packaging>war</packaging>
-    <repositories>
-        <repository>
-            <id>central</id>
-            <name>central</name>
-            <url>http://central.maven.org/maven2/</url>
-        </repository>
-    </repositories>
-
+  <artifactId>jun_web_ssm</artifactId>
 </project>

@@ -27,6 +27,9 @@
   	<module>jun_plugin_jbpm</module>
   	<module>jun_plugin_utils</module>
   	
-  	<module>jun_plugin_webapp</module>
+  	<module>jun_web_servlet</module>
+  	<module>jun_web_ssh</module>
+  	<module>jun_web_ssm</module> 	
+  	
   </modules>
 </project>

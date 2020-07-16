@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.wujun728</groupId>
-    <artifactId>spring_core</artifactId>
+    <artifactId>spring_test</artifactId>
     <version>1.0</version>
-    <name>spring_core</name>
-    <description>spring_core</description>
+    <name>spring_test</name>
+    <description>spring_test</description>
     <packaging>war</packaging>
     
     <properties>

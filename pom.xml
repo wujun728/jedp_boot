@@ -5,12 +5,12 @@
   <version>1.0</version>
   <packaging>pom</packaging>
   <modules>
-  	<module>spring_activemq</module>
+<!--   	<module>spring_activemq</module>
   	<module>spring_activiti</module> 
   	<module>spring_apache_commons_cli</module>
-  	<module>spring_camel</module> 
+  	<module>spring_camel</module>  -->
   	<module>spring_core</module>  
-  	<module>spring_dao_hibernate</module>
+<!--   	<module>spring_dao_hibernate</module> 
   	<module>spring_dbutil</module>
   	<module>spring_demo</module>
   	<module>spring_designpattern</module>
@@ -44,7 +44,7 @@
   	<module>spring_utils</module> 
   	<module>spring_webservlet</module>
   	<module>spring_ssh</module>
-  	<module>spring_ssm</module> 	
+  	<module>spring_ssm</module> 	-->
   	
   </modules>
 </project>

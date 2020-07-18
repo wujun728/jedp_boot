@@ -1,11 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>shenzhanwang</groupId>
-  <artifactId>Spring-REST-Client</artifactId>
+  <artifactId>spring_rest_client</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Spring-REST-Client</name>
+  <name>spring_rest_client</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>  
@@ -45,51 +47,72 @@
         <artifactId>fastjson</artifactId>  
         <version>1.1.29</version>  
     </dependency>  
+	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-core</artifactId>
+	    <version>2.11.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.11.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-annotations</artifactId>
+	    <version>2.11.1</version>
+	</dependency>
+
+
+    
         <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>4.0.4.RELEASE</version>
+			<version>4.3.27.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>4.0.4.RELEASE</version>
+			<version>4.3.27.RELEASE</version>
 		</dependency>
         <!-- spring -->  
         <dependency>  
             <groupId>org.springframework</groupId>  
             <artifactId>spring-core</artifactId>  
-            <version>4.0.4.RELEASE</version>  
+            <version>4.3.27.RELEASE</version>  
         </dependency>  
         <dependency>   
 		   <groupId>org.springframework</groupId>   
 		   <artifactId>spring-context-support</artifactId>
-		   <version>4.0.4.RELEASE</version>
+		   <version>4.3.27.RELEASE</version>
   		</dependency>
         <dependency>  
             <groupId>org.springframework</groupId>  
             <artifactId>spring-context</artifactId>  
-            <version>4.0.4.RELEASE</version>  
+            <version>4.3.27.RELEASE</version>  
         </dependency>  
         <dependency>  
             <groupId>org.springframework</groupId>  
             <artifactId>spring-jdbc</artifactId>  
-            <version>4.0.4.RELEASE</version>  
+            <version>4.3.27.RELEASE</version>  
         </dependency>  
         <dependency>  
             <groupId>org.springframework</groupId>  
             <artifactId>spring-beans</artifactId>  
-            <version>4.0.4.RELEASE</version>  
+            <version>4.3.27.RELEASE</version>  
         </dependency>  
         <dependency>  
             <groupId>org.springframework</groupId>  
             <artifactId>spring-expression</artifactId>  
-            <version>4.0.4.RELEASE</version>  
+            <version>4.3.27.RELEASE</version>  
         </dependency>  
         <dependency>  
             <groupId>org.springframework</groupId>  
             <artifactId>spring-orm</artifactId>  
-            <version>4.0.4.RELEASE</version>  
+            <version>4.3.27.RELEASE</version>  
         </dependency>  
         <!-- aspectjweaver -->  
         <dependency>  
@@ -149,7 +172,7 @@
 		</dependency>
   </dependencies>
   <build>
-    <finalName>Spring-REST-Client</finalName>
+    <finalName>spring_rest_client</finalName>
   </build>
    <!-- 指定maven编译方式为jdk1.8版本 -->
 	<profiles>

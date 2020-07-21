@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Spring-activeMQ</title>
+    <title>spring-activemq</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -120,7 +120,7 @@
 <script>
     $(document).ready(function() {
         // 指定websocket路径
-        var websocket = new WebSocket('ws://localhost:8080/Spring-activeMQ/ws');
+        var websocket = new WebSocket('ws://localhost:8080/spring_activemq/ws');
         websocket.onmessage = function(event) {
        	 var data=JSON.parse(event.data);
             // 接收服务端的实时日志并添加到HTML页面中

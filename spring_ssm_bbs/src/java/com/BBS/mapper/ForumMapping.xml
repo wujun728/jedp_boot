@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.BBS.dao.ForumDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+
+    <resultMap id="forumMap" type="com.BBS.pojo.Forum">
+        <result column="forum_id" property="forumid"/><result column="main_id" property="mainid"/>
+        <result column="title" property="title"/><result column="content" property="content"/>
+        <result column="pic_path" property="picPpath"/><result column="author" property="author"/>
+        <result column="make_time" property="makeTime"/><result column="make_date" property="makeDate"/>
+        <result column="bbs_type" property="bbsType"/><result column="read_times" property="readTimes"/>
+        <result column="reply_times" property="replyTimes"/><result column="remark" property="remark"/>
+        <result column="reward" property="reward"/><result column="status" property="status"/>
+        <result column="del_flag" property="del_flag"/><result column="top_status" property="top_status"/>
+        <result column="delicate_status" property="delicate_status"/> <result column="author_path" property="authorPath"/>
+    </resultMap>
+    <!-- 查询对应的帖子-->
+    <select id="queryByForum" parameterType="java.lang.String" resultType="com.BBS.pojo.Forum" resultMap="forumMap">
+        <!-- 具体的sql -->
+        SELECT
+        *
+        FROM
+        b_forum
+        WHERE
+        forum_id = #{forumid}
+    </select>
+
+    <!-- 查询回帖的回复信息-->
+    <select id="queryreplyForum" parameterType="java.lang.String" resultType="com.BBS.pojo.ReplyForum" resultMap="forumMap">
+        select *  from  b_replyforum where forum_id=#{forumid} order by status desc
+    </select>
+
+    <!-- 查询个人的回复通知消息信息-->
+    <select id="queryreply" parameterType="java.util.Map" resultType="com.BBS.pojo.ReplyForum" resultMap="forumMap">
+        select *  from  b_replyforum  where forum_id=#{forumid} and auther =#{auther}
+    </select>
+
+    <!-- 查询个人的回帖周榜-->
+    <select id="weeks" resultType="java.util.Map" resultMap="forumMap">
+      select ID,COUNT(id) as Times ,title,reply_author
+      from b_replyforum group by reply_author order by COUNT(ID) desc
+     </select>
+
+    <!-- 插入帖子信息数据-->
+    <insert id="AddByForum" parameterType="com.BBS.pojo.Forum">
+        INSERT  INTO  b_forum (forum_id ,main_id,title,content,pic_path,author,make_time,make_date,reward,bbs_type,read_times,remark,status)
+        VALUE (#{forumid},#{mainid},#{title},#{content},#{picPath},#{author},#{makeTime},#{makeDate},#{reward},#{bbstype},#{readTimes},#{remark},#{status})
+    </insert>
+
+    <!-- 删除帖子数据，根据用户的id来删除用户信息。这里指的主键值，更新帖子的状态-->
+    <update id="deleteByForum" parameterType="java.lang.Integer">
+        UPDATE    b_forum  set  del_flag=1 WHERE  forum_id = #{forumid}
+    </update>
+
+    <!-- 更新帖子内容状态-->
+    <update id="updateByForum" parameterType="com.BBS.pojo.Forum">
+        UPDATE  b_forum  SET
+         content =#{content },remark =#{remark },
+         read_times =#{readTimes },pic_path =#{picPath },
+         status=#{status}
+         WHERE  forum_id =#{forumid}
+    </update>
+
+
+    <select id="AllForum" resultType="com.BBS.pojo.Forum" parameterType="com.BBS.utils.PageUtils" resultMap="forumMap">
+        select  *
+         from
+          b_forum  where del_flag !=1
+
+           limit #{start},#{pageSize}
+
+    </select>
+    <!-- 更新阅读数-->
+    <update id="updateReadTimes" parameterType="com.BBS.pojo.Forum">
+        UPDATE b_forum set read_times = #{readTimes} where forum_id=#{forumid}
+    </update>
+
+    <!-- 更新帖子回复数-->
+    <update id="updateReplyTimes" parameterType="com.BBS.pojo.Forum">
+        UPDATE b_forum set reply_times = #{replyTimes} where forum_id=#{forumid}
+    </update>
+
+    <!-- 更新置顶状态-->
+    <update id="updatetop" parameterType="com.BBS.pojo.Forum">
+        UPDATE b_forum set top_status = #{top_status} where forum_id=#{forumid}
+    </update>
+
+    <!-- 更新精贴状态-->
+    <update id="updatedelicate" parameterType="com.BBS.pojo.Forum">
+        UPDATE b_forum set delicate_status = #{delicate_status} where forum_id=#{forumid}
+    </update>
+
+    <!-- 点赞操作-->
+    <update id="updateZan" parameterType="java.util.Map">
+        UPDATE b_forum set support_times = #{supportTimes} where forum_id=#{forumid}
+    </update>
+
+    <!-- 回帖操作-->
+    <insert id="replyForum" parameterType="java.util.Map">
+            INSERT  INTO  b_replyforum (id ,forum_id,title,content,pic_path,reply_author,author,make_time,make_date,reward,bbs_type,reply_dimes,support_times,remark,status,del_flag)
+        VALUE (#{id},#{forumid},#{title},#{content},#{picPath},#{replyauthor},#{author},#{makeTime},#{makeDate},#{reward},#{bbstype},#{replyTimes},#{supportTimes},#{remark},#{status},#{del_flag})
+    </insert>
+
+    <!--删除回帖操作 -->
+    <update id="deletereply" parameterType="java.lang.String">
+        UPDATE  b_replyforum set del_flag =1 where ID=#{id}
+    </update>
+
+    <!--采纳回复操作-->
+    <update id="accpetreply" parameterType="java.lang.String">
+        UPDATE  b_replyforum set status =1 where ID=#{id}
+    </update>
+
+    <select id="searchForum" parameterType="com.BBS.utils.PageUtils" resultType="com.BBS.pojo.Forum" resultMap="forumMap">
+        select * from b_forum  where del_flag!=1 and bbs_type=#{parameter}
+           limit #{start},#{pageSize}
+
+    </select>
+
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.BBS.dao.GeneralDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+
+    <!-- 如果输入参数的类型是简单类型，#{}的占位符输入参数可以任意 ，输出结果集返回的类型是返回java对象，例如pojo,javabean类接收-->
+    <select id="getCount"  parameterType="java.util.Map" resultType="java.lang.Integer" >
+        <!-- 具体的sql -->
+        SELECT
+        count(*)
+        FROM
+        ${tableName}
+        where del_flag !=1
+    </select>
+
+
+
+</mapper>

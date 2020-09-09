@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                        http://www.springframework.org/schema/mvc
+                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+                        http://www.springframework.org/schema/aop
+                        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+"
+>
+
+    <description>Redis Configuration</description>
+
+
+    <!--  redis properties 配置连接实例  -->
+    <context:property-placeholder location="classpath:redis.properties"/>
+
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="${redis.maxIdle}"/>
+        <!--<property name="maxActive" value="${redis.maxActive}" />-->
+        <!--<property name="maxWait" value="${redis.maxWait}" />-->
+        <!--上面的2个属性在最新版的Redis版本下，已经更换下面的2个最新属性-->
+        <property name="maxTotal" value="${redis.maxActive}"/>
+        <property name="maxWaitMillis" value="${redis.maxWait}"/>
+        <property name="testOnBorrow" value="${redis.testOnBorrow}"/>
+    </bean>
+    <!--配置redis连接工厂-->
+    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+          p:host-name="${redis.host}"
+          p:port="${redis.port}"
+          p:password="${redis.pass}"
+          p:pool-config-ref="poolConfig"/>
+    <!--配置序列化的bean-->
+    <bean id ="jdkSerializationRedisSerializer" class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
+    <bean id="stringRedisSerializer" class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+
+    <bean id="stringRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <!--配置redis序列号的Key 与value的属性，这里Spring 已经把属性给我们配好了，所以这里部需要配置了看情况而定-->
+        <!--<property name="keySerializer" value="org.springframework.data.redis.serializer.StringRedisSerializer">-->
+        <!--</property>-->
+        <!--<property name="valueSerializer" value="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer">-->
+        <!--</property>-->
+        <!--<property name="hashKeySerializer" value="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer">-->
+        <!--</property>-->
+        <!--<property name="hashValueSerializer" value="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer">-->
+        <!--</property>-->
+    </bean>
+
+</beans>

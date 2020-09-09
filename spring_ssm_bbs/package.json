@@ -1,0 +1,8 @@
+{
+  "name": "BBS_SSm",
+  "version": "1.0.0",
+  "dependencies": {
+    "element-ui": "^2.4.9",
+    "vue": "^2.5.17"
+  }
+}

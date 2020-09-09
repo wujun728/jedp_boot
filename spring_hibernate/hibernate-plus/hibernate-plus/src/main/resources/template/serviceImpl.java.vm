@@ -1,0 +1,22 @@
+package
+
+    ${package.ServiceImpl};
+
+import ${package.PO}.${po};
+import ${package.VO}.${vo};
+import ${package.Service}.${table.serviceName};
+import ${superServiceImplClassPackage};
+import org.springframework.stereotype.Service;
+
+/**
+ * <p>
+ * ${table.comment}  服务实现类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@Service
+public class ${table.serviceImplName} extends${superServiceImplClass}<${po}, ${vo}> implements ${table.serviceName} {
+
+        }

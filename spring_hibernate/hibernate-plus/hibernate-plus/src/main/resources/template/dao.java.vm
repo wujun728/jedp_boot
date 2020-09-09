@@ -1,0 +1,18 @@
+package
+
+    ${package.Dao};
+
+import ${package.PO}.${po};
+import ${superDaoClassPackage};
+
+/**
+ * <p>
+ * Dao类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+public interface ${table.daoName} extends${superDaoClass}<${po}> {
+
+        }

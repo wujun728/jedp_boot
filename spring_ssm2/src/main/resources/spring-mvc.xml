@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+
+
+
+	<!-- 自动扫描(自动注入) -->
+	<context:component-scan base-package="com.wuzy.*.controller"/>
+
+ 	<mvc:annotation-driven  /><!-- cache-period="315360000" -->
+	<mvc:resources mapping="/static/**" location="/static/" />
+	
+	<!-- 这个一定得有，注意了，如果其他配置也有需要这个，已经配置了，那不必了 -->
+	<mvc:annotation-driven  />
+	
+	<!-- 默认访问跳转到登录页面(即定义无需Controller的url<->view直接映射) -->  
+    <mvc:view-controller path="/" view-name="forward:/sys/login"/>
+	
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">  
+		<property name="messageConverters">  
+	        <list>  
+	               <ref bean="mappingJacksonHttpMessageConverter" />  
+	        </list>  
+	    </property>  
+	</bean>  
+	        
+	<bean id="mappingJacksonHttpMessageConverter"  
+	    class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">  
+	     <property name = "supportedMediaTypes">  
+			  <list>  
+			    <bean class="org.springframework.http.MediaType">  
+			     <constructor-arg index="0" value="text"/>  
+			     <constructor-arg index="1" value="plain"/>  
+			     <constructor-arg index="2" value="UTF-8"/>  
+			    </bean>  
+			    <bean class="org.springframework.http.MediaType">  
+			     <constructor-arg index="0" value="*"/>  
+			     <constructor-arg index="1" value="*"/>  
+			     <constructor-arg index="2" value="UTF-8"/>  
+			    </bean>  
+			    <bean class="org.springframework.http.MediaType">  
+			     <constructor-arg index="0" value="text"/>  
+			     <constructor-arg index="1" value="*"/>  
+			     <constructor-arg index="2" value="UTF-8"/>  
+			    </bean>  
+			     <bean class="org.springframework.http.MediaType">  
+			     <constructor-arg index="0" value="application"/>  
+			     <constructor-arg index="1" value="json"/>  
+			     <constructor-arg index="2" value="UTF-8"/>  
+			    </bean>  
+			  </list>  
+		</property>  
+	</bean>   
+	
+	
+
+	<!--===============通用视图解析器 begin===============-->
+	<!--<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	   <property name="prefix" value="/WEB-INF/views" />  
+	   <property name="suffix" value=".jsp" />  
+	</bean>-->
+
+	<!-- Velocity视图解析器    默认视图  -->
+	<bean id="viewResolver" class="com.wuzy.core.utils.DevViewResolver">
+		<property name="defaultViewResolver" ref="beanNameViewResolver"/>
+		<property name="viewResolverMap">
+			<map>
+				<entry>
+					<key>
+						<set>
+							<value>.vm</value>
+							<value>.htm</value>
+						</set>
+					</key>
+					<ref bean="velocityViewResolver"/>
+				</entry>
+				<entry>
+					<key>
+						<set>
+							<value>.jsp</value>
+						</set>
+					</key>
+					<ref bean="jspViewResolver"/>
+				</entry>
+				<entry>
+					<key><value>.ftl</value></key>
+					<ref bean="freeMarkerViewResolver"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+
+	<bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+
+	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<property name="prefix" value="/WEB-INF/view/"/>
+		<property name="suffix" value=".jsp"/>
+		<property name="order" value="1" />
+	</bean>
+
+	<!--  Velocity ViewResolver Configuration -->
+	<bean id="velocityViewResolver" class = "org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+		<property name="order" value="0" />
+		<property name="suffix" value=".html"/>
+		<property name="contentType" value="text/html;charset=UTF-8" />
+		<property name="requestContextAttribute" value="req"/>
+	</bean>
+
+	<!-- Velocity Configuration -->
+	<bean id="velocityConfig" class = "org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+		<property name="configLocation" value="classpath:velocity.properties"/>
+		<property name="resourceLoaderPath" value="/WEB-INF/html/" />
+		<property name="velocityProperties">
+			<props>
+				<prop key="input.encoding">UTF-8</prop>
+				<prop key="output.encoding">UTF-8</prop>
+				<prop key="contentType">text/html;charset=UTF-8</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!--  FreeMarker ViewResolver Configuration -->
+	<bean id="freeMarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="order" value="2" />
+		<property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+	</bean>
+
+
+	<!-- FreeMarker Configuration -->
+	<bean id="freemarkerConfig"  class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="configLocation" value="classpath:freemarker.properties"/>
+		<property name="templateLoaderPath" value="/WEB-INF/ftl/"/>
+		<property name="freemarkerVariables">
+			<map>
+				<entry key="xml_escape" value-ref="fmXmlEscape"/>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
+	<!--===============通用视图解析器 end===============-->
+	
+	
+</beans>

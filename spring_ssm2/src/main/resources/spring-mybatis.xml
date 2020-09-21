@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+    		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd"
+			>
+	
+	<bean id="log-filter" class="com.alibaba.druid.filter.logging.Log4jFilter">
+    	<property name="resultSetLogEnabled" value="true" />
+	</bean>
+	<!-- 配置数据源 -->
+	<bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+<!--		<property name="driverClassName" value="${jdbc.driverClassName}" /> -->
+		<property name="url" value="${jdbc.url}" /> 
+		<property name="username" value="${jdbc.username}" /> 
+		<property name="password" value="${jdbc.password}" /> 
+		<property name="initialSize" value="${jdbc.initialSize}" /> 
+	    <property name="minIdle" value="${jdbc.minIdle}" /> 
+	    <property name="maxActive" value="${jdbc.maxActive}" /> 
+	    <property name="maxWait" value="${jdbc.maxWait}" /> 
+	    <property name="timeBetweenEvictionRunsMillis" value="${jdbc.timeBetweenEvictionRunsMillis}" /> 
+	    <property name="minEvictableIdleTimeMillis" value="${jdbc.minEvictableIdleTimeMillis}" /> 
+	    <property name="validationQuery" value="${jdbc.validationQuery}" /> 
+	    <property name="testWhileIdle" value="${jdbc.testWhileIdle}" /> 
+	    <property name="testOnBorrow" value="${jdbc.testOnBorrow}" /> 
+	    <property name="testOnReturn" value="${jdbc.testOnReturn}" /> 
+	    <property name="removeAbandoned" value="${jdbc.removeAbandoned}" /> 
+	    <property name="removeAbandonedTimeout" value="${jdbc.removeAbandonedTimeout}" /> 
+<!--	    <property name="logAbandoned" value="${jdbc.logAbandoned}" /> -->
+	    <property name="filters" value="${jdbc.filters}" />
+		<!-- 关闭abanded连接时输出错误日志 -->
+		<property name="logAbandoned" value="true" />
+		<property name="proxyFilters">
+	        <list>
+	            <ref bean="log-filter"/>
+	        </list>
+	    </property>
+
+		<!-- 监控数据库 -->
+		<!-- <property name="filters" value="stat" /> -->
+<!--		<property name="filters" value="mergeStat" />-->
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		<!--<property name="mapperLocations"  >
+			<list>
+				<value>classpath*:com/wuzy/**/mapper/*.xml</value>
+			</list>
+		</property>-->
+		<property name="mapperLocations" value="classpath:com/wuzy/**/mapper/*.xml" ></property>
+	</bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.wuzy.*.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+	 <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	     <property name="dataSource" ref="dataSource" />
+	 </bean>
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="publish*" />
+			<tx:method name="save*" />
+			<tx:method name="add*" />
+			<tx:method name="update*" />
+			<tx:method name="insert*" />
+			<tx:method name="create*" />
+			<tx:method name="del*" />
+			<tx:method name="load*" />
+			<tx:method name="init*" />
+
+
+
+
+			<tx:method name="*"  read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!--配置jedis-->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="testOnReturn" value="false"/>
+        <property name="maxIdle" value="15"/>
+        <property name="maxTotal" value="20" />
+        <property name="maxWaitMillis" value="1000"/>
+        <property name="minIdle" value="10" />
+        <property name="lifo" value="false"/>
+        <property name="softMinEvictableIdleTimeMillis" value="10"/>
+        <property name="testOnBorrow" value="true"/>
+        <property name="testWhileIdle" value="false"/>
+        <property name="timeBetweenEvictionRunsMillis" value="300000"/>
+        <property name="blockWhenExhausted" value="true"/>
+    </bean>
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg index="0" ref="jedisPoolConfig" />
+        <constructor-arg index="1" value="${jedis.host}" />
+        <constructor-arg index="2" value="6379" />
+        <constructor-arg index="3" value="3000" />
+        <!-- 
+        <constructor-arg index="4" value="test1234567" />
+         -->
+    </bean>
+	<bean id="redisManager" class="com.wuzy.core.shiro.RedisManager">
+        <property name="jedisPool" ref="jedisPool"/>
+    </bean>
+    
+	<!--缓存管理
+    <bean id="cache" class="com.eazy.lksy.web.shiro.cache.WTCache">
+        <property name="redisManager" ref="redisManager"/>
+    </bean>
+    <bean id="cacheManager" class="com.eazy.lksy.web.shiro.cache.WTCacheManager">
+        <property name="cache" ref="cache"/>
+    </bean>
+    -->
+</beans>

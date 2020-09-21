@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration debug="false">
+    <property name="log.dir" value="C:/logs"/>
+    <!-- 按照每天生成日志文件 -->
+    <appender name="ROLLINGFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${log.dir}/root-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>200MB</maxFileSize>
+            <!-- 日志最大的历史 30天 -->
+            <maxHistory>30</maxHistory>
+            <!--日志文件的上限大小，到了这个值就会删除旧日志-->
+            <totalSizeCap>30GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 控制台 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="ERROR" class="ch.qos.logback.ext.spring.DelegatingLogbackAppender">
+    </appender>
+    <appender name="SYSUSER" class="ch.qos.logback.ext.spring.DelegatingLogbackAppender">
+    </appender>
+    <appender name="ROOT" class="ch.qos.logback.ext.spring.DelegatingLogbackAppender">
+    </appender>
+
+    <!-- AsyncAppender 异步-->
+    <appender name="STDOUTASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="STDOUT"/>
+        <queueSize>512</queueSize>
+    </appender>
+    <appender name="ERRORASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="ERROR"/>
+        <queueSize>512</queueSize>
+    </appender>
+    <appender name="SYSUSERASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="SYSUSER"/>
+        <queueSize>512</queueSize>
+    </appender>
+    <appender name="ROOTASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="ROOT"/>
+        <queueSize>512</queueSize>
+    </appender>
+
+    <!--错误日志 -->
+    <logger name="error" level="info" additivity="false">
+        <appender-ref ref="ERRORASYNC"/>
+    </logger>
+    <!--系统用户操作日志 -->
+    <logger name="sys-user" level="info" additivity="false">
+        <appender-ref ref="SYSUSERASYNC"/>
+    </logger>
+
+    <!--框架的日志级别调整，默认debug，生产环境调整为warn-->
+    <logger name="com.ylzinfo.framework" level="WARN" additivity="false">
+        <appender-ref ref="ROOTASYNC"/>
+    </logger>
+
+    <!-- 日志级别TRACE<DEBUG<INFO<WARN<ERROR 会记录配置级别和配置级别以上的log -->
+    <root level="WARN">
+        <appender-ref ref="ROOTASYNC"/>
+    </root>
+</configuration>

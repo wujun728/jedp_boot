@@ -1,0 +1,27 @@
+#??????????? Unicode???!
+
+#??????????Unicode???!
+#log4j.rootLogger=trace,appenderNameConsole,appenderNameRollingFile
+
+#????????????????????Unicode???! > trace > debug > info > warn > error
+log4j.rootLogger=info,appenderNameConsole
+
+#?????
+log4j.appender.appenderNameConsole=org.apache.log4j.ConsoleAppender
+log4j.appender.appenderNameConsole.Target=System.out
+log4j.appender.appenderNameConsole.layout=org.apache.log4j.PatternLayout
+log4j.appender.appenderNameConsole.layout.ConversionPattern=[%d{MM-dd HH:mm:ss}] %p: %F:%L %m %n
+
+#??????mybatis??sql??.?? com.youmeek.ssm.manage.mapper ??mapper.xml??namespace,???????????????????,??????namespace.
+log4j.logger.com.youmeek.ssm.mapper=debug
+
+#======================================================
+#?????????????????????????????
+#log4j.appender.appenderNameRollingFile=org.apache.log4j.RollingFileAppender
+#log4j.appender.appenderNameRollingFile.File=log4j-log-out-file/ssm.log
+#log4j.appender.appenderNameRollingFile.MaxFileSize=50MB
+#log4j.appender.appenderNameRollingFile.Threshold=ALL
+#log4j.appender.appenderNameRollingFile.layout=org.apache.log4j.PatternLayout
+#log4j.appender.appenderNameRollingFile.layout.ConversionPattern=[%d{yyyy-MM-dd HH:mm:ss:SSS}] --- [%p] --- [%F:%L] --- [%m] --- %n
+
+

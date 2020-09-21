@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nuc.Store.entity.OrderListMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.nuc.Store.model.OrderList" >
+    <id column="OrderId" property="orderid" jdbcType="INTEGER" />
+    <result column="GoodId" property="goodid" jdbcType="INTEGER" />
+    <result column="CarId" property="carid" jdbcType="INTEGER" />
+    <result column="BuyNum" property="buynum" jdbcType="INTEGER" />
+    <result column="BuyState" property="buystate" jdbcType="INTEGER" />
+    <result column="BuyDesc" property="buydesc" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    OrderId, GoodId, CarId, BuyNum, BuyState, BuyDesc
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from orderlist
+    where OrderId = #{orderid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from orderlist
+    where OrderId = #{orderid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.nuc.Store.model.OrderList" >
+    insert into orderlist (OrderId, GoodId, CarId, 
+      BuyNum, BuyState, BuyDesc
+      )
+    values (#{orderid,jdbcType=INTEGER}, #{goodid,jdbcType=INTEGER}, #{carid,jdbcType=INTEGER}, 
+      #{buynum,jdbcType=INTEGER}, #{buystate,jdbcType=INTEGER}, #{buydesc,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.nuc.Store.model.OrderList" >
+    insert into orderlist
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderid != null" >
+        OrderId,
+      </if>
+      <if test="goodid != null" >
+        GoodId,
+      </if>
+      <if test="carid != null" >
+        CarId,
+      </if>
+      <if test="buynum != null" >
+        BuyNum,
+      </if>
+      <if test="buystate != null" >
+        BuyState,
+      </if>
+      <if test="buydesc != null" >
+        BuyDesc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderid != null" >
+        #{orderid,jdbcType=INTEGER},
+      </if>
+      <if test="goodid != null" >
+        #{goodid,jdbcType=INTEGER},
+      </if>
+      <if test="carid != null" >
+        #{carid,jdbcType=INTEGER},
+      </if>
+      <if test="buynum != null" >
+        #{buynum,jdbcType=INTEGER},
+      </if>
+      <if test="buystate != null" >
+        #{buystate,jdbcType=INTEGER},
+      </if>
+      <if test="buydesc != null" >
+        #{buydesc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.nuc.Store.model.OrderList" >
+    update orderlist
+    <set >
+      <if test="goodid != null" >
+        GoodId = #{goodid,jdbcType=INTEGER},
+      </if>
+      <if test="carid != null" >
+        CarId = #{carid,jdbcType=INTEGER},
+      </if>
+      <if test="buynum != null" >
+        BuyNum = #{buynum,jdbcType=INTEGER},
+      </if>
+      <if test="buystate != null" >
+        BuyState = #{buystate,jdbcType=INTEGER},
+      </if>
+      <if test="buydesc != null" >
+        BuyDesc = #{buydesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OrderId = #{orderid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.nuc.Store.model.OrderList" >
+    update orderlist
+    set GoodId = #{goodid,jdbcType=INTEGER},
+      CarId = #{carid,jdbcType=INTEGER},
+      BuyNum = #{buynum,jdbcType=INTEGER},
+      BuyState = #{buystate,jdbcType=INTEGER},
+      BuyDesc = #{buydesc,jdbcType=VARCHAR}
+    where OrderId = #{orderid,jdbcType=INTEGER}
+  </update>
+</mapper>

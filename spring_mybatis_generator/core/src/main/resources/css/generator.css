@@ -1,0 +1,15 @@
+.root{
+    -fx-background-color: #ffffff;
+}
+TextField{
+    -fx-background-radius: 0;
+}
+Button{
+    -fx-background-radius: 0;
+}
+ChoiceBox{
+    -fx-background-radius: 0;
+}
+
+.noRightBorder {
+}

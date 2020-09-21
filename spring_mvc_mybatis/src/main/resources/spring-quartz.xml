@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+ 
+ 
+ 		<!-- 1. 读取jdbc.properties文件 -->	
+	<context:property-placeholder ignore-unresolvable="true" location="classpath:jdbc.properties" />
+ <context:property-placeholder ignore-unresolvable="true" location="classpath:quartz.properties" />
+ 
+ 	<!-- 配置数据源 -->
+	<bean name="quartzSource" class="com.alibaba.druid.pool.DruidDataSource" >
+		<!-- 初始化连接大小 -->
+		<property name="initialSize" value="0" />
+		<!-- 连接池最大使用连接数量  20-->
+		<property name="maxActive" value="1" />
+		<!-- 连接池最大空闲 20-->
+		<property name="maxIdle" value="1" />
+		<!-- 连接池最小空闲 -->
+		<property name="minIdle" value="0" />
+		<!-- 获取连接最大等待时间 -->
+		<property name="maxWait" value="60000" />
+
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="25200000" />
+		<property name="url" value="${quartz_url}" />
+		<property name="username" value="${quartz_username}" />
+		<property name="password" value="${quartz_password}" />
+	</bean>
+ 
+ 
+ 
+ 	<bean id="scheduler"  class="org.springframework.scheduling.quartz.SchedulerFactoryBean" >
+ 		<property name="dataSource" ref="quartzSource"></property>
+ 	</bean> 
+ 	<bean id="quartzManager" class="com.qbt.framework.quartz.QuartzManager">
+ 		<property name="scheduler" ref="scheduler"></property>
+ 	</bean>
+ 	
+ 
+ </beans>

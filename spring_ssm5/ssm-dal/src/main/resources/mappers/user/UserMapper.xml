@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="zw.cc.cn.user.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="zw.cc.cn.user.module.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_Name" property="userName" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="nick_Name" property="nickName" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="stauts" property="stauts" jdbcType="INTEGER" />
+    <result column="create_Date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_Date" property="updateDate" jdbcType="TIMESTAMP" />
+    <result column="create_User" property="createUser" jdbcType="INTEGER" />
+    <result column="update_User" property="updateUser" jdbcType="INTEGER" />
+    <result column="Logic_State" property="logicState" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_Name, password, nick_Name, sex, age, phone, address, stauts, create_Date, 
+    update_Date, create_User, update_User, Logic_State
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="zw.cc.cn.user.module.User" >
+    insert into user (id, user_Name, password, 
+      nick_Name, sex, age, 
+      phone, address, stauts, 
+      create_Date, update_Date, create_User, 
+      update_User, Logic_State)
+    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{nickName,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{age,jdbcType=INTEGER}, 
+      #{phone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{stauts,jdbcType=INTEGER}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}, #{createUser,jdbcType=INTEGER}, 
+      #{updateUser,jdbcType=INTEGER}, #{logicState,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="zw.cc.cn.user.module.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userName != null" >
+        user_Name,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="nickName != null" >
+        nick_Name,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="stauts != null" >
+        stauts,
+      </if>
+      <if test="createDate != null" >
+        create_Date,
+      </if>
+      <if test="updateDate != null" >
+        update_Date,
+      </if>
+      <if test="createUser != null" >
+        create_User,
+      </if>
+      <if test="updateUser != null" >
+        update_User,
+      </if>
+      <if test="logicState != null" >
+        Logic_State,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="stauts != null" >
+        #{stauts,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=INTEGER},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=INTEGER},
+      </if>
+      <if test="logicState != null" >
+        #{logicState,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="zw.cc.cn.user.module.User" >
+    update user
+    <set >
+      <if test="userName != null" >
+        user_Name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        nick_Name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="stauts != null" >
+        stauts = #{stauts,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        create_Date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null" >
+        update_Date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null" >
+        create_User = #{createUser,jdbcType=INTEGER},
+      </if>
+      <if test="updateUser != null" >
+        update_User = #{updateUser,jdbcType=INTEGER},
+      </if>
+      <if test="logicState != null" >
+        Logic_State = #{logicState,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="zw.cc.cn.user.module.User" >
+    update user
+    set user_Name = #{userName,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      nick_Name = #{nickName,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      age = #{age,jdbcType=INTEGER},
+      phone = #{phone,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      stauts = #{stauts,jdbcType=INTEGER},
+      create_Date = #{createDate,jdbcType=TIMESTAMP},
+      update_Date = #{updateDate,jdbcType=TIMESTAMP},
+      create_User = #{createUser,jdbcType=INTEGER},
+      update_User = #{updateUser,jdbcType=INTEGER},
+      Logic_State = #{logicState,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByUmAndPwd" parameterType="zw.cc.cn.user.module.User" resultMap="BaseResultMap">
+    select * from user
+    WHERE
+    user_Name = #{userName,jdbcType=VARCHAR}
+    AND password = #{password,jdbcType=VARCHAR}
+    AND stauts = 1
+    AND Logic_State = 1
+  </select>
+</mapper>

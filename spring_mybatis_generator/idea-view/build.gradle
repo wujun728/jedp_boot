@@ -1,0 +1,21 @@
+
+
+apply from: "${rootProject.projectDir}/build.gradle"
+
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2018.1.1'
+    updateSinceUntilBuild false
+    pluginName 'idea-mybatis-generator'
+}
+patchPluginXml {
+
+}
+
+dependencies {
+    compile project(':core')
+}
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}

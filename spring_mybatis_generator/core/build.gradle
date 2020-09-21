@@ -1,0 +1,17 @@
+
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.23'
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.31'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.16'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.0'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+}

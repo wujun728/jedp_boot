@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="zw.cc.cn.user.dao.RolePreMapper" >
+  <resultMap id="BaseResultMap" type="zw.cc.cn.user.module.RolePre" >
+    <result column="role_id" property="roleId" jdbcType="INTEGER" />
+    <result column="pre_id" property="preId" jdbcType="INTEGER" />
+    <result column="create_Date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_Date" property="updateDate" jdbcType="TIMESTAMP" />
+    <result column="create_User" property="createUser" jdbcType="INTEGER" />
+    <result column="update_User" property="updateUser" jdbcType="INTEGER" />
+    <result column="Logic_State" property="logicState" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="zw.cc.cn.user.module.RolePre" >
+    insert into role_pre (role_id, pre_id, create_Date, 
+      update_Date, create_User, update_User, 
+      Logic_State)
+    values (#{roleId,jdbcType=INTEGER}, #{preId,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{updateDate,jdbcType=TIMESTAMP}, #{createUser,jdbcType=INTEGER}, #{updateUser,jdbcType=INTEGER}, 
+      #{logicState,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="zw.cc.cn.user.module.RolePre" >
+    insert into role_pre
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="roleId != null" >
+        role_id,
+      </if>
+      <if test="preId != null" >
+        pre_id,
+      </if>
+      <if test="createDate != null" >
+        create_Date,
+      </if>
+      <if test="updateDate != null" >
+        update_Date,
+      </if>
+      <if test="createUser != null" >
+        create_User,
+      </if>
+      <if test="updateUser != null" >
+        update_User,
+      </if>
+      <if test="logicState != null" >
+        Logic_State,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="roleId != null" >
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="preId != null" >
+        #{preId,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=INTEGER},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=INTEGER},
+      </if>
+      <if test="logicState != null" >
+        #{logicState,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

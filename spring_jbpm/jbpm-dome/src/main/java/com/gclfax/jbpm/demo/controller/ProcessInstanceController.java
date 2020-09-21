@@ -1,0 +1,65 @@
+package com.gclfax.jbpm.demo.controller;
+
+import net.sf.json.JSONArray;
+import org.jbpm.services.api.ProcessService;
+import org.jbpm.services.api.RuntimeDataService;
+import org.jbpm.services.api.model.ProcessInstanceDesc;
+import org.kie.internal.query.QueryContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Collection;
+
+@RestController
+@RequestMapping("/processinstance")
+public class ProcessInstanceController {
+
+    @Autowired
+    private RuntimeDataService runtimeDataService;
+
+    @Autowired
+    private ProcessService processService;
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @ResponseBody
+    public Collection<ProcessInstanceDesc> getProcessInstances() {
+
+        Collection<ProcessInstanceDesc> processInstances = runtimeDataService.getProcessInstances(new QueryContext(0, 20, "id", false));
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("ProcessinstanceList");
+        modelAndView.addObject("ProcessinstanceListJson", JSONArray.fromObject(processInstances).toString());
+        modelAndView.addObject("processInstances", processInstances);
+        return processInstances;
+
+    }
+
+    @RequestMapping(value = "/show", method = RequestMethod.GET)
+    @ResponseBody
+    public ProcessInstanceDesc getProcessInstance(@RequestParam String id) {
+        long processInstanceId = Long.parseLong(id);
+        ProcessInstanceDesc processInstance = runtimeDataService.getProcessInstanceById(processInstanceId);
+
+        return processInstance;
+    }
+
+    @RequestMapping(value = "/abort", method = RequestMethod.POST)
+    @ResponseBody
+    public String abortProcessInstance(@RequestParam String id) {
+
+        processService.abortProcessInstance(Long.parseLong(id));
+
+        return "Instance (" + id + ") aborted successfully";
+    }
+
+    @RequestMapping(value = "/signal", method = RequestMethod.POST)
+    @ResponseBody
+    public String signalProcessInstance(@RequestParam String id, @RequestParam String signal,
+                                        @RequestParam String data) {
+
+        processService.signalProcessInstance(Long.parseLong(id), signal, data);
+
+        return "Signal sent to instance (" + id + ") successfully";
+    }
+}

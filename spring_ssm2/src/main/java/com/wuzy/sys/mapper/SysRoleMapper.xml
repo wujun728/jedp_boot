@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wuzy.sys.dao.SysRoleMapper" >
+  <resultMap id="BaseResultMap" type="com.wuzy.sys.model.SysRole" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="role_name" property="roleName" jdbcType="VARCHAR" />
+    <result column="role_code" property="roleCode" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_user" property="createUser" jdbcType="BIGINT" />
+    <result column="role_sort" property="roleSort" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    R.id,R.role_name,R.role_code,R.memo,R.create_time,R.create_user,R.role_sort
+  </sql>
+
+  <select id="getRoleListByUid" parameterType="java.lang.Long" resultMap="BaseResultMap">
+	SELECT r.role_code
+    FROM sys_role r LEFT JOIN sys_user_role ur ON ur.role_id = r.id
+      LEFT JOIN  sys_user u  on u.id=ur.user_id
+      WHERE  u.id=#{userId}
+  </select>
+
+</mapper>

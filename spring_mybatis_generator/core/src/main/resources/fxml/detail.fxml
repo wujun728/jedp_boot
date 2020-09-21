@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<GridPane hgap="10.0" stylesheets="/css/detail.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="db.controller.DetailController">
+
+
+    <columnConstraints>
+        <ColumnConstraints prefWidth="180">
+        </ColumnConstraints>
+        <ColumnConstraints prefWidth="620">
+        </ColumnConstraints>
+    </columnConstraints>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+
+    <VBox prefHeight="480" prefWidth="180" styleClass="borderShow" BorderPane.alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <HBox prefWidth="180" styleClass="borderShow">
+            <ImageView fitHeight="28" fitWidth="28" style="-fx-background-color: #dddddd">
+                <Image url="/images/search.png" />
+            </ImageView>
+            <TextField prefHeight="32" prefWidth="152" promptText="搜索" style="-fx-background-color: #dddddd" />
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </HBox>
+        <HBox styleClass="borderShow">
+            <ListView fx:id="tableList" maxHeight="410" minHeight="410" minWidth="180" style="-fx-border-width: 0" styleClass="list-cell" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            </ListView>
+        </HBox>
+    </VBox>
+
+    <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <padding>
+            <Insets left="12.0" />
+        </padding>
+        <HBox prefHeight="430" prefWidth="620" styleClass="borderShow" alignment="CENTER" >
+            <VBox alignment="CENTER" prefWidth="200" prefHeight="130" styleClass="borderShow" spacing="5">
+                <TextField promptText="源代码路径 /root/.../src/java/main" prefHeight="32"/>
+                <Button text="选择文件路径" prefHeight="32"/>
+                <TextField promptText="包路径 com.jlh.model" prefHeight="32"/>
+                <TextField promptText="生成文件名 XXXDO" prefHeight="32"/>
+                <padding>
+                    <Insets left="5" right="5" top="5" bottom="5"/>
+                </padding>
+            </VBox>
+            <VBox alignment="CENTER" prefWidth="200" prefHeight="130" styleClass="borderShow" spacing="5">
+                <TextField promptText="源代码路径 /root/.../src/java/main" prefHeight="32"/>
+                <Button text="选择文件路径" prefHeight="32"/>
+                <TextField promptText="包路径 com.jlh.model" prefHeight="32"/>
+                <TextField promptText="生成文件名 XXXDO" prefHeight="32"/>
+                <padding>
+                    <Insets left="5" right="5" top="5" bottom="5"/>
+                </padding>
+            </VBox>
+            <VBox alignment="CENTER" prefWidth="200" prefHeight="130" styleClass="borderShow" spacing="5">
+                <TextField promptText="源代码路径 /root/.../src/java/main" prefHeight="32"/>
+                <Button text="选择文件路径" prefHeight="32"/>
+                <TextField promptText="包路径 com.jlh.model" prefHeight="32"/>
+                <TextField promptText="生成文件名 XXXDO" prefHeight="32"/>
+                <padding>
+                    <Insets left="5" right="5" top="5" bottom="5"/>
+                </padding>
+            </VBox>
+        </HBox>
+        <VBox alignment="CENTER_RIGHT" prefHeight="50" prefWidth="420" styleClass="borderShow">
+            <Button prefHeight="24" prefWidth="75" text="生成模板" />
+            <padding>
+                <Insets right="10"/>
+            </padding>
+        </VBox>
+    </VBox>
+
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+
+
+</GridPane>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="zw.cc.cn.user.dao.UserRoleMapper">
+    <resultMap id="BaseResultMap" type="zw.cc.cn.user.module.UserRole">
+        <result column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="role_id" property="roleId" jdbcType="INTEGER"/>
+        <result column="role_Code" property="roleCode" jdbcType="VARCHAR" />
+        <result column="role_Name" property="roleName" jdbcType="VARCHAR" />
+        <result column="create_Date" property="createDate" jdbcType="TIMESTAMP"/>
+        <result column="update_Date" property="updateDate" jdbcType="TIMESTAMP"/>
+        <result column="create_User" property="createUser" jdbcType="INTEGER"/>
+        <result column="update_User" property="updateUser" jdbcType="INTEGER"/>
+        <result column="Logic_State" property="logicState" jdbcType="INTEGER"/>
+    </resultMap>
+    <insert id="insert" parameterType="zw.cc.cn.user.module.UserRole">
+    insert into user_role (user_id, role_id, create_Date, 
+      update_Date, create_User, update_User, 
+      Logic_State)
+    values (#{userId,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{updateDate,jdbcType=TIMESTAMP}, #{createUser,jdbcType=INTEGER}, #{updateUser,jdbcType=INTEGER}, 
+      #{logicState,jdbcType=INTEGER})
+  </insert>
+    <insert id="insertSelective" parameterType="zw.cc.cn.user.module.UserRole">
+        insert into user_role
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="roleId != null">
+                role_id,
+            </if>
+            <if test="createDate != null">
+                create_Date,
+            </if>
+            <if test="updateDate != null">
+                update_Date,
+            </if>
+            <if test="createUser != null">
+                create_User,
+            </if>
+            <if test="updateUser != null">
+                update_User,
+            </if>
+            <if test="logicState != null">
+                Logic_State,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="roleId != null">
+                #{roleId,jdbcType=INTEGER},
+            </if>
+            <if test="createDate != null">
+                #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateDate != null">
+                #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createUser != null">
+                #{createUser,jdbcType=INTEGER},
+            </if>
+            <if test="updateUser != null">
+                #{updateUser,jdbcType=INTEGER},
+            </if>
+            <if test="logicState != null">
+                #{logicState,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <select id="queryUserRoleCodeByUserId" parameterType="Integer" resultType="String">
+        SELECT
+        r.role_Code
+        FROM user_role ur
+        LEFT JOIN role r
+        ON ur.role_id = r.id
+        AND r.Logic_State = 1
+        WHERE ur.user_id = #{id,jdbcType=INTEGER}
+        AND ur.Logic_State = 1
+  </select>
+
+    <select id="queryUserPermissByUserId" parameterType="Integer" resultType="String">
+       select
+       p.pre_Code
+       from
+       shiro_ssm.role_pre rp
+       LEFT JOIN shiro_ssm.permission p
+       ON p.id=rp.pre_id
+       AND p.Logic_State = 1
+       WHERE rp.role_id in(
+        SELECT
+        r.id
+        FROM user_role ur
+        LEFT JOIN role r
+        ON ur.role_id = r.id
+        AND r.Logic_State = 1
+        WHERE ur.user_id = #{id,jdbcType=INTEGER}
+        AND ur.Logic_State = 1
+       )
+
+    </select>
+</mapper>

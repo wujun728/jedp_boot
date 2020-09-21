@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ketayao.learn</groupId>
+  <artifactId>learn-framework</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>learn-jsoup</module>
+  	<module>learn-lucene</module>
+  	<module>learn-commons-email</module>
+  	<module>learn_apache_commons_cli</module>
+  	<module>learn-oschina</module>
+  	<module>learn-test</module>
+  	<module>learn-activemq</module>
+  	<module>learn-threads</module>
+  	<module>learn-camel</module>
+  	<module>learn-javase</module>
+  	<module>learn-poi</module>
+  	<module>learn-dao-hibernate</module>
+  	<module>learn-html-css-js</module>
+  	<module>learn-itext</module>
+  	<module>learn-hibernate</module>
+  	<module>learn-spring-data-jpa</module>
+  	<module>learn-mybatis</module>
+  	<module>learn-spring</module>
+  	<module>learn-algorithm</module>
+  	<module>learn-design-pattern</module>
+  	<module>learn-commons-configuration</module>
+  </modules>
+</project>

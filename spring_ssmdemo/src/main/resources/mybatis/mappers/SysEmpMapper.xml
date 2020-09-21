@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zt.mapper.SysEmpMapper">
+  <resultMap id="BaseResultMap" type="com.zt.pojo.SysEmp">
+    <id column="EMP_ID" jdbcType="DECIMAL" property="empId" />
+    <result column="EMP_NAME" jdbcType="VARCHAR" property="empName" />
+    <result column="LOG_NAME" jdbcType="VARCHAR" property="logName" />
+    <result column="LOG_PWD" jdbcType="VARCHAR" property="logPwd" />
+    <result column="LOG_STATUS" jdbcType="DECIMAL" property="logStatus" />
+    <result column="SEX" jdbcType="VARCHAR" property="sex" />
+    <result column="BIRTHDAY" jdbcType="TIMESTAMP" property="birthday" />
+    <result column="TEL" jdbcType="VARCHAR" property="tel" />
+    <result column="SAL" jdbcType="DECIMAL" property="sal" />
+    <result column="HIREDATE" jdbcType="TIMESTAMP" property="hiredate" />
+    <result column="ADDR" jdbcType="VARCHAR" property="addr" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="MARITAL_STATUS" jdbcType="DECIMAL" property="maritalStatus" />
+    <result column="HEAD_IMG" jdbcType="VARCHAR" property="headImg" />
+    <result column="CHANGE_TIME" jdbcType="TIMESTAMP" property="changeTime" />
+    <result column="MGR_ID" jdbcType="DECIMAL" property="mgrId" />
+    <result column="DEPT_ID" jdbcType="DECIMAL" property="deptId" />
+    <result column="ROLE_ID" jdbcType="DECIMAL" property="roleId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    EMP_ID, EMP_NAME, LOG_NAME, LOG_PWD, LOG_STATUS, SEX, BIRTHDAY, TEL, SAL, HIREDATE, 
+    ADDR, EMAIL, MARITAL_STATUS, HEAD_IMG, CHANGE_TIME, MGR_ID, DEPT_ID, ROLE_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_EMP
+    where EMP_ID = #{empId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from SYS_EMP
+    where EMP_ID = #{empId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.zt.pojo.SysEmp">
+    insert into SYS_EMP (EMP_ID, EMP_NAME, LOG_NAME, 
+      LOG_PWD, LOG_STATUS, SEX, 
+      BIRTHDAY, TEL, SAL, 
+      HIREDATE, ADDR, EMAIL, 
+      MARITAL_STATUS, HEAD_IMG, CHANGE_TIME, 
+      MGR_ID, DEPT_ID, ROLE_ID
+      )
+    values (#{empId,jdbcType=DECIMAL}, #{empName,jdbcType=VARCHAR}, #{logName,jdbcType=VARCHAR}, 
+      #{logPwd,jdbcType=VARCHAR}, #{logStatus,jdbcType=DECIMAL}, #{sex,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=TIMESTAMP}, #{tel,jdbcType=VARCHAR}, #{sal,jdbcType=DECIMAL}, 
+      #{hiredate,jdbcType=TIMESTAMP}, #{addr,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{maritalStatus,jdbcType=DECIMAL}, #{headImg,jdbcType=VARCHAR}, #{changeTime,jdbcType=TIMESTAMP}, 
+      #{mgrId,jdbcType=DECIMAL}, #{deptId,jdbcType=DECIMAL}, #{roleId,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zt.pojo.SysEmp">
+    insert into SYS_EMP
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="empId != null">
+        EMP_ID,
+      </if>
+      <if test="empName != null">
+        EMP_NAME,
+      </if>
+      <if test="logName != null">
+        LOG_NAME,
+      </if>
+      <if test="logPwd != null">
+        LOG_PWD,
+      </if>
+      <if test="logStatus != null">
+        LOG_STATUS,
+      </if>
+      <if test="sex != null">
+        SEX,
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY,
+      </if>
+      <if test="tel != null">
+        TEL,
+      </if>
+      <if test="sal != null">
+        SAL,
+      </if>
+      <if test="hiredate != null">
+        HIREDATE,
+      </if>
+      <if test="addr != null">
+        ADDR,
+      </if>
+      <if test="email != null">
+        EMAIL,
+      </if>
+      <if test="maritalStatus != null">
+        MARITAL_STATUS,
+      </if>
+      <if test="headImg != null">
+        HEAD_IMG,
+      </if>
+      <if test="changeTime != null">
+        CHANGE_TIME,
+      </if>
+      <if test="mgrId != null">
+        MGR_ID,
+      </if>
+      <if test="deptId != null">
+        DEPT_ID,
+      </if>
+      <if test="roleId != null">
+        ROLE_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="empId != null">
+        #{empId,jdbcType=DECIMAL},
+      </if>
+      <if test="empName != null">
+        #{empName,jdbcType=VARCHAR},
+      </if>
+      <if test="logName != null">
+        #{logName,jdbcType=VARCHAR},
+      </if>
+      <if test="logPwd != null">
+        #{logPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="logStatus != null">
+        #{logStatus,jdbcType=DECIMAL},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="sal != null">
+        #{sal,jdbcType=DECIMAL},
+      </if>
+      <if test="hiredate != null">
+        #{hiredate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="addr != null">
+        #{addr,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="maritalStatus != null">
+        #{maritalStatus,jdbcType=DECIMAL},
+      </if>
+      <if test="headImg != null">
+        #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="changeTime != null">
+        #{changeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mgrId != null">
+        #{mgrId,jdbcType=DECIMAL},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=DECIMAL},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zt.pojo.SysEmp">
+    update SYS_EMP
+    <set>
+      <if test="empName != null">
+        EMP_NAME = #{empName,jdbcType=VARCHAR},
+      </if>
+      <if test="logName != null">
+        LOG_NAME = #{logName,jdbcType=VARCHAR},
+      </if>
+      <if test="logPwd != null">
+        LOG_PWD = #{logPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="logStatus != null">
+        LOG_STATUS = #{logStatus,jdbcType=DECIMAL},
+      </if>
+      <if test="sex != null">
+        SEX = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY = #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tel != null">
+        TEL = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="sal != null">
+        SAL = #{sal,jdbcType=DECIMAL},
+      </if>
+      <if test="hiredate != null">
+        HIREDATE = #{hiredate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="addr != null">
+        ADDR = #{addr,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="maritalStatus != null">
+        MARITAL_STATUS = #{maritalStatus,jdbcType=DECIMAL},
+      </if>
+      <if test="headImg != null">
+        HEAD_IMG = #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="changeTime != null">
+        CHANGE_TIME = #{changeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mgrId != null">
+        MGR_ID = #{mgrId,jdbcType=DECIMAL},
+      </if>
+      <if test="deptId != null">
+        DEPT_ID = #{deptId,jdbcType=DECIMAL},
+      </if>
+      <if test="roleId != null">
+        ROLE_ID = #{roleId,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where EMP_ID = #{empId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zt.pojo.SysEmp">
+    update SYS_EMP
+    set EMP_NAME = #{empName,jdbcType=VARCHAR},
+      LOG_NAME = #{logName,jdbcType=VARCHAR},
+      LOG_PWD = #{logPwd,jdbcType=VARCHAR},
+      LOG_STATUS = #{logStatus,jdbcType=DECIMAL},
+      SEX = #{sex,jdbcType=VARCHAR},
+      BIRTHDAY = #{birthday,jdbcType=TIMESTAMP},
+      TEL = #{tel,jdbcType=VARCHAR},
+      SAL = #{sal,jdbcType=DECIMAL},
+      HIREDATE = #{hiredate,jdbcType=TIMESTAMP},
+      ADDR = #{addr,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      MARITAL_STATUS = #{maritalStatus,jdbcType=DECIMAL},
+      HEAD_IMG = #{headImg,jdbcType=VARCHAR},
+      CHANGE_TIME = #{changeTime,jdbcType=TIMESTAMP},
+      MGR_ID = #{mgrId,jdbcType=DECIMAL},
+      DEPT_ID = #{deptId,jdbcType=DECIMAL},
+      ROLE_ID = #{roleId,jdbcType=DECIMAL}
+    where EMP_ID = #{empId,jdbcType=DECIMAL}
+  </update>
+</mapper>

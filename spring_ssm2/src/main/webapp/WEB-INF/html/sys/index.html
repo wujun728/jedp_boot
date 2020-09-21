@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link rel="stylesheet" href="/static/common_css/bootstrap.3.3.0.min.css"/>
+    <link rel="stylesheet" href="/static/common_css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/static/common_css/AdminLTE.min.css"/>
+
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="/static/common_css/all-skins.min.css"/>
+    <link rel="stylesheet" href="/static/common_css/main.css"/>
+
+    <title>系统控制台</title>
+</head>
+<body class="hold-transition skin-blue sidebar-mini"><!--这里可以js控制主题色调-->
+<!--site wrapper-->
+<div class="wrapper" id="yapp" v-cloak>
+    <!--头部 start-->
+    <header class="main-header">
+        <a href="javascript:void(0);" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels 关闭左侧菜单时效果-->
+            <span class="logo-mini"><b>Younger</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Younger后台管理系统</b></span>
+        </a>
+        <!--nav导航条start-->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!--Sidebar toggle button 导航菜单开关-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <div style="float: left;color: #fff;padding: 15px 10px">欢迎user.userName</div>
+            <!--顶部右侧菜单-->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="#"><i class="fa fa-home"></i>&nbsp;个人信息</a> </li>
+                    <li><a href="javascript:;" @click="updatPassword"><i class="fa fa-lock"></i>&nbsp;修改密码</a> </li>
+                    <li><a href="/sys/logout"><i class="fa fa-sign-out"></i>&nbsp;退出系统</a> </li>
+                </ul>
+            </div>
+        </nav>
+        <!--nav导航条end-->
+    </header>
+    <!--头部end-->
+
+    <!--=========================================-->
+
+    <!--左侧菜单start-->
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="header">导航菜单</li>
+                <!--js生成菜单-->
+                <menu-item :item ="item" v-for ="item in menuList"></menu-item>
+            </ul>
+        </section>
+    </aside>
+    <!--左侧菜单end-->
+
+    <!--============================================-->
+    <!--主体部分start-->
+    <div class="content-wrapper">
+        <!-- 面包屑导航 例如：“首页》控制台》监控数据”-->
+        <section class="content-header">
+            <ol class="breadcrumb" id="nav_title" style="position:static;float:none;">
+                <li class="active"><i class="fa fa-home" style="font-size:20px;position:relative;top:2px;left:-3px;"></i> &nbsp; 首页</li>
+                <li class="active">{{navTitle}}</li>
+            </ol>
+        </section>
+        <!-- Main content -->
+        <section class="content" style="background:#fff;">
+            <iframe scrolling="yes" frameborder="0" style="width:100%;min-height:1000px;overflow:visible;background:#fff;" :src="main"></iframe>
+        </section>
+        <!--主体部分end-->
+    </div>
+
+    <!--==============================================-->
+
+    <!--footer start-->
+
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            Version 1.15.1
+        </div>
+        Copyright &copy; 2017 <a href="#" target="_blank">Younger Blog</a> All Rights Reserved
+    </footer>
+    <!--footer end-->
+
+    <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+
+    <!--===============================-->
+    <!--修改密码start-->
+    <div id="passwordLayer" style="display: none;">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <div class="form-group">
+                    <div class="col-sm-2 control-label">账号</div>
+                    <span class="label label-success" style="vertical-align: bottom;">{{user.username}}</span>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2 control-label">原密码</div>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" v-model="password" placeholder="原密码"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2 control-label">新密码</div>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" v-model="newPassword" placeholder="新密码"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--修改密码end-->
+</div>
+
+<script src="/static/common_js/jquery.1.11.1.min.js" type="text/javascript"></script>
+<script src="/static/common_js/vue.min.js" type="text/javascript"></script>
+<script src="/static/common_js/bootstrap.3.3.0.min.js" type="text/javascript"></script>
+<script src="/static/common_js/jquery.slimscroll.min.js" type="text/javascript"></script>
+<!--改变滚动条的样式-->
+<script src="/static/common_js/jquery.slimscroll.min.js"></script>
+<!--改变click的响应速度（移动端），fastclick在touchend之前就处理了click-->
+<script src="/static/common_js/fastclick.min.js"></script>
+<!--这个路由，用于面包屑导航-->
+<script src="/static/common_js/router.js" type="text/javascript"></script>
+<!-- App.js 是一个轻量级的 JavaScript UI 库，用来创建移动的 Web 应用，应用的外观跟原生的应用相同，性能也近乎一致。-->
+<script src="/static/common_js/app.js" type="text/javascript"></script>
+<!--layer弹出层-->
+<script src="/static/plugins/layer/layer.js" type="text/javascript"></script>
+<script src="/static/js/sys/index.js" type="text/javascript"></script>
+
+</body>
+</html>

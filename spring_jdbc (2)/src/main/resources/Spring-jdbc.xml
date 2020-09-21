@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	<!-- <context:property-placeholder location="classpath:jdbc.properties" /> -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${mysql.driver}"></property>
+		<property name="jdbcUrl" value="${mysql.jdbc.url}"></property>
+		<property name="user" value="${mysql.user}"></property>
+		<property name="password" value="${mysql.pass}"></property>
+	</bean>
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<bean id="bankDao" class="cn.edu.nuc.Spring_jdbc.dao.impl.BankDaoImpl">
+		<property name="jtl" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="bankService" class="cn.edu.nuc.Spring_jdbc.service.impl.BankServiceImpl">
+	</bean>
+	<!-- 事物管理 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="tr*" propagation="REQUIRED"/>
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<tx:method name="delete*" propagation="REQUIRED"/>
+			
+			<!-- 默认 -->
+			<tx:method name="*" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut expression="execution(* cn.edu.nuc.sprint_jdbc.service..*.*(..))" id="pointcut"/>
+		<aop:advisor advice-ref="transactionAdvice" pointcut-ref="pointcut"/>
+	</aop:config>
+	
+	<!-- 文件加密 -->
+	
+	<bean id="propertyConfigurer" class="cn.edu.nuc.Spring_jdbc.config.EncryptablePreferencesPlaceholderConfigurer">
+	    <constructor-arg ref="configurationEncryptor" />
+	    <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+	    <property name="ignoreResourceNotFound" value="true" />
+	    <property name="locations">
+	        <list>
+	            <value>classpath:/jdbc.properties</value>
+	            <value>classpath:jdbc.properties</value>
+	        </list>
+	    </property>
+	</bean>
+	<bean id="configurationEncryptor" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor">
+	    <property name="config" ref="environmentVariablesConfiguration" />
+	</bean>
+	
+	<bean id="environmentVariablesConfiguration" class="org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig">
+	    <property name="algorithm" value="PBEWithMD5AndDES" />
+	    <property name="password" value="kl" />
+	</bean>
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="1 seconds">
+    <context-listener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </context-listener>
+
+    <!--使用JMX动态管理Logback的配置，而无需重启服务器-->
+    <jmxConfigurator/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <Encoding>UTF-8</Encoding>
+        <encoder>
+            <pattern>logbak :%d{HH:mm:ss.SSS} %logger{36} - %msg%n</pattern>
+           <!-- <pattern>logbak :%d{HH:mm:ss.SSS} %5p [%t] [%c{1}]:%L - %m%n</pattern>-->
+        </encoder>
+    </appender>
+
+    <!--日志级别调整为debug-->
+    <logger name="org.springframework.web" level="DEBUG"></logger>
+
+    <root level="info">
+        <appender-ref ref="console"></appender-ref>
+    </root>
+
+</configuration>

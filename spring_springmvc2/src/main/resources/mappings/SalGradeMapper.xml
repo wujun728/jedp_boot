@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.kiwipeach.demo.mapper.SalGradeMapper">
+  <resultMap id="BaseResultMap" type="cn.kiwipeach.demo.domain.SalGrade">
+    <result column="GRADE" jdbcType="DECIMAL" property="grade" />
+    <result column="LOSAL" jdbcType="DECIMAL" property="losal" />
+    <result column="HISAL" jdbcType="DECIMAL" property="hisal" />
+  </resultMap>
+  <insert id="insert" parameterType="cn.kiwipeach.demo.domain.SalGrade">
+    insert into SALGRADE (GRADE, LOSAL, HISAL
+      )
+    values (#{grade,jdbcType=DECIMAL}, #{losal,jdbcType=DECIMAL}, #{hisal,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.kiwipeach.demo.domain.SalGrade">
+    insert into SALGRADE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="grade != null">
+        GRADE,
+      </if>
+      <if test="losal != null">
+        LOSAL,
+      </if>
+      <if test="hisal != null">
+        HISAL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="grade != null">
+        #{grade,jdbcType=DECIMAL},
+      </if>
+      <if test="losal != null">
+        #{losal,jdbcType=DECIMAL},
+      </if>
+      <if test="hisal != null">
+        #{hisal,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>

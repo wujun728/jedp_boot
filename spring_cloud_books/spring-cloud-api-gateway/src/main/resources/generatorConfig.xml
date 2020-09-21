@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <properties resource="generatorConfig.properties"/>
+    <classPathEntry location="${classPath}"/>
+    <context id="wujunshen" targetRuntime="MyBatis3" defaultModelType="conditional">
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
+            <property name="fileName" value="sqlMapClient.xml"/>
+            <property name="targetPackage" value="/"/>
+            <property name="targetProject" value="${targetResource}"/>
+        </plugin>
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$"/>
+            <property name="replaceString" value="Criteria"/>
+        </plugin>
+        <jdbcConnection driverClass="${driverClass}"
+                        connectionURL="${connectionURL}" userId="${userId}"
+                        password="${password}">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="${modelPackage}"
+                            targetProject="${targetProject}">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="${sqlMapperPackage}"
+                         targetProject="${targetResource}">
+        </sqlMapGenerator>
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="${daoMapperPackage}" targetProject="${targetProject}">
+        </javaClientGenerator>
+        <table tableName="user" schema="${schema}" domainObjectName="User"
+               enableSelectByExample="true">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+    </context>
+</generatorConfiguration>

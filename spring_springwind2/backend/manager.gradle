@@ -1,0 +1,19 @@
+// 依赖管理
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+
+    dependencies {
+        // 文档
+        dependency("io.springfox:springfox-swagger2:2.7.0")
+        dependency("io.springfox:springfox-swagger-ui:2.7.0")
+        // 工具类
+        dependency("commons-collections:commons-collections:3.2.2")
+        dependency("org.apache.commons:commons-lang3:3.6")
+        // 日志
+        dependency("org.slf4j:slf4j-api:1.7.25")
+        dependency("com.lmax:disruptor:3.3.7")
+    }
+}

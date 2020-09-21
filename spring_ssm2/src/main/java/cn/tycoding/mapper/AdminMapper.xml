@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.tycoding.mapper.AdminMapper">
+
+    <resultMap id="AdminBaseMap" type="cn.tycoding.pojo.Admin">
+        <id property="a_id" column="a_id" jdbcType="INTEGER"/>
+        <result property="a_name" column="a_name" jdbcType="VARCHAR"/>
+        <result property="a_password" column="a_password" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 登录的功能 -->
+    <select id="login" resultType="cn.tycoding.pojo.Admin" parameterType="String">
+        select * from admin where a_name = #{a_name}
+    </select>
+
+    <!-- 注册的功能 -->
+    <insert id="insert" parameterType="cn.tycoding.pojo.Admin">
+        insert into
+        admin(
+          a_name,
+          a_password
+        )
+        values(
+          #{a_name},
+          #{a_password}
+        )
+    </insert>
+
+    <!-- 根据用户名查询 -->
+    <select id="findByName" parameterType="String" resultType="cn.tycoding.pojo.Admin">
+        select a_name from admin where a_name = #{a_name}
+    </select>
+</mapper>

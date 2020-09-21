@@ -1,0 +1,125 @@
+<!DOCTYPE table SYSTEM "../config/table-config-1.0.dtd">
+<table sqlname="abs_loan" physicalName="abs_loan" remark="loan表">
+    <!--  特殊字符说明 &lt;&gt; <> -->
+    <!-- baseSql option中 select * 会自动替换为 include -->
+    <sql id="Base_Column_List">
+        CODE,SEX,NAME
+    </sql>
+
+    <!-- baseSql option中 select sf.* 会自动替换为 include -->
+    <sql id="Base_SF_Column_List">
+        sf.CODE,sf.SEX,sf.NAME
+    </sql>
+
+    <operation name="insert" paramtype="object" remark="插入表:abs_loan" autoGen="true">
+            <![CDATA[
+            INSERT INTO abs_loan(
+                    CODE
+                    ,SEX
+                    ,NAME
+            )VALUES(
+                     #{code,jdbcType=NUMBER}
+                    , #{sex,jdbcType=VARCHAR2}
+                    , #{name,jdbcType=VARCHAR2}
+            )
+            ]]>
+    </operation>
+
+    <!-- foreach 可以自定义类型，paramtype="primitive" foreach->javatype="自己书写的类"  -->
+    <!-- 只有一个参数且为List时必须将参数命名为list -->
+    <operation name="insertBatch" paramtype="objectList" remark="批量插入表:abs_loan"  autoGen="true">
+            INSERT INTO abs_loan(
+                    CODE
+                    ,SEX
+                    ,NAME
+            )VALUES
+            <foreach collection="list"  item="item" separator=",">
+                (
+                     #{item.code,jdbcType=NUMBER}
+                    , #{item.sex,jdbcType=VARCHAR2}
+                    , #{item.name,jdbcType=VARCHAR2}
+                )
+            </foreach>
+    </operation>
+
+    <!-- 不推荐使用全 update 有需要自己打开
+    <operation name="update" paramtype="object" remark="更新表:abs_loan"  autoGen="true">
+        <![CDATA[
+        UPDATE abs_loan
+        SET
+            NAME            = #{name,jdbcType=VARCHAR2}
+        WHERE
+            CODE            = #{code,jdbcType=NUMBER}
+            AND SEX             = #{sex,jdbcType=VARCHAR2}
+        ]]>
+    </operation>
+    -->
+    <operation name="deleteByAbsLoanPk"  remark="根据主键删除数据:abs_loan">
+        <![CDATA[
+        DELETE FROM abs_loan
+        WHERE
+            CODE = #{code,jdbcType=NUMBER}
+            AND SEX = #{sex,jdbcType=VARCHAR2}
+        ]]>
+    </operation>
+
+    <operation name="getByAbsLoanPk" multiplicity="one" remark="根据主键获取数据:abs_loan">
+        SELECT *
+        FROM abs_loan
+        WHERE
+        <![CDATA[
+            CODE = #{code,jdbcType=NUMBER}
+            AND SEX = #{sex,jdbcType=VARCHAR2}
+        ]]>
+    </operation>
+
+    <!-- 根据唯一约束操作数据 -->
+    <operation name="updateByCode" paramtype="object" remark="根据唯一约束Code更新表:abs_loan">
+        <![CDATA[
+        UPDATE abs_loan
+        SET
+            NAME            = #{name,jdbcType=VARCHAR2}
+        WHERE
+            CODE            = #{code,jdbcType=NUMBER}
+        ]]>
+    </operation>
+
+    <operation name="deleteByCode" remark="根据唯一约束Code删除数据:abs_loan">
+        <![CDATA[
+        DELETE FROM abs_loan
+        WHERE
+            CODE            = #{code,jdbcType=NUMBER}
+        ]]>
+    </operation>
+
+    <operation name="getByCode" multiplicity="one" remark="根据唯一约束Code获取数据:abs_loan">
+        SELECT *
+        FROM abs_loan
+        WHERE
+        <![CDATA[
+            CODE            = #{code,jdbcType=NUMBER}
+        ]]>
+    </operation>
+
+    <!-- 根据普通索引查询数据 -->
+    <operation name="queryByName" multiplicity="many" remark="根据普通索引Name获取数据:abs_loan">
+        SELECT *
+        FROM abs_loan
+        WHERE
+        <![CDATA[
+            NAME            = #{name,jdbcType=VARCHAR2}
+        ]]>
+    </operation>
+
+
+    <operation name="queryLoanListPage" multiplicity="paging" resultmap="BaseResultMap"
+               remark="分页查询资产列表" paging="LoanAstList">
+        SELECT *, ROWNUM RN
+        FROM abs_loan
+        WHERE
+        <![CDATA[
+            NAME            = #{name,jdbcType=VARCHAR2}
+        ]]>
+        ORDER BY name desc
+    </operation>
+</table>

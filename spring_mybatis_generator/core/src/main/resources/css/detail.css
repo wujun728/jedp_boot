@@ -1,0 +1,22 @@
+.root{
+    -fx-background-color: #ffffff;
+}
+.list-cell{
+    -fx-text-fill: #292e34;
+    -fx-font-family: Arial;
+    -fx-pref-height: 28px;
+    -fx-min-width: 200px;
+}
+
+TextField{
+    -fx-background-radius: 0;
+}
+Button{
+    -fx-background-radius: 0;
+}
+
+.borderShow{
+    -fx-border-style: solid;
+    -fx-border-width: 0;
+    -fx-border-color: gray;
+}

@@ -1,0 +1,48 @@
+body{
+    background-color: #1abc9c;
+}
+.login{
+    width: 100%;
+    height: 100%;
+}
+.login-screen{
+    max-width: 480px;
+    padding: 15px;
+    margin: 0 auto;
+    position: relative;
+}
+.login-ico{
+    left: 30%;
+    position: absolute;
+    top: 30%;
+    width: 96px;
+}
+.login-ico > img{
+    display: block;
+    margin-bottom: 6px;
+    width: 100%;
+}
+.login-ico > h4{
+    font-size: 17px;
+    font-weight: 200;
+    line-height: 34px;
+    opacity: 0.95;
+    margin-top: 4px;
+    color: #f0f8ff;
+    text-rendering: optimizelegibility;
+}
+.login-ico > h4 small{
+    color: #f0f8ff;
+    display: block;
+    font-size: inherit;
+    font-weight: 700;
+}
+.login-form{
+    left: 45%;
+    top: 30%;
+    background-color: #eceff1;
+    border-radius: 6px;
+    padding: 24px 23px 20px;
+    position: absolute;
+}
+

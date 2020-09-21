@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:s="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+          http://www.springframework.org/schema/security
+          http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<s:http pattern="/admin/login.jsp*" security="none"/>
+	<s:http pattern="/admin/css/**" security="none"/>
+	<s:http pattern="/admin/js/**" security="none"/>
+	<s:http pattern="/admin/images/**" security="none"/>
+	
+	<s:http use-expressions="true" entry-point-ref="authenticationEntryPoint">
+		<s:intercept-url pattern="/admin/**" access="hasRole('ROLE_USER')"/>
+		<s:logout logout-url="/admin/logout.action" logout-success-url="/admin/login.jsp" delete-cookies="JSESSIONID" />
+		<s:custom-filter position="FORM_LOGIN_FILTER" ref="loginFilter"/>
+		<s:custom-filter position="CONCURRENT_SESSION_FILTER" ref="concurrencyFilter" />
+        <s:session-management session-authentication-strategy-ref="sas" />
+	</s:http>
+
+    <bean id="concurrencyFilter"
+        class="org.springframework.security.web.session.ConcurrentSessionFilter">
+        <property name="sessionRegistry" ref="sessionRegistry" />
+        <property name="expiredUrl" value="/session-expired.jsp" />
+    </bean>
+
+	<bean id="sas" class="org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy">
+		<constructor-arg name="sessionRegistry" ref="sessionRegistry" />
+		<property name="maximumSessions" value="1" />
+		<property name="exceptionIfMaximumExceeded" value="true"/>
+	</bean>
+
+    <bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />
+
+	<bean id="loginFilter" class="com.jyl.security.filter.ValidateCodeAuthenticationFilter">  
+		<property name="sessionAuthenticationStrategy" ref="sas" />
+	    <property name="authenticationManager" ref="authenticationManager" />  
+	   	<property name="authenticationFailureHandler" ref="failureHandler"/>  
+        <property name="authenticationSuccessHandler" ref="successHandler"/>  
+	    <property name="rememberMeServices" ref="rememberMeServices"/>
+	    <property name="validateCodeParameter" value="validateCode" />
+	    <property name="validateCodeSwitch" value="false" />
+	    <property name="filterProcessesUrl" value="/admin/login.action" />
+	    <property name="usernameParameter" value="username" />
+	    <property name="passwordParameter" value="password" />
+	</bean>  
+	
+	<bean id="authenticationEntryPoint" class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">  
+	    <property name="loginFormUrl" value="/admin/login.jsp" />  
+	</bean>  
+	
+	<bean id="successHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler">  
+        <property name="defaultTargetUrl" value="/admin/"/>
+    </bean>  
+    <bean id="failureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">  
+        <property name="defaultFailureUrl" value="/admin/login.jsp?login_error"/>
+    </bean>  
+	
+	<bean id="rememberMeServices" class="org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices">
+      	<property name="userDetailsService" ref="userDetailsService" />
+      	<property name="key" value="ssmKey" />
+      	<property name="parameter" value="rememberMe"/>
+      	<property name="cookieName" value="SSM_REMEMBER_ME_COOKIE"/>
+   	</bean>
+   	
+   	<s:authentication-manager alias="authenticationManager">
+		<s:authentication-provider ref="authenticationProvider" />
+	</s:authentication-manager>
+  	
+	<bean id="authenticationProvider"  
+    	class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">  
+	    <property name="userDetailsService" ref="userDetailsService" />  
+	    <property name="hideUserNotFoundExceptions" value="false" />  
+	    <property name="passwordEncoder" ref="passwordEncoder"/>
+	    <property name="messageSource" ref="messageSource"/>
+	</bean>  
+	
+	<bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
+   	
+   	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+    	<!-- <property name="basename" value="classpath:org/springframework/security/messages_zh_CN"/> -->
+    	<property name="basename" value="classpath:messageBundle/springSecurity-messages"/>
+    </bean>
+   	<!-- <bean id="rememberMeServices" class="org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices">
+   		<property name="userDetailsService" ref="userDetailsService" />
+      	<property name="key" value="ssmKey" />
+      	<property name="parameter" value="rememberMe"/>
+      	<property name="cookieName" value="SSM_REMEMBER_ME_COOKIE"/>
+      	<property name="tokenRepository" ref="tokenRepository"/>
+   	</bean>
+   	<bean id="tokenRepository" class="org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean> -->
+   	
+	<bean id="userDetailsService" class="com.jyl.security.userdetails.MyUserDetailsService">
+	</bean>
+
+</beans>

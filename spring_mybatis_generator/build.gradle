@@ -1,0 +1,35 @@
+allprojects {
+    group = 'com.jlh.idea-mybatis'
+    version = "1.0.0"
+}
+
+subprojects {
+    apply plugin: 'java'
+}
+
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "gradle.plugin.org.jetbrains.intellij.plugins:gradle-intellij-plugin:0.4.8"
+    }
+}
+
+apply plugin: "org.jetbrains.intellij"
+
+group 'com.jlh'
+version '2.13'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

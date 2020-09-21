@@ -1,0 +1,44 @@
+<idea-plugin>
+    <id>com.jlh.plugin.idea.mybatis.generator</id>
+    <name>idea-mybatis-generator</name>
+    <version>2.13</version>
+    <vendor email="472327024@qq.com" url="https://gitee.com/rohou">小螺号嘀嘀吹</vendor>
+
+    <description><![CDATA[
+      mybatis 生成器  <br/>
+      注意：url中需要使用jdbc:mysql://xxxx:3306的形式 <br/>
+
+      mybatis-generate <br/>
+      To generate sql template for mybatis<br/>
+      Tips: the example of url like this  jdbc:mysql://xxxx:3306<br/>
+    ]]></description>
+
+    <change-notes><![CDATA[
+1、开放数据库类型映射java类型的配置文件 （/用户目录/mb-switch.json）
+1、Support JavaDatabaseTypeMapping config file  （/home/usr/mb-switch.json）
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="115.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <group id="PubEditorPlugin.Menu" text="_Plugin" description="plugin menu">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action id="MVPSupportPlugin.MVPSupportAction"
+                    class="com.jlh.mybatis.view.MVPSupportAction"
+                    text="mybatis-generator" description="mybatis-generator">
+            </action>
+        </group>
+    </actions>
+
+</idea-plugin>

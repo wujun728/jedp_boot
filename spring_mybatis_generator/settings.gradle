@@ -1,0 +1,4 @@
+rootProject.name = 'idea-mybatis'
+include 'core'
+include 'idea-view'
+

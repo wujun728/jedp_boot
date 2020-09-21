@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- 驱动包路径,可以通过添加 maven plugin 依赖移出该配置项-->
+    <!-- <classPathEntry location="E:/repository/maven/com/oracle/ojdbc6/11.2.0.3/ojdbc6-11.2.0.3.jar"/> -->
+    <properties resource="generator/generatorConfig.properties"></properties>
+    <!--
+        targetRuntime:[MyBatis3,MyBatis3Simple]
+        生成的Modal类型：defaultModelType：[conditional,flat,hierarchical]
+    -->
+    <context id="generatorContext" targetRuntime="MyBatis3" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+<!--
+        <plugin type="${mapper.plugin}">
+            <property name="mappers" value="${mapper.Mapper}"/>
+            <property name="caseSensitive" value="true"/>
+        </plugin>
+-->
+
+        <commentGenerator>
+            <!--生成表或字段的备注信息,默认均为false-->
+            <property name="suppressDate" value="false"/>
+            <property name="suppressAllComments" value="true"/>
+
+        </commentGenerator>
+
+        <!-- jdbc url地址 ！ -->
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.user}"
+                        password="${jdbc.password}">
+        </jdbcConnection>
+
+        <!-- 非必需，类型处理器，在数据库类型和java类型之间的转换控制-->
+        <javaTypeResolver>
+            <!--
+               默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL 和
+               NUMERIC 类型解析为java.math.BigDecimal
+           -->
+            <property name="forceBigDecimals" value="true"/>
+        </javaTypeResolver>
+
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="${targetModelPackage}" targetProject="${targetJavaProject}">
+            <!-- 是否对model添加 构造函数 -->
+            <property name="constructorBased" value="false"/>
+            <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 建立的Model对象是否 不可改变  即生成的Model对象不会有 setter方法，只有构造方法 -->
+            <property name="immutable" value="false"/>
+            <!-- 是否对类CHAR类型的列的数据进行trim操作 -->
+            <property name="trimStrings" value="false"/>
+        </javaModelGenerator>
+
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="${targetXMLPackage}" targetProject="${targetResourcesProject}">
+        </sqlMapGenerator>
+
+        <!-- 生成DAO的包名和位置
+                type="ANNOTATEDMAPPER",生成Java Model 和基于注解@InsertProvider的Mapper对象
+                type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
+                type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${targetMapperPackage}"
+                             targetProject="${targetJavaProject}">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <!--  表配置    tableName 表名      domainObjectName java类名，首字母必须大写，否则报字符串越界错误 -->
+        <table tableName="tb_jreport" domainObjectName="JReport"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>
+
+    </context>
+
+</generatorConfiguration>

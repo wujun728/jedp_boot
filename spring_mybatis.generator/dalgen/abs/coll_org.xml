@@ -1,0 +1,183 @@
+<!DOCTYPE table SYSTEM "../config/table-config-1.0.dtd">
+<table sqlname="coll_org" physicalName="COLL_ORG" remark="催收机构">
+    <!--  特殊字符说明 &lt;&gt; <> -->
+    <!-- baseSql option中 select * 会自动替换为 include -->
+    <sql id="Base_Column_List">
+        ID,STATUS,ORG_CODE,ORG_NAME,ORG_TYPE 
+        ,GMT_CREATE,GMT_MODIFIED
+    </sql>
+
+    <!-- baseSql option中 select sf.* 会自动替换为 include -->
+    <sql id="Base_SF_Column_List">
+        sf.ID,sf.STATUS,sf.ORG_CODE,sf.ORG_NAME,sf.ORG_TYPE
+        ,sf.GMT_CREATE,sf.GMT_MODIFIED
+    </sql>
+
+
+    <operation name="insert" paramtype="primitive" useGeneratedKeys="true" keyProperty="id" remark="插入表:coll_org">
+        <extraparams>
+            <param name="entity" javatype="com.xxx.OrgDO"/>
+            <param name="tableName" javatype="String"/>
+        </extraparams>
+        <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER">
+            SELECT
+            LAST_INSERT_ID()
+        </selectKey>
+        <![CDATA[
+        INSERT INTO ${tableName,jdbcType=VARCHAR}(
+            ID
+            ,STATUS
+            ,ORG_CODE
+            ,ORG_NAME
+            ,ORG_TYPE
+            ,GMT_CREATE
+            ,GMT_MODIFIED
+        )VALUES(
+             null
+            , #{entity.status,jdbcType=VARCHAR}
+            , #{entity.orgCode,jdbcType=VARCHAR}
+            , #{entity.orgName,jdbcType=VARCHAR}
+            , #{entity.orgType,jdbcType=VARCHAR}
+            , now()
+            , now()
+        )
+        ]]>
+    </operation>
+
+    <!-- foreach 可以自定义类型，paramtype="primitive" foreach->javatype="自己书写的类"  -->
+    <!-- 只有一个参数且为List时必须将参数命名为list -->
+    <operation name="insertBatch" useGeneratedKeys="true" keyProperty="id" paramtype="objectList" remark="批量插入表:coll_org">
+        INSERT INTO coll_org(
+            ID
+            ,STATUS
+            ,ORG_CODE
+            ,ORG_NAME
+            ,ORG_TYPE
+            ,GMT_CREATE
+            ,GMT_MODIFIED
+        )VALUES
+        <foreach collection="list"  item="item" separator=",">
+            (
+                 null
+                , #{item.status,jdbcType=VARCHAR}
+                , #{item.orgCode,jdbcType=VARCHAR}
+                , #{item.orgName,jdbcType=VARCHAR}
+                , #{item.orgType,jdbcType=VARCHAR}
+                , now()
+                , now()
+            )
+        </foreach>
+    </operation>
+
+    <operation name="insertBatch2" paramtype="primitive" remark="批量插入">
+        INSERT INTO coll_org(
+            ID
+            ,STATUS
+            ,ORG_CODE
+            ,ORG_NAME
+            ,ORG_TYPE
+            ,GMT_CREATE
+            ,GMT_MODIFIED
+        )VALUES
+        <foreach collection="list"  javatype="example.DalgenModel" item="item" separator=",">
+            (
+                null
+                , #{item.status,jdbcType=VARCHAR}
+                , #{item.orgCode,jdbcType=VARCHAR}
+                , #{item.orgName,jdbcType=VARCHAR}
+                , #{item.orgType,jdbcType=VARCHAR}
+                , now()
+                , now()
+            )
+        </foreach>
+    </operation>
+
+    <!-- 不推荐使用全 update 有需要自己打开
+    <operation name="update" paramtype="object" remark="更新表:coll_org">
+        <![CDATA[
+        UPDATE coll_org
+        SET
+            STATUS          = #{status,jdbcType=VARCHAR}
+            ,ORG_CODE        = #{orgCode,jdbcType=VARCHAR}
+            ,ORG_NAME        = #{orgName,jdbcType=VARCHAR}
+            ,ORG_TYPE        = #{orgType,jdbcType=VARCHAR}
+            ,GMT_MODIFIED    = now()
+        WHERE
+            ID              = #{id,jdbcType=BIGINT}
+        ]]>
+    </operation>
+    -->
+    <operation name="deleteById"  remark="根据主键删除数据:coll_org">
+        <![CDATA[
+        DELETE FROM coll_org
+        WHERE
+            ID = #{id,jdbcType=BIGINT}
+        ]]>
+    </operation>
+
+    <operation name="getById" multiplicity="one" remark="根据主键获取数据:coll_org">
+        SELECT *
+        FROM coll_org
+        WHERE
+        <![CDATA[
+            ID = #{id,jdbcType=BIGINT}
+        ]]>
+    </operation>
+
+    <!-- 根据唯一约束操作数据 -->
+    <operation name="updateByOrgCode" paramtype="object" remark="根据唯一约束OrgCode更新表:coll_org">
+        <![CDATA[
+        UPDATE coll_org
+        SET
+            STATUS          = #{status,jdbcType=VARCHAR}
+            ,ORG_NAME        = #{orgName,jdbcType=VARCHAR}
+            ,ORG_TYPE        = #{orgType,jdbcType=VARCHAR}
+            ,GMT_MODIFIED    = now()
+        WHERE
+            ORG_CODE        = #{orgCode,jdbcType=VARCHAR}
+        ]]>
+    </operation>
+
+    <operation name="deleteByOrgCode" remark="根据唯一约束OrgCode删除数据:coll_org">
+        <![CDATA[
+        DELETE FROM coll_org
+        WHERE
+            ORG_CODE        = #{orgCode,jdbcType=VARCHAR}
+        ]]>
+    </operation>
+
+    <operation name="getByOrgCode" multiplicity="one" remark="根据唯一约束OrgCode获取数据:coll_org">
+        SELECT *
+        FROM coll_org
+        WHERE
+        <![CDATA[
+            ORG_CODE        = #{orgCode,jdbcType=VARCHAR}
+        ]]>
+    </operation>
+
+    <operation name="queryByTaskS" multiplicity="many" remark="根据普通索引Task获取数据:loan_verify_data_task">
+        SELECT *
+        FROM diary_relation AS t1 JOIN
+        (
+        SELECT ROUND
+        (
+        RAND() \\*
+        (
+        (SELECT MAX(id) FROM diary_relation)-(SELECT MIN(id) FROM diary_relation)
+        ) +
+        (
+        SELECT MIN(id) FROM diary_relation
+        )
+        ) AS id
+        ) AS t2
+        WHERE t1.id >= t2.id
+        <if test="level != null and level!=''  ">
+            AND t1.level = #{level,jdbcType=INTEGER}
+            AND t1.level = #{a,jdbcType=INTEGER}
+        </if>
+        ORDER BY t1.id LIMIT #{limit};
+    </operation>
+    <operation name="queryByTaskSs" multiplicity="many" remark="根据普通索引Task获取数据:loan_verify_data_task">
+        SELECT * FROM loan_verify_data_task WHERE id >= (SELECT floor(RAND() /*/ (SELECT MAX(id) FROM loan_verify_data_task))) ORDER BY id LIMIT 0,5
+    </operation>
+</table>

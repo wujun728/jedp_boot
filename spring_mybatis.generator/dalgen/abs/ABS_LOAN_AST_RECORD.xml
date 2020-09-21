@@ -1,0 +1,272 @@
+<!DOCTYPE table SYSTEM "../config/table-config-1.0.dtd">
+<table sqlname="ABS_LOAN_AST_RECORD" physicalName="ABS_LOAN_AST_RECORD" remark=" 还款计划变更记录">
+    <!--  特殊字符说明 &lt;&gt; <> -->
+    <!-- baseSql option中 select * 会自动替换为 include -->
+
+    <column name="ORI_STATUS" javatype="com.abssqr.common.model.enums.AstStatusEnum" jdbctype="VARCHAR"></column>
+    <column name="CUR_STATUS" javatype="com.abssqr.common.model.enums.AstStatusEnum" jdbctype="VARCHAR"></column>
+    <column name="ORI_CST_AST_CL" javatype="com.abssqr.common.model.enums.AstRiskClassEnum" jdbctype="VARCHAR"></column>
+    <column name="CUR_CST_AST_CL" javatype="com.abssqr.common.model.enums.AstRiskClassEnum" jdbctype="VARCHAR"></column>
+    <column name="ORI_AST_CL" javatype="com.abssqr.common.model.enums.AstRiskClassEnum" jdbctype="VARCHAR"></column>
+    <column name="CUR_AST_CL" javatype="com.abssqr.common.model.enums.AstRiskClassEnum" jdbctype="VARCHAR"></column>
+    <column name="PRIN_BAL" javatype="com.abssqr.common.model.base.Money" jdbctype="BIGINT"></column>
+    <column name="INTR_BAL" javatype="com.abssqr.common.model.base.Money" jdbctype="BIGINT"></column>
+    <column name="PRIN_PENAL_BAL" javatype="com.abssqr.common.model.base.Money" jdbctype="BIGINT"></column>
+    <column name="INTR_PENAL_BAL" javatype="com.abssqr.common.model.base.Money" jdbctype="BIGINT"></column>
+    <column name="INST_FEE_BAL" javatype="com.abssqr.common.model.base.Money" jdbctype="BIGINT"></column>
+    <column name="INST_FEE_PENAL_BAL" javatype="com.abssqr.common.model.base.Money" jdbctype="BIGINT"></column>
+    <!--<column name="INST_FEE_PENAL_BAL" javatype="com.abssqr.common.model.base.Money" jdbctype="BIGINT"></column>-->
+
+
+    <sql id="Base_Column_List">
+        ID,INTR_BAL,PRIN_BAL,INST_FEE_BAL,INTR_PENAL_BAL,PRIN_PENAL_BAL,INST_FEE_PENAL_BAL,AST_ID,SEQ_NO,USER_ID,EXEC_TMS,BSN_SEQ_NO,CUR_AST_CL,ORI_AST_CL,OUT_AST_ID,CUR_STATUS,EVENT_CODE,ORI_STATUS,SCENE_CODE,CUR_CST_AST_CL,ORI_CST_AST_CL,TERM_NO,CUR_TERM_CNT,ORI_TERM_CNT,CUR_ODUE_DAYS,ORI_ODUE_DAYS,TXT_DT,SETL_DT,GMT_CREATE,CUR_END_DATE,ORI_END_DATE,GMT_MODIFIED,LAST_UPDATE_DT
+    </sql>
+
+    <!-- baseSql option中 select sf.* 会自动替换为 include -->
+    <sql id="Base_SF_Column_List">
+        sf.ID,sf.INTR_BAL,sf.PRIN_BAL,sf.INST_FEE_BAL,sf.INTR_PENAL_BAL,sf.PRIN_PENAL_BAL,sf.INST_FEE_PENAL_BAL,sf.AST_ID,sf.SEQ_NO,sf.USER_ID,sf.EXEC_TMS,sf.BSN_SEQ_NO,sf.CUR_AST_CL,sf.ORI_AST_CL,sf.OUT_AST_ID,sf.CUR_STATUS,sf.EVENT_CODE,sf.ORI_STATUS,sf.SCENE_CODE,sf.CUR_CST_AST_CL,sf.ORI_CST_AST_CL,sf.TERM_NO,sf.CUR_TERM_CNT,sf.ORI_TERM_CNT,sf.CUR_ODUE_DAYS,sf.ORI_ODUE_DAYS,sf.TXT_DT,sf.SETL_DT,sf.GMT_CREATE,sf.CUR_END_DATE,sf.ORI_END_DATE,sf.GMT_MODIFIED,sf.LAST_UPDATE_DT
+    </sql>
+
+    <operation name="insert" paramtype="object" remark="插入表:ABS_LOAN_AST_RECORD">
+        <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER">
+            SELECT
+            LAST_INSERT_ID()
+        </selectKey>
+        <![CDATA[
+        INSERT INTO ABS_LOAN_AST_RECORD(
+            ID
+            ,INTR_BAL
+            ,PRIN_BAL
+            ,INST_FEE_BAL
+            ,INTR_PENAL_BAL
+            ,PRIN_PENAL_BAL
+            ,INST_FEE_PENAL_BAL
+            ,AST_ID
+            ,SEQ_NO
+            ,USER_ID
+            ,EXEC_TMS
+            ,BSN_SEQ_NO
+            ,CUR_AST_CL
+            ,ORI_AST_CL
+            ,OUT_AST_ID
+            ,CUR_STATUS
+            ,EVENT_CODE
+            ,ORI_STATUS
+            ,SCENE_CODE
+            ,CUR_CST_AST_CL
+            ,ORI_CST_AST_CL
+            ,TERM_NO
+            ,CUR_TERM_CNT
+            ,ORI_TERM_CNT
+            ,CUR_ODUE_DAYS
+            ,ORI_ODUE_DAYS
+            ,TXT_DT
+            ,SETL_DT
+            ,GMT_CREATE
+            ,CUR_END_DATE
+            ,ORI_END_DATE
+            ,GMT_MODIFIED
+            ,LAST_UPDATE_DT
+        )VALUES(
+             null
+            , #{intrBal,jdbcType=BIGINT}
+            , #{prinBal,jdbcType=BIGINT}
+            , #{instFeeBal,jdbcType=BIGINT}
+            , #{intrPenalBal,jdbcType=BIGINT}
+            , #{prinPenalBal,jdbcType=BIGINT}
+            , #{instFeePenalBal,jdbcType=BIGINT}
+            , #{astId,jdbcType=VARCHAR}
+            , #{seqNo,jdbcType=VARCHAR}
+            , #{userId,jdbcType=VARCHAR}
+            , #{execTms,jdbcType=VARCHAR}
+            , #{bsnSeqNo,jdbcType=VARCHAR}
+            , #{curAstCl,jdbcType=VARCHAR}
+            , #{oriAstCl,jdbcType=VARCHAR}
+            , #{outAstId,jdbcType=VARCHAR}
+            , #{curStatus,jdbcType=VARCHAR}
+            , #{eventCode,jdbcType=VARCHAR}
+            , #{oriStatus,jdbcType=VARCHAR}
+            , #{sceneCode,jdbcType=VARCHAR}
+            , #{curCstAstCl,jdbcType=VARCHAR}
+            , #{oriCstAstCl,jdbcType=VARCHAR}
+            , #{termNo,jdbcType=INTEGER}
+            , #{curTermCnt,jdbcType=INTEGER}
+            , #{oriTermCnt,jdbcType=INTEGER}
+            , #{curOdueDays,jdbcType=INTEGER}
+            , #{oriOdueDays,jdbcType=INTEGER}
+            , #{txtDt,jdbcType=TIMESTAMP}
+            , #{setlDt,jdbcType=TIMESTAMP}
+            , now()
+            , #{curEndDate,jdbcType=TIMESTAMP}
+            , #{oriEndDate,jdbcType=TIMESTAMP}
+            , now()
+            , #{lastUpdateDt,jdbcType=TIMESTAMP}
+        )
+        ]]>
+    </operation>
+
+    <!-- foreach 可以自定义类型，paramtype="primitive" foreach->javatype="自己书写的类"  -->
+    <!-- 只有一个参数且为List时必须将参数命名为list -->
+    <operation name="insertBatch" paramtype="objectList" remark="批量插入表:ABS_LOAN_AST_RECORD">
+        INSERT INTO ABS_LOAN_AST_RECORD(
+            ID
+            ,INTR_BAL
+            ,PRIN_BAL
+            ,INST_FEE_BAL
+            ,INTR_PENAL_BAL
+            ,PRIN_PENAL_BAL
+            ,INST_FEE_PENAL_BAL
+            ,AST_ID
+            ,SEQ_NO
+            ,USER_ID
+            ,EXEC_TMS
+            ,BSN_SEQ_NO
+            ,CUR_AST_CL
+            ,ORI_AST_CL
+            ,OUT_AST_ID
+            ,CUR_STATUS
+            ,EVENT_CODE
+            ,ORI_STATUS
+            ,SCENE_CODE
+            ,CUR_CST_AST_CL
+            ,ORI_CST_AST_CL
+            ,TERM_NO
+            ,CUR_TERM_CNT
+            ,ORI_TERM_CNT
+            ,CUR_ODUE_DAYS
+            ,ORI_ODUE_DAYS
+            ,TXT_DT
+            ,SETL_DT
+            ,GMT_CREATE
+            ,CUR_END_DATE
+            ,ORI_END_DATE
+            ,GMT_MODIFIED
+            ,LAST_UPDATE_DT
+        )VALUES
+        <foreach collection="list"  item="item" separator=",">
+            (
+                 null
+                , #{item.intrBal,jdbcType=BIGINT}
+                , #{item.prinBal,jdbcType=BIGINT}
+                , #{item.instFeeBal,jdbcType=BIGINT}
+                , #{item.intrPenalBal,jdbcType=BIGINT}
+                , #{item.prinPenalBal,jdbcType=BIGINT}
+                , #{item.instFeePenalBal,jdbcType=BIGINT}
+                , #{item.astId,jdbcType=VARCHAR}
+                , #{item.seqNo,jdbcType=VARCHAR}
+                , #{item.userId,jdbcType=VARCHAR}
+                , #{item.execTms,jdbcType=VARCHAR}
+                , #{item.bsnSeqNo,jdbcType=VARCHAR}
+                , #{item.curAstCl,jdbcType=VARCHAR}
+                , #{item.oriAstCl,jdbcType=VARCHAR}
+                , #{item.outAstId,jdbcType=VARCHAR}
+                , #{item.curStatus,jdbcType=VARCHAR}
+                , #{item.eventCode,jdbcType=VARCHAR}
+                , #{item.oriStatus,jdbcType=VARCHAR}
+                , #{item.sceneCode,jdbcType=VARCHAR}
+                , #{item.curCstAstCl,jdbcType=VARCHAR}
+                , #{item.oriCstAstCl,jdbcType=VARCHAR}
+                , #{item.termNo,jdbcType=INTEGER}
+                , #{item.curTermCnt,jdbcType=INTEGER}
+                , #{item.oriTermCnt,jdbcType=INTEGER}
+                , #{item.curOdueDays,jdbcType=INTEGER}
+                , #{item.oriOdueDays,jdbcType=INTEGER}
+                , #{item.txtDt,jdbcType=TIMESTAMP}
+                , #{item.setlDt,jdbcType=TIMESTAMP}
+                , now()
+                , #{item.curEndDate,jdbcType=TIMESTAMP}
+                , #{item.oriEndDate,jdbcType=TIMESTAMP}
+                , now()
+                , #{item.lastUpdateDt,jdbcType=TIMESTAMP}
+            )
+        </foreach>
+    </operation>
+
+    <!-- 不推荐使用全 update 有需要自己打开
+    <operation name="update" paramtype="object" remark="更新表:ABS_LOAN_AST_RECORD">
+        <![CDATA[
+        UPDATE ABS_LOAN_AST_RECORD
+        SET
+            INTR_BAL        = #{intrBal,jdbcType=BIGINT}
+            ,PRIN_BAL        = #{prinBal,jdbcType=BIGINT}
+            ,INST_FEE_BAL    = #{instFeeBal,jdbcType=BIGINT}
+            ,INTR_PENAL_BAL  = #{intrPenalBal,jdbcType=BIGINT}
+            ,PRIN_PENAL_BAL  = #{prinPenalBal,jdbcType=BIGINT}
+            ,INST_FEE_PENAL_BAL = #{instFeePenalBal,jdbcType=BIGINT}
+            ,AST_ID          = #{astId,jdbcType=VARCHAR}
+            ,SEQ_NO          = #{seqNo,jdbcType=VARCHAR}
+            ,USER_ID         = #{userId,jdbcType=VARCHAR}
+            ,EXEC_TMS        = #{execTms,jdbcType=VARCHAR}
+            ,BSN_SEQ_NO      = #{bsnSeqNo,jdbcType=VARCHAR}
+            ,CUR_AST_CL      = #{curAstCl,jdbcType=VARCHAR}
+            ,ORI_AST_CL      = #{oriAstCl,jdbcType=VARCHAR}
+            ,OUT_AST_ID      = #{outAstId,jdbcType=VARCHAR}
+            ,CUR_STATUS      = #{curStatus,jdbcType=VARCHAR}
+            ,EVENT_CODE      = #{eventCode,jdbcType=VARCHAR}
+            ,ORI_STATUS      = #{oriStatus,jdbcType=VARCHAR}
+            ,SCENE_CODE      = #{sceneCode,jdbcType=VARCHAR}
+            ,CUR_CST_AST_CL  = #{curCstAstCl,jdbcType=VARCHAR}
+            ,ORI_CST_AST_CL  = #{oriCstAstCl,jdbcType=VARCHAR}
+            ,TERM_NO         = #{termNo,jdbcType=INTEGER}
+            ,CUR_TERM_CNT    = #{curTermCnt,jdbcType=INTEGER}
+            ,ORI_TERM_CNT    = #{oriTermCnt,jdbcType=INTEGER}
+            ,CUR_ODUE_DAYS   = #{curOdueDays,jdbcType=INTEGER}
+            ,ORI_ODUE_DAYS   = #{oriOdueDays,jdbcType=INTEGER}
+            ,TXT_DT          = #{txtDt,jdbcType=TIMESTAMP}
+            ,SETL_DT         = #{setlDt,jdbcType=TIMESTAMP}
+            ,CUR_END_DATE    = #{curEndDate,jdbcType=TIMESTAMP}
+            ,ORI_END_DATE    = #{oriEndDate,jdbcType=TIMESTAMP}
+            ,GMT_MODIFIED    = now()
+            ,LAST_UPDATE_DT  = #{lastUpdateDt,jdbcType=TIMESTAMP}
+        WHERE
+            ID              = #{id,jdbcType=BIGINT}
+        ]]>
+    </operation>
+    -->
+    <operation name="deleteById"  remark="根据主键删除数据:ABS_LOAN_AST_RECORD">
+        <![CDATA[
+        DELETE FROM ABS_LOAN_AST_RECORD
+        WHERE
+            ID = #{id,jdbcType=BIGINT}
+        ]]>
+    </operation>
+
+    <operation name="getById" multiplicity="one" remark="根据主键获取数据:ABS_LOAN_AST_RECORD">
+        SELECT *
+        FROM ABS_LOAN_AST_RECORD
+        WHERE
+        <![CDATA[
+            ID = #{id,jdbcType=BIGINT}
+        ]]>
+    </operation>
+
+    <operation name="queryForPage1" multiplicity="paging" paging="LoanAst" remark="普通分页">
+        select * from
+        ABS_LOAN_AST_RECORD
+        where CUR_END_DATE    = #{curEndDate,jdbcType=TIMESTAMP}
+        order by GMT_MODIFIED desc,id desc
+    </operation>
+
+
+    <operation name="queryForPage2" multiplicity="paging" pagingCntType="optimize" paging="LoanAst" remark="查询效率提升">
+        select sf.* from
+        ABS_LOAN_AST_RECORD sf
+        JOIN(
+        <optimizePaging>
+            select
+                id
+            from
+                ABS_LOAN_AST_RECORD
+            where
+                CUR_END_DATE    = #{curEndDate,jdbcType=TIMESTAMP}
+            ORDER BY GMT_MODIFIED desc,id desc
+        </optimizePaging>
+        ) b
+        on a.id=b.id
+    </operation>
+
+    <operation name="queryForPage3" multiplicity="paging" pagingCntType="pagingExtCnt" paging="LoanAst" remark="应对group by distinct">
+        select distinct code,name from ABS_LOAN_AST_RECORD where xx=?
+    </operation>
+
+</table>

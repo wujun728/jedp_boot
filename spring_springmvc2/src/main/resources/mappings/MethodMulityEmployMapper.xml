@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.kiwipeach.demo.mapper.MethodMulityEmployMapper">
+  <resultMap id="BaseResultMap" type="cn.kiwipeach.demo.domain.Employ">
+    <id column="EMPNO" jdbcType="DECIMAL" property="empno" />
+    <result column="ENAME" jdbcType="VARCHAR" property="ename" />
+    <result column="JOB" jdbcType="VARCHAR" property="job" />
+    <result column="MGR" jdbcType="DECIMAL" property="mgr" />
+    <result column="HIREDATE" jdbcType="TIMESTAMP" property="hiredate" />
+    <result column="SAL" jdbcType="DECIMAL" property="sal" />
+    <result column="COMM" jdbcType="DECIMAL" property="comm" />
+    <result column="DEPTNO" jdbcType="DECIMAL" property="deptno" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO
+  </sql>
+  <!--mysql方法级别数据源查询-->
+  <select id="mysqlSelectByPrimaryKey" parameterType="java.math.BigDecimal" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from EMP
+    where EMPNO = #{empno,jdbcType=DECIMAL}
+  </select>
+  <!--oracle方法级别数据源查询-->
+  <select id="oracleSelectByPrimaryKey" parameterType="java.math.BigDecimal" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from EMP
+    where EMPNO = #{empno,jdbcType=DECIMAL}
+  </select>
+
+  </mapper>

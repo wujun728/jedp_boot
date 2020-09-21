@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--1.加载属性配置文件-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <!-- 不需要区分环境的,指向的是被Maven已编译的资源文件 -->
+                 <value>classpath*:datasource/datasource.properties</value>
+<!--
+                <value>classpath*:datasource/datasource-mysql.properties</value>
+                <value>classpath*:datasource/datasource-oracle.properties</value>
+-->
+            </list>
+        </property>
+    </bean>
+    <!--2.引入其他的spring模块-->
+    <import resource="spring-datasource.xml"></import>
+    <import resource="spring-mybatis.xml"></import>
+    <!--
+        <import resource="spring-redis.xml"></import>
+        <import resource="spring-mongo.xml"></import>
+        <import resource="spring-activemq.xml"></import>
+        <import resource="spring-utils.xml"></import>
+    -->
+    <!--2.配置扫描Service组件的扫描器-->
+    <context:component-scan base-package="cn.kiwipeach.demo.**.impl;cn.kiwipeach.demo.framework.aspect;">
+        <!--排除扫描注解-->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+    </context:component-scan>
+
+    <aop:config>
+        <!--切点声明-->
+        <aop:pointcut id="mapperDatasourcePointcut" expression="execution(public * cn.kiwipeach.demo.mapper.*.*(..))"/>
+        <aop:pointcut id="mapperPagePointcut" expression="execution(public java.util.List cn.kiwipeach.demo.mapper.*.*(..))"/>
+        <!--数据源自动切换切面-->
+        <aop:aspect ref="mybatisDatasourceAspect" order="1">
+            <aop:before method="beforedMethod" pointcut-ref="mapperDatasourcePointcut"></aop:before>
+            <aop:after method="afterMethod" pointcut-ref="mapperDatasourcePointcut"></aop:after>
+            <aop:after-returning method="afterReturnMethod" pointcut-ref="mapperDatasourcePointcut" returning="result"></aop:after-returning>
+            <aop:after-throwing method="afterThrowMethod" pointcut-ref="mapperDatasourcePointcut" throwing="ex"></aop:after-throwing>
+        </aop:aspect>
+        <!--mybatis自动分页切面-->
+        <aop:aspect ref="mybatisPageableAspect" order="2">
+            <aop:before method="beforedMethod" pointcut-ref="mapperPagePointcut"></aop:before>
+            <aop:after method="afterMethod" pointcut-ref="mapperPagePointcut"></aop:after>
+            <aop:after-returning method="afterReturnMethod" pointcut-ref="mapperPagePointcut" returning="result"></aop:after-returning>
+            <aop:after-throwing method="afterThrowMethod" pointcut-ref="mapperPagePointcut" throwing="ex"></aop:after-throwing>
+        </aop:aspect>
+    </aop:config>
+
+
+</beans>

@@ -1,0 +1,7 @@
+apply plugin: 'org.springframework.boot'
+
+apply from: "${rootDir}/manager.gradle"
+
+dependencies {
+
+}

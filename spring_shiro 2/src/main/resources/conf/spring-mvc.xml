@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+	<!--<context:component-scan base-package="controller" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+    </context:component-scan> -->
+    <context:component-scan base-package="controller"></context:component-scan>
+<mvc:annotation-driven/>
+ <!-- 扫描文件（自动将service层注入） -->
+<context:component-scan base-package="service.impl"/>
+<context:component-scan base-package="realm" />
+
+<aop:config proxy-target-class="true"></aop:config>
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+<!-- 处理请求时返回json字符串的中文乱码问题 -->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+            <bean id="fastJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">  
+                <property name="supportedMediaTypes">  
+                    <list>  
+                        <value>application/json;charset=UTF-8</value>  
+                    </list>  
+                </property>  
+                <property name="features">
+		          <array>
+		            <value>WriteMapNullValue</value>
+		            <value>WriteNullStringAsEmpty</value>
+		          </array>
+		        </property>
+            </bean>  
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+<!-- 静态资源访问（不拦截此目录下的东西的访问）  -->
+<mvc:resources location="/js/"  mapping="/js/**" />  
+<mvc:resources location="/css/"  mapping="/css/**" />  
+<mvc:resources location="/plugins/"  mapping="/plugins/**" /> 
+<mvc:resources location="/img/"  mapping="/img/**" /> 
+<mvc:resources location="/fonts/"  mapping="/fonts/**" /> 
+<mvc:resources location="/html/"  mapping="/html/**" />   
+<!-- 文件上传 -->
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+</bean>
+
+</beans>

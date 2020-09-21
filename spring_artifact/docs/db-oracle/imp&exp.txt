@@ -1,0 +1,15 @@
+Oracle数据库dmp导入导出命令:
+
+1.远程登录
+    sqlplus eva_sg/eva_sg@192.168.10.128:1521/orcl
+
+2.导出数据
+    2.1导出某个用户的数据
+    exp yzsl/yzsl@192.168.10.129:1521/orcl file=.\yzsl.dmp owner=(yzsl)
+    2.2导出某些表数据
+    exp eva_sg/eva_sg@192.168.10.128:1521/orcl tables=(sysuser) file=.\sys-user.dmp
+    2.3导出数据库实例全部用户的数据
+    exp eva_sg/eva_sg@192.168.10.128:1521/orcl full=y file=.\sys-user.dmp
+
+3.导入数据
+    imp scott/123456@127.0.0.1:1521/orcl file=sgjc_fl_zc_20171025.dmp fromuser=sg_eva

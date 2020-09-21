@@ -1,0 +1,84 @@
+<!DOCTYPE table SYSTEM "../config/table-config-1.0.dtd">
+<table sqlname="server_cost" physicalName="server_cost" remark="SERVER_COST">
+    <!--  特殊字符说明 &lt;&gt; <> -->
+    <!-- baseSql option中 select * 会自动替换为 include -->
+    <sql id="Base_Column_List">
+        COST_VALUE,DEFAULT_VALUE,COMMENT,COST_NAME,LAST_UPDATE
+    </sql>
+
+    <!-- baseSql option中 select sf.* 会自动替换为 include -->
+    <sql id="Base_SF_Column_List">
+        sf.COST_VALUE,sf.DEFAULT_VALUE,sf.COMMENT,sf.COST_NAME,sf.LAST_UPDATE
+    </sql>
+
+    <operation name="insert" paramtype="object" remark="插入表:server_cost" autoGen="true">
+            <![CDATA[
+            INSERT INTO server_cost(
+                    COST_VALUE
+                    ,DEFAULT_VALUE
+                    ,COMMENT
+                    ,COST_NAME
+                    ,LAST_UPDATE
+            )VALUES(
+                     #{costValue,jdbcType=FLOAT}
+                    , #{defaultValue,jdbcType=FLOAT}
+                    , #{comment,jdbcType=VARCHAR}
+                    , #{costName,jdbcType=VARCHAR}
+                    , #{lastUpdate,jdbcType=TIMESTAMP}
+            )
+            ]]>
+    </operation>
+
+    <!-- foreach 可以自定义类型，paramtype="primitive" foreach->javatype="自己书写的类"  -->
+    <!-- 只有一个参数且为List时必须将参数命名为list -->
+    <operation name="insertBatch" paramtype="objectList" remark="批量插入表:server_cost"  autoGen="true">
+            INSERT INTO server_cost(
+                    COST_VALUE
+                    ,DEFAULT_VALUE
+                    ,COMMENT
+                    ,COST_NAME
+                    ,LAST_UPDATE
+            )VALUES
+            <foreach collection="list"  item="item" separator=",">
+                (
+                     #{item.costValue,jdbcType=FLOAT}
+                    , #{item.defaultValue,jdbcType=FLOAT}
+                    , #{item.comment,jdbcType=VARCHAR}
+                    , #{item.costName,jdbcType=VARCHAR}
+                    , #{item.lastUpdate,jdbcType=TIMESTAMP}
+                )
+            </foreach>
+    </operation>
+
+    <!-- 不推荐使用全 update 有需要自己打开
+    <operation name="update" paramtype="object" remark="更新表:server_cost"  autoGen="true">
+        <![CDATA[
+        UPDATE server_cost
+        SET
+            COST_VALUE      = #{costValue,jdbcType=FLOAT}
+            ,DEFAULT_VALUE   = #{defaultValue,jdbcType=FLOAT}
+            ,COMMENT         = #{comment,jdbcType=VARCHAR}
+            ,LAST_UPDATE     = #{lastUpdate,jdbcType=TIMESTAMP}
+        WHERE
+            COST_NAME       = #{costName,jdbcType=VARCHAR}
+        ]]>
+    </operation>
+    -->
+    <operation name="deleteByCostName"  remark="根据主键删除数据:server_cost">
+        <![CDATA[
+        DELETE FROM server_cost
+        WHERE
+            COST_NAME = #{costName,jdbcType=VARCHAR}
+        ]]>
+    </operation>
+
+    <operation name="getByCostName" multiplicity="one" remark="根据主键获取数据:server_cost">
+        SELECT *
+        FROM server_cost
+        WHERE
+        <![CDATA[
+            COST_NAME = #{costName,jdbcType=VARCHAR}
+        ]]>
+    </operation>
+
+</table>

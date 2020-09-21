@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:mongo="http://www.springframework.org/schema/data/mongo" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd  
+          http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd  
+          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<util:properties id="p_prop" location="classpath*:properties/mongodb.properties" />
+
+	<context:annotation-config />
+
+	<context:component-scan base-package="cn.springmvc" />
+
+	<mongo:repositories base-package="cn.springmvc.mongo.repository" />
+
+	<!-- 定义mongo对象，对应的是mongodb官方jar包中的Mongo，replica-set设置集群副本的ip地址和端口 -->
+	<mongo:mongo id="mongo" host="#{p_prop['mongo.host']}" port="#{p_prop['mongo.port']}">
+		<!-- 一些连接属性的设置 -->
+		<mongo:options connections-per-host="#{p_prop['mongo.connectionsPerHost']}" threads-allowed-to-block-for-connection-multiplier="#{p_prop['mongo.threadsAllowedToBlockForConnectionMultiplier']}" connect-timeout="#{p_prop['mongo.connectTimeout']}"
+			max-wait-time="#{p_prop['mongo.maxWaitTime']}" auto-connect-retry="#{p_prop['mongo.autoConnectRetry']}" socket-keep-alive="#{p_prop['mongo.socketKeepAlive']}" socket-timeout="#{p_prop['mongo.socketTimeout']}" write-number="1" write-timeout="0"
+			write-fsync="true" />
+	</mongo:mongo>
+	
+	<!-- <mongo:options -->
+	<!-- connections-per-host="#{p_prop['mongo.connectionsPerHost']}" 每个主机答应的连接数（每个主机的连接池大小），当连接池被用光时，会被阻塞住 ，默以为10 -->
+	<!-- threads-allowed-to-block-for-connection-multiplier="#{p_prop['mongo.threadsAllowedToBlockForConnectionMultiplier']}" -->
+	<!-- connect-timeout="#{p_prop['mongo.connectTimeout']}" 在建立（打开）套接字连接时的超时时间（ms） -->
+	<!-- max-wait-time="#{p_prop['mongo.maxWaitTime']}" 被阻塞线程从连接池获取连接的最长等待时间 -->
+	<!-- auto-connect-retry="#{p_prop['mongo.autoConnectRetry']}" 控制系统在发生连接错误时是否重试 ，默以为false boolean -->
+	<!-- socket-keep-alive="#{p_prop['mongo.socketKeepAlive']}" 这个控制是打开(SO_KEEPALIVE)。默认值为false,布尔 -->
+	<!-- socket-timeout="#{p_prop['mongo.socketTimeout']}" #套接字超时时间;该值会被传递给Socket.setSoTimeout(int)。默以为0（无穷） -->
+	<!-- write-number="1" -->
+	<!-- write-timeout="0" -->
+	<!-- safe="false" #假如为true，驱动每次update后会发出一个getLastError命令来保证成功，默以为false -->
+	<!-- write-fsync="true"/> -->
+
+	<bean id="mongoCredentials" class="org.springframework.data.authentication.UserCredentials">
+		<constructor-arg name="username" value="#{p_prop['mongo.user']}" />
+		<constructor-arg name="password" value="#{p_prop['mongo.password']}" />
+	</bean>
+
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongo" ref="mongo" />
+		<constructor-arg name="databaseName" value="#{p_prop['mongo.database']}" />
+		<constructor-arg name="userCredentials" ref="mongoCredentials" />
+		<property name="writeConcern" value="FSYNC_SAFE" />
+	</bean>
+
+</beans>  

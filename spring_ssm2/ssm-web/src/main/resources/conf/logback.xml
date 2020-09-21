@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true">
+	<substitutionProperty name="log.base" value="$[log.base.ssm]" />
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>
+				%d{yyyy-MM-dd HH:mm:ss,SSS} |-%level in %logger{36} - %msg%n
+			</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	<!--  <appender name="common"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>
+			${log.base}_common.log
+		</File>
+		<append>
+			true
+		</append>
+		<encoder>
+			<pattern>
+				%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} -
+				%msg%n
+			</pattern>
+			<charset>
+				UTF-8
+			</charset>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<FileNamePattern>
+				${log.base}_common.log.%i.bak
+			</FileNamePattern>
+			<MinIndex>0</MinIndex>
+			<MaxIndex>12</MaxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>
+				100MB
+			</MaxFileSize>
+		</triggeringPolicy>
+	</appender>-->
+	<root level="$[level.log.root]">
+		<appender-ref ref="stdout" />
+		<!-- <appender-ref ref="common" /> -->
+	</root>
+</configuration>

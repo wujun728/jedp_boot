@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="common/head :: commonHead('业务列表')"></head>
+
+<body>
+
+<div th:replace="common/header :: header"/>
+
+<div class="container-fluid">
+
+    <div class="row-fluid">
+
+        <div th:replace="common/left :: left"/>
+
+        <div class="span9">
+
+            <div class="row">
+                <div class="span6">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a th:href="@{/home/}">Home</a> <span class="divider">></span>
+                        </li>
+                        <!--<li>-->
+                        <!--<a href="#">Tutorials</a> <span class="divider">></span>-->
+                        <!--</li>-->
+                        <li class="active">Business List</li>
+                    </ul>
+                </div>
+            </div>
+
+            <table class="table table-condensed">
+                <caption>业务列表</caption>
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>content1</th>
+                    <th>content2</th>
+                    <th>content3</th>
+                    <th>option</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="business,businessStat : ${businessList}">
+                    <td th:text="${business.id}"></td>
+                    <td th:text="${business.content1}"></td>
+                    <td th:text="${business.content2}"></td>
+                    <td th:text="${business.content3}"></td>
+                    <th><input th:bid="${business.id}" type="button" onclick="history(this)" class="btn btn-primary" value="审核记录"/></th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="common/footer :: footer"/>
+
+
+<script>
+
+
+    function history(obj) {
+        var bid = $(obj).attr("bid");
+        location.href = '/business/businessLogList?bid='+bid;
+    }
+
+    function claim() {
+        $.ajax({
+            type: 'POST',
+            url: '/task/claim',
+            dataType:"json",
+            data: $("#form").serialize(),
+            success: function(data){
+                alert(data.msg)
+            },
+            error:function (error) {
+                alert(data.msg)
+            }
+
+        });
+    }
+
+</script>
+
+</body>
+
+</html>

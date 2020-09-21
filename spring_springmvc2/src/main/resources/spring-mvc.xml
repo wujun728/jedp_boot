@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--1.配置SpringMVC注解扫描的Control组件-->
+    <context:component-scan base-package="cn.kiwipeach.demo" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController"/>
+        <context:include-filter type="annotation"
+                                expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+    </context:component-scan>
+    <!--2.配置SpringMVC视图,通常：解析原则为优先解析小众视图，然后解析常用视图-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="order" value="99999"></property>
+        <property name="prefix" value="/WEB-INF/views/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+    <!--CustomView需要交给Spring容器管理:视图的名称默认为视图的bean名称[customView]-->
+    <bean id="myCustomView" class="cn.kiwipeach.demo.framework.views.CustomView"></bean>
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <property name="order" value="1"></property>
+    </bean>
+
+    <!--3.静态资处理-->
+    <mvc:default-servlet-handler/>
+
+    <!--4.注解驱动，可自定义参数转换器【string2Object】也参数解析器[annotation]-->
+    <mvc:annotation-driven conversion-service="conversionService">
+        <mvc:message-converters>
+            <!--避免IE执行AJAX时,返回JSON出现下载文件 -->
+            <bean id="fastJsonHttpMessageConverter"
+                  class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <!--
+                    经测试顺序可以调换[网上很多坑比,说顺序决不能反的]，其配置的先后顺序不过是浏览器解析的先后顺序，
+                    场景：@ResponseBody注解返回的是json字符串还是json对象就是取决于此的。
+                -->
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                        <value>text/html;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+        <mvc:argument-resolvers>
+            <bean class="cn.kiwipeach.demo.framework.resolver.CurrentUserHttpMessageResolver"></bean>
+        </mvc:argument-resolvers>
+    </mvc:annotation-driven>
+    <!--5.配置资源国际化标签，只有经过DispatcherServlet才会被国际化，而且资源文件的中文必须为ASCII编码-->
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="locale/message"></property>
+    </bean>
+    <!--添加直接访问路径-->
+    <mvc:view-controller path="direct/i18n" view-name="i18n"></mvc:view-controller>
+
+    <!-- 配置 ConversionService -->
+    <bean id="conversionService"
+          class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="cn.kiwipeach.demo.framework.converter.EmployConverter"></bean>
+            </set>
+        </property>
+    </bean>
+
+    <!--3.配置切面代理对象-->
+    <!--
+    能解决AOP执行两次的bug，原因为默认存在jdk代理和cglib代理共存导致。
+    设置为true,则使用CGLIB代理,此属性默认为false,使用JDK动态代理
+    -->
+    <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+    <!--多个aspect，order越小越先执行-->
+    <!--需要注意：
+        Controller层的切面一定不能配置到spring-context.xml中，因为代理对象一定要优先加载；
+        而默认的加载顺序为先加载spring-mvc.xml再加载spring-context.xml配置文件
+    -->
+    <aop:config>
+        <!--切点声明-->
+        <aop:pointcut id="controllerLogPointcut" expression="execution(public * cn.kiwipeach.demo.controller.*.*(..))"/>
+        <!--controller 日志信息处理切面-->
+        <aop:aspect ref="controllerLogAspect" order="1">
+            <aop:before method="beforedMethod" pointcut-ref="controllerLogPointcut"></aop:before>
+            <aop:after method="afterMethod" pointcut-ref="controllerLogPointcut"></aop:after>
+            <aop:after-returning method="afterReturnMethod" pointcut-ref="controllerLogPointcut"
+                                 returning="result"></aop:after-returning>
+            <aop:after-throwing method="afterThrowMethod" pointcut-ref="controllerLogPointcut"
+                                throwing="ex"></aop:after-throwing>
+        </aop:aspect>
+    </aop:config>
+
+
+</beans>

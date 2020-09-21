@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.youmeek.ssm.mapper.EventDetailMapper">
+    <resultMap id="BaseResultMap" type="com.youmeek.ssm.pojo.EventDetail">
+        <id column="detail_id" property="detailId" jdbcType="INTEGER"/>
+        <result column="left_air" property="leftAir" jdbcType="VARCHAR"/>
+        <result column="detail_time" property="detailTime" jdbcType="TIMESTAMP"/>
+        <result column="fireman_id" property="firemanId" jdbcType="INTEGER"/>
+        <result column="event_id" property="eventId" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        ed.detail_id, ed.left_air, ed.detail_time, ed.fireman_id, ed.event_id
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from event_detail ed
+        where detail_id = #{detailId,jdbcType=INTEGER}
+    </select>
+
+    <select id="getEventDetailByManAndEventId" resultType="com.youmeek.ssm.pojo.EventDetail">
+        select
+        <include refid="Base_Column_List"/>
+        from event_detail ed
+        WHERE 1 = 1
+        AND fireman_id = #{firemanId}
+        and event_id = #{eventId}
+    </select>
+
+    <select id="getEventDetailByEventId" resultType="com.youmeek.ssm.pojo.EventDetail">
+        select
+        <include refid="Base_Column_List"/>,
+        f.name as name
+        from event_detail ed
+        LEFT JOIN fireman f ON ed.fireman_id = f.fireman_id
+        WHERE 1 = 1
+        AND event_id = #{eventId}
+    </select>
+
+    <select id="listEventDetail" resultType="com.youmeek.ssm.pojo.EventDetail">
+        SELECT
+        <include refid="Base_Column_List"/>,
+        f.name as name
+        from event_detail ed
+        LEFT JOIN fireman f ON ed.fireman_id = f.fireman_id
+        WHERE 1 = 1
+        order by ed.detail_id DESC
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from event_detail
+        where detail_id = #{detailId,jdbcType=INTEGER}
+    </delete>
+
+    <delete id="delByIdList">
+        delete from event_detail
+        where detail_id in
+        <foreach collection="idList" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <insert id="insert" parameterType="com.youmeek.ssm.pojo.EventDetail">
+        insert into event_detail (detail_id, left_air, detail_time,
+        fireman_id, event_id)
+        values (#{detailId,jdbcType=INTEGER}, #{leftAir,jdbcType=VARCHAR}, #{detailTime,jdbcType=TIMESTAMP},
+        #{firemanId,jdbcType=INTEGER}, #{eventId,jdbcType=INTEGER})
+    </insert>
+    <insert id="insertSelective" parameterType="com.youmeek.ssm.pojo.EventDetail">
+        insert into event_detail
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="detailId != null">
+                detail_id,
+            </if>
+            <if test="leftAir != null">
+                left_air,
+            </if>
+            <if test="detailTime != null">
+                detail_time,
+            </if>
+            <if test="firemanId != null">
+                fireman_id,
+            </if>
+            <if test="eventId != null">
+                event_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="detailId != null">
+                #{detailId,jdbcType=INTEGER},
+            </if>
+            <if test="leftAir != null">
+                #{leftAir,jdbcType=VARCHAR},
+            </if>
+            <if test="detailTime != null">
+                #{detailTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="firemanId != null">
+                #{firemanId,jdbcType=INTEGER},
+            </if>
+            <if test="eventId != null">
+                #{eventId,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.youmeek.ssm.pojo.EventDetail">
+        update event_detail
+        <set>
+            <if test="leftAir != null">
+                left_air = #{leftAir,jdbcType=VARCHAR},
+            </if>
+            <if test="detailTime != null">
+                detail_time = #{detailTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="firemanId != null">
+                fireman_id = #{firemanId,jdbcType=INTEGER},
+            </if>
+            <if test="eventId != null">
+                event_id = #{eventId,jdbcType=INTEGER},
+            </if>
+        </set>
+        where detail_id = #{detailId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.youmeek.ssm.pojo.EventDetail">
+        update event_detail
+        set left_air = #{leftAir,jdbcType=VARCHAR},
+        detail_time = #{detailTime,jdbcType=TIMESTAMP},
+        fireman_id = #{firemanId,jdbcType=INTEGER},
+        event_id = #{eventId,jdbcType=INTEGER}
+        where detail_id = #{detailId,jdbcType=INTEGER}
+    </update>
+
+
+</mapper>

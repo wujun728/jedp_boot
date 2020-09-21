@@ -1,0 +1,15 @@
+WebSocket 消息改进
+====
+
+* 暴露展示信息关于用户的连接和订阅:
+	* 新 SimpUserRegistry 公开为一个名为“userRegistry”的bean。
+	* 共享在服务器集群的展示信息(见代理中继配置选项)
+* 解决用户目的地在集群的服务器(见代理中继配置选项)。
+* StompSubProtocolErrorHandler 扩展端点用来自定义和控制 STOMP ERROR 帧给用户
+* 全局 @MessageExceptionHandler 方法通过 @ControllerAdvice 组件
+* 心跳和 SpEL 表达式'selector'头用 SimpleBrokerMessageHandler 订阅
+* STOMP 客户端使用TCP 和 WebSocket; 见 25.4.13, “[STOMP 客户端](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#websocket-stomp-client)”
+* @SendTo 和 @SendToUser 可以包含目标变量的占位符。
+Jackson 的 @JsonView 支持 @MessageMapping 和 @SubscribeMapping 方法返回值
+* ListenableFuture 和 CompletableFuture 是从 @MessageMapping 和 @SubscribeMapping 方法返回类型值
+* MarshallingMessageConverter 用于 XML 有效载荷

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.manager.mapper.UserMapper" >
+	<resultMap type="com.ssm.manager.pojo.User" id="user">
+		
+	</resultMap>
+	
+	<select id="getUsers" resultMap="user">
+		select id,user_name,password from user
+	</select>	
+	
+	<select id="getUserById" resultMap="user" >
+		select id,user_name,password from user where id=#{id}
+	</select>
+	
+	<insert id="insertUser" parameterType="com.ssm.manager.pojo.User" useGeneratedKeys="true" keyProperty="id">
+		insert into
+		user(id,user_name,password)values(#{id},#{userName},#{password})
+	</insert>
+	
+	<delete id="deleteUser" parameterType="java.lang.Integer">
+		delete from user where id=#{id}
+	</delete>
+	
+</mapper>

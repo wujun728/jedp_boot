@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.ipeony.ssm.dao.IDataManagerMapper">
+	<select id="getUser" parameterType="String" resultType="User">
+		select * from user where id=#{id}
+	</select>
+    <select id="countAll" resultType="int">
+        select count(*) c from user;
+    </select>
+    
+    <select id="selectAll" resultType="com.ipeony.ssm.entity.User">
+        select * from user order by username asc
+    </select>
+    
+    <insert id="insert" parameterType="com.ipeony.ssm.entity.User">
+        insert into user(id,username,password,email) values(#{id,username},#{password},#{email})
+    </insert>
+    
+    <update id="update" parameterType="com.ipeony.ssm.entity.User">
+        update user set username=#{username},password=#{password},email=#{email} where username=#{username}
+    </update>
+    
+    <delete id="delete" parameterType="int">
+        delete from user where username=#{username}
+    </delete>
+    
+    <select id="findByUserName" parameterType="String" resultType="com.ipeony.ssm.entity.User">
+        select * from user where username=#{username}
+    </select>
+</mapper>

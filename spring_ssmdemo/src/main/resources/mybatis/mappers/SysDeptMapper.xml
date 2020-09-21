@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zt.mapper.SysDeptMapper">
+  <resultMap id="BaseResultMap" type="com.zt.pojo.SysDept">
+    <id column="DEPT_ID" jdbcType="DECIMAL" property="deptId" />
+    <result column="DEPT_NAME" jdbcType="VARCHAR" property="deptName" />
+    <result column="PARENT_ID" jdbcType="DECIMAL" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    DEPT_ID, DEPT_NAME, PARENT_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_DEPT
+    where DEPT_ID = #{deptId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from SYS_DEPT
+    where DEPT_ID = #{deptId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.zt.pojo.SysDept">
+    insert into SYS_DEPT (DEPT_ID, DEPT_NAME, PARENT_ID
+      )
+    values (#{deptId,jdbcType=DECIMAL}, #{deptName,jdbcType=VARCHAR}, #{parentId,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zt.pojo.SysDept">
+    insert into SYS_DEPT
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deptId != null">
+        DEPT_ID,
+      </if>
+      <if test="deptName != null">
+        DEPT_NAME,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deptId != null">
+        #{deptId,jdbcType=DECIMAL},
+      </if>
+      <if test="deptName != null">
+        #{deptName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zt.pojo.SysDept">
+    update SYS_DEPT
+    <set>
+      <if test="deptName != null">
+        DEPT_NAME = #{deptName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where DEPT_ID = #{deptId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zt.pojo.SysDept">
+    update SYS_DEPT
+    set DEPT_NAME = #{deptName,jdbcType=VARCHAR},
+      PARENT_ID = #{parentId,jdbcType=DECIMAL}
+    where DEPT_ID = #{deptId,jdbcType=DECIMAL}
+  </update>
+</mapper>

@@ -1,0 +1,559 @@
+@charset "UTF-8";
+/**
+*** least.js 2
+*** Author: Kamil Czujowski - @kamilczujowski
+*** Version: 2.2
+*** Made with ♥	in Hamburg, Germany.
+*** http://kamilczujowski.de
+**/
+/* @group Import */
+/**
+*** least.js 2
+*** Author: Kamil Czujowski - @kamilczujowski
+*** Version: 2.2.0
+*** Made with ♥	in Hamburg, Germany.
+*** http://kamilczujowski.de
+**/
+/* @group BASE */
+
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  border: 0;
+}
+
+/* @end */
+/**
+*** least.js 2
+*** Author: Kamil Czujowski - @kamilczujowski
+*** Version: 2.2.0
+*** Made with ♥ in Hamburg, Germany.
+*** http://kamilczujowski.de
+**/
+/* @group Mixins */
+/* @end */
+/**
+*** least.js 2
+*** Author: Kamil Czujowski - @kamilczujowski
+*** Version: 2.2.0
+*** Made with ♥	in Hamburg, Germany.
+*** http://kamilczujowski.de
+**/
+/* @group Options */
+/* @group Master */
+/* enable (true) or disable (false) thumbnails title text */
+/* enable (true) or disable (false) thumbnails border */
+/* @end */
+/* @group Vars: Colors */
+/* @end */
+/* @group Gallery-Fullscreen */
+/* default size for fullscreen preview  */
+/* @end */
+/* @group Gallery-Thumbails */
+/* default "width" size for thumbnails */
+/* default "height" size for thumbnails */
+/* @end */
+/* @end */
+/**
+*** least.js 2
+*** Author: Kamil Czujowski - @kamilczujowski
+*** Version: 2.2.0
+*** Made with ♥ in Hamburg, Germany.
+*** http://kamilczujowski.de
+**/
+/* @group Gallery */
+#least {
+  min-width: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 30px 0;
+  position: relative;
+  text-align: center;
+  /* @group Fullimage */
+  /* @end */
+  /* @group Smallimages */
+}
+#least .least-preview {
+  border-bottom: 2px solid;
+  border-color: #f1f0f0;
+  padding: 50px 0;
+  margin-bottom: 30px;
+  display: none;
+  /* important for Slide-Down Effect */
+}
+#least .least-preview img {
+  width: 100%;
+  max-width: 960px;
+  /* default width: 960px - to edit go to assets/options */
+  margin: 0 auto;
+  display: block;
+}
+#least .least-preview .close {
+  background-size: 100%;
+  background-image: url("../img/close.svg");
+  width: 30px;
+  height: 30px;
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  top: 58px;
+  right: 280px;
+}
+#least .least-preview article {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+  top: 20px;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+#least .least-preview article strong {
+  font-weight: 800;
+}
+#least .least-gallery {
+  font-size: 0;
+}
+#least .least-gallery li {
+  position: relative;
+  vertical-align: top;
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  /* @end */
+}
+#least .least-gallery li a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  width: 240px;
+  /* Default width: 240px: to edit go to assets/options */
+  height: 150px;
+  /* Default height: 150px: to edit go to assets/options */
+  /* @group Outline */
+  -webkit-transition-property: outline-color;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: outline-color;
+  -moz-transition-duration: 0.3s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: outline-color;
+  -ms-transition-duration: 0.3s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: outline-color;
+  -o-transition-duration: 0.3s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: outline-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  -webkit-backface-visibility: hidden;
+  outline-color: white;
+  /* @end */
+}
+#least .least-gallery li a img {
+  width: 240px;
+  /* Default width: 240px: to edit go to assets/options */
+  height: 150px;
+  /* Default height: 150px: to edit go to assets/options */
+}
+#least .least-gallery li a.active {
+  outline: 2px solid;
+  outline-color: #666666;
+}
+#least .least-gallery li a.load:after {
+  content: url("../img/loading.svg");
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+  overflow: hidden;
+  margin: -20px 0 0 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  text-shadow: 1px 1px 1px #666666;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 800;
+}
+#least .least-gallery li a:hover {
+  /* @group Outline */
+  outline: 2px solid;
+  outline-color: #666666;
+  /* @end */
+  /* @group Thumbnail Text */
+  /* @end */
+}
+#least .least-gallery li a:hover:before {
+  content: attr(data-subtitle);
+  /* Default text: "View Picture" - to edit go change the attr. "data-subtitle" */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  overflow: hidden;
+  letter-spacing: 1px;
+  color: white;
+  text-shadow: 1px 1px 1px #666666;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 175px;
+  font-weight: 200;
+  width: 240px;
+  /* Default width: 240px: to edit go to assets/options */
+  height: 150px;
+  /* Default height: 150px: to edit go to assets/options */
+  background: black;
+  background: rgba(0, 0, 0, 0.5);
+}
+#least .least-gallery li a:hover:after {
+  content: attr(title);
+  /* Default text: your a "title"-tag */
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+  overflow: hidden;
+  margin: -30px 0 0 0;
+  border-bottom: 2px solid;
+  border-color: white;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px #666666;
+  letter-spacing: 1px;
+  color: white;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+/* end */
+/* @end group */
+
+/*# sourceMappingURL=least.min.css.map */
+@charset "utf-8";
+        body{
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: none;
+            /*background-image: url("../img/hat.jpg");*/
+            font: 12px "宋体";
+        }
+
+        a img {
+            border: 0
+        }
+
+        ul, ol, li {
+            list-style-type: none;
+            vertical-align: 0
+        }
+
+        a {
+            outline-style: none;
+            color: #535353;
+            text-decoration: none
+        }
+
+        a:hover {
+            color: #D40000;
+            text-decoration: none
+        }
+
+        .clear {
+            height: 0;
+            overflow: hidden;
+            clear: both
+        }
+        header{
+            height: 100px;
+        }
+        input{
+            border: none;
+        }
+        .button {
+            display: inline-block;
+            zoom: 1;
+            *display: inline;
+            vertical-align: baseline;
+            margin: 0 2px;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font: 14px/100% Arial, Helvetica, sans-serif;
+            padding: 0.25em 0.6em 0.3em;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+            -webkit-border-radius: .5em;
+            -moz-border-radius: .5em;
+            border-radius: .5em;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        }
+
+        /*restCSS结束，应用特效时，以上样式可删除*/
+        /* 需要的css样式 */
+        .nav {
+        	display:inline-block;
+            width: 100%;
+            margin-bottom:30px;
+            float:right;
+            text-align:center;
+        }
+
+        .menu, .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu {
+            height: 58px;
+        }
+
+        .menu li {
+            background-color: #0C0000;
+            border-bottom: 2px solid #181818;
+            border-top: 2px solid #303030;
+            min-width: 157px;
+        }
+
+        .menu > li {
+            display: block;
+            float: left;
+            position: relative;
+        }
+
+        .menu > li:first-child {
+            border-radius: 5px 0 0;
+        }
+
+        .menu a {
+            border-left: 3px solid rgba(0, 0, 0, 0);
+           /*background: url("../img/back.jpg");*/
+            color: #808080;
+            display: block;
+            font-size: 18px;
+            line-height: 54px;
+            padding: 0 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .menu li:hover {
+            background-color: #1c1c1c;
+            background: -moz-linear-gradient(#1c1c1c, #1b1b1b);
+            background: -ms-linear-gradient(#1c1c1c, #1b1b1b);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1c1c1c), color-stop(100%, #1b1b1b));
+            background: -webkit-linear-gradient(#1c1c1c, #1b1b1b);
+            background: -o-linear-gradient(#1c1c1c, #1b1b1b);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b');
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b')";
+            background: linear-gradient(#1c1c1c, #1b1b1b);
+            border-bottom: 2px solid #222222;
+            border-top: 2px solid #1B1B1B;
+            /*改变加深父元素的背景*/
+        }
+
+        .menu li:hover > a {
+            border-radius: 5px 0 0 0;
+            border-left: 3px solid #C4302B;
+            color: #C4302B;
+        }
+
+        .submenu {
+            left: 0;
+            max-height: 0;
+            position: absolute;
+            top: 100%;
+            z-index: 0;
+            -webkit-perspective: 400px;
+            -moz-perspective: 400px;
+            -ms-perspective: 400px;
+            -o-perspective: 400px;
+            perspective: 400px;
+        }
+
+        .submenu li {
+            opacity: 0;
+            -webkit-transform: rotateY(90deg);
+            -moz-transform: rotateY(90deg);
+            -ms-transform: rotateY(90deg);
+            -o-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+            -webkit-transition: opacity .4s, -webkit-transform .5s;
+            -moz-transition: opacity .4s, -moz-transform .5s;
+            -ms-transition: opacity .4s, -ms-transform .5s;
+            -o-transition: opacity .4s, -o-transform .5s;
+            transition: opacity .4s, transform .5s;
+            /*实现下拉菜单螺旋淡出*/
+        }
+
+        .menu .submenu li:hover a {
+            border-left: 3px solid #454545;
+            border-radius: 0;
+            color: #ffffff;
+        }
+
+        .menu > li:hover .submenu, .menu > li:focus .submenu {
+            max-height: 2000px;
+            z-index: 10;
+        }
+
+        .menu > li:hover .submenu li, .menu > li:focus .submenu li {
+            opacity: 1;
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            -o-transform: none;
+            transform: none;
+        }
+        /*动画递进的时间 实现一个个螺旋子菜单*/
+        .menu li:hover .submenu li:nth-child(1) {
+            -webkit-transition-delay: 0s;
+            -moz-transition-delay: 0s;
+            -ms-transition-delay: 0s;
+            -o-transition-delay: 0s;
+            transition-delay: 0s;
+        }
+
+        .menu li:hover .submenu li:nth-child(2) {
+            -webkit-transition-delay: 50ms;
+            -moz-transition-delay: 50ms;
+            -ms-transition-delay: 50ms;
+            -o-transition-delay: 50ms;
+            transition-delay: 50ms;
+        }
+
+        .menu li:hover .submenu li:nth-child(3) {
+            -webkit-transition-delay: 100ms;
+            -moz-transition-delay: 100ms;
+            -ms-transition-delay: 100ms;
+            -o-transition-delay: 100ms;
+            transition-delay: 100ms;
+        }
+
+        .menu li:hover .submenu li:nth-child(4) {
+            -webkit-transition-delay: 150ms;
+            -moz-transition-delay: 150ms;
+            -ms-transition-delay: 150ms;
+            -o-transition-delay: 150ms;
+            transition-delay: 150ms;
+        }
+
+        .menu li:hover .submenu li:nth-child(5) {
+            -webkit-transition-delay: 200ms;
+            -moz-transition-delay: 200ms;
+            -ms-transition-delay: 200ms;
+            -o-transition-delay: 200ms;
+            transition-delay: 200ms;
+        }
+
+        .menu li:hover .submenu li:nth-child(6) {
+            -webkit-transition-delay: 250ms;
+            -moz-transition-delay: 250ms;
+            -ms-transition-delay: 250ms;
+            -o-transition-delay: 250ms;
+            transition-delay: 250ms;
+        }
+
+        .menu li:hover .submenu li:nth-child(7) {
+            -webkit-transition-delay: 300ms;
+            -moz-transition-delay: 300ms;
+            -ms-transition-delay: 300ms;
+            -o-transition-delay: 300ms;
+            transition-delay: 300ms;
+        }
+
+        .menu li:hover .submenu li:nth-child(8) {
+            -webkit-transition-delay: 350ms;
+            -moz-transition-delay: 350ms;
+            -ms-transition-delay: 350ms;
+            -o-transition-delay: 350ms;
+            transition-delay: 350ms;
+        }
+
+        .submenu li:nth-child(1) {
+            -webkit-transition-delay: 350ms;
+            -moz-transition-delay: 350ms;
+            -ms-transition-delay: 350ms;
+            -o-transition-delay: 350ms;
+            transition-delay: 350ms;
+        }
+
+        .submenu li:nth-child(2) {
+            -webkit-transition-delay: 300ms;
+            -moz-transition-delay: 300ms;
+            -ms-transition-delay: 300ms;
+            -o-transition-delay: 300ms;
+            transition-delay: 300ms;
+        }
+
+        .submenu li:nth-child(3) {
+            -webkit-transition-delay: 250ms;
+            -moz-transition-delay: 250ms;
+            -ms-transition-delay: 250ms;
+            -o-transition-delay: 250ms;
+            transition-delay: 250ms;
+        }
+
+        .submenu li:nth-child(4) {
+            -webkit-transition-delay: 200ms;
+            -moz-transition-delay: 200ms;
+            -ms-transition-delay: 200ms;
+            -o-transition-delay: 200ms;
+            transition-delay: 200ms;
+        }
+
+        .submenu li:nth-child(5) {
+            -webkit-transition-delay: 150ms;
+            -moz-transition-delay: 150ms;
+            -ms-transition-delay: 150ms;
+            -o-transition-delay: 150ms;
+            transition-delay: 150ms;
+        }
+
+        .submenu li:nth-child(6) {
+            -webkit-transition-delay: 100ms;
+            -moz-transition-delay: 100ms;
+            -ms-transition-delay: 100ms;
+            -o-transition-delay: 100ms;
+            transition-delay: 100ms;
+        }
+
+        .submenu li:nth-child(7) {
+            -webkit-transition-delay: 50ms;
+            -moz-transition-delay: 50ms;
+            -ms-transition-delay: 50ms;
+            -o-transition-delay: 50ms;
+            transition-delay: 50ms;
+        }
+
+        .submenu li:nth-child(8) {
+            -webkit-transition-delay: 0s;
+            -moz-transition-delay: 0s;
+            -ms-transition-delay: 0s;
+            -o-transition-delay: 0s;
+            transition-delay: 0s;
+        }

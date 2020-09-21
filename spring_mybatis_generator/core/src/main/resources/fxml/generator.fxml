@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<BorderPane  stylesheets="/css/generator.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="db.controller.GeneratorController">
+    <top>
+        <VBox prefHeight="20">
+        </VBox>
+    </top>
+    <center>
+        <VBox prefWidth="300" spacing="8.0" BorderPane.alignment="CENTER">
+            <HBox>
+                <ImageView fitHeight="100" fitWidth="100">
+                    <Image url="/images/bird.png" />
+               <rotationAxis>
+                  <Point3D x="50.0" z="1.0" />
+               </rotationAxis>
+                </ImageView>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <VBox.margin>
+               <Insets left="110.0" />
+            </VBox.margin>
+            </HBox>
+            <HBox>
+                <Label prefHeight="32" prefWidth="75" text="jdbc"/>
+                <ChoiceBox prefHeight="32" prefWidth="220" fx:id="jdbcSelector">
+                </ChoiceBox>
+            </HBox>
+            <HBox>
+                <Label prefHeight="32" prefWidth="75" text="jdbcJar"/>
+                <ChoiceBox prefHeight="32" prefWidth="220" fx:id="jdbcJarSelector" onAction="#jdbcJarAction" >
+                </ChoiceBox>
+            </HBox>
+            <HBox fx:id="jdbcJarUrlHBox">
+                <Label prefHeight="32" prefWidth="75" text="jdbcJarUrl"/>
+                <TextField prefHeight="32" prefWidth="180" promptText="jdbcJarUrl" fx:id="jdbcJarUrl" styleClass="noRightBorder"/>
+                <Button prefWidth="40" prefHeight="32" text="选择" fx:id="jdbcJarUrlBtn" />
+            </HBox>
+            <HBox>
+                <Label prefHeight="32" prefWidth="75" text="URL:" />
+                <TextField prefHeight="32" prefWidth="220" promptText="jdbc:mysql://localhost:3306" fx:id="urlText"/>
+            </HBox>
+            <HBox>
+                <Label prefHeight="32" prefWidth="75" text="schema:"/>
+                <TextField prefHeight="32" prefWidth="220" promptText="db1" fx:id="schemaText"/>
+            </HBox>
+            <HBox>
+                <Label prefHeight="32" prefWidth="75" text="user:" />
+                <TextField prefHeight="32" prefWidth="220" promptText="root" fx:id="userText"/>
+            </HBox>
+            <HBox>
+                <Label prefHeight="32" prefWidth="75" text="password:" />
+                <TextField prefHeight="32" prefWidth="220" promptText="root" fx:id="passwordText"/>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Button text="链接" prefWidth="300" prefHeight="32" onAction="#linkDataBaseAction"/>
+            </HBox>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+        </VBox>
+    </center>
+    <left>
+        <Pane prefWidth="100" />
+    </left>
+</BorderPane>

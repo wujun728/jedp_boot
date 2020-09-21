@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url" value="${jdbcUrl}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+        <property name="driverClassName" value="${driverClassName}"></property>
+        <property name="initialSize" value="${initialSize}"/>
+        <property name="minIdle" value="${minIdle}"/>
+        <property name="maxActive" value="${maxActive}"/>
+        <property name="maxWait" value="${maxWait}"/>
+        <property name="poolPreparedStatements" value="${poolPreparedStatements}"/>
+        <property name="validationQuery" value="${validationQuery}"/>
+        <property name="testWhileIdle" value="${testWhileIdle}"/>
+        <property name="testOnBorrow" value="${testOnBorrow}"/>
+        <property name="testOnReturn" value="${testOnReturn}"/>
+        <property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}"/>
+        <property name="removeAbandoned" value="true"/>
+        <property name="removeAbandonedTimeout" value="1800"/>
+        <property name="logAbandoned" value="true"/>
+        <property name="filters" value="${filters}"/>
+        <property name="connectionProperties" value="${connectionProperties}"/>
+    </bean>
+
+
+    <!--mysql scott用户 数据源-->
+<!--
+    <bean id="mysqlDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url" value="${jdbcUrl}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+        <property name="driverClassName" value="${driverClassName}"></property>
+        <property name="initialSize" value="${initialSize}"/>
+        <property name="minIdle" value="${minIdle}"/>
+        <property name="maxActive" value="${maxActive}"/>
+        <property name="maxWait" value="${maxWait}"/>
+        <property name="poolPreparedStatements" value="${poolPreparedStatements}"/>
+        <property name="validationQuery" value="${validationQuery}"/>
+        <property name="testWhileIdle" value="${testWhileIdle}"/>
+        <property name="testOnBorrow" value="${testOnBorrow}"/>
+        <property name="testOnReturn" value="${testOnReturn}"/>
+        <property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}"/>
+        <property name="removeAbandoned" value="true"/>
+        <property name="removeAbandonedTimeout" value="1800"/>
+        <property name="logAbandoned" value="true"/>
+        <property name="filters" value="${filters}"/>
+        <property name="connectionProperties" value="${connectionProperties}"/>
+    </bean>
+-->
+
+
+    <!--oracle kiwipeach用户数据源-->
+    <!--<bean id="oracleDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init"
+          destroy-method="close">
+        <property name="url" value="${oracle.jdbcUrl}"/>
+        <property name="username" value="${oracle.username}"/>
+        <property name="password" value="${oracle.password}"/>
+        <property name="driverClassName" value="${oracle.driverClassName}"></property>
+        <property name="initialSize" value="${oracle.initialSize}"/>
+        <property name="minIdle" value="${oracle.minIdle}"/>
+        <property name="maxActive" value="${oracle.maxActive}"/>
+        <property name="maxWait" value="${oracle.maxWait}"/>
+        <property name="poolPreparedStatements" value="${oracle.poolPreparedStatements}"/>
+        <property name="validationQuery" value="${oracle.validationQuery}"/>
+        <property name="testWhileIdle" value="${oracle.testWhileIdle}"/>
+        <property name="testOnBorrow" value="${oracle.testOnBorrow}"/>
+        <property name="testOnReturn" value="${oracle.testOnReturn}"/>
+        <property name="timeBetweenEvictionRunsMillis" value="${oracle.timeBetweenEvictionRunsMillis}"/>
+        <property name="removeAbandoned" value="true"/>
+        <property name="removeAbandonedTimeout" value="1800"/>
+        <property name="logAbandoned" value="true"/>
+        <property name="filters" value="${oracle.filters}"/>
+        <property name="connectionProperties" value="${oracle.connectionProperties}"/>
+    </bean>-->
+
+</beans>

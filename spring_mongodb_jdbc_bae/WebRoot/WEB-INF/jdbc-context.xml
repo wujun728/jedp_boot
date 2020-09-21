@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns="http://www.springframework.org/schema/beans" 
+       	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       	xmlns:p="http://www.springframework.org/schema/p" 
+       	xmlns:tx="http://www.springframework.org/schema/tx"
+       	xmlns:context="http://www.springframework.org/schema/context"
+       	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/tx 
+			http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	   		">
+	<!-- 定义jdbc配置信息路径 -->
+	<context:property-placeholder location="/WEB-INF/jdbc.properties" />
+    
+   	<!-- 使用annotation定义事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />	
+   
+	<!-- 数据源配置,使用c3p0数据库连接池 -->
+    <!--开发模式 -->
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url"
+                  value="${app.jdbc.url}" />
+        <!-- value="jdbc:mysql://sqld.duapp.com:4050/dbname?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull&amp;transformedBitIsBoolean=true"
+            /> -->
+        <property name="username" value="${app.jdbc.username}" />
+        <property name="password" value="${app.jdbc.password}" />
+    </bean>
+	<!--<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+				destroy-method="close"
+				p:driverClass="${app.jdbc.driverClassName}"
+				p:jdbcUrl="${app.jdbc.url}"
+				p:user="${app.jdbc.username}"
+				p:password="${app.jdbc.password}"
+				p:acquireIncrement="5"
+				p:idleConnectionTestPeriod="60"
+				p:maxPoolSize="100"
+				p:maxStatements="50"
+				p:minPoolSize="10" />-->
+	<!-- 定义事务管理 -->
+	<!-- See http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/transaction.html -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" 
+       			p:dataSource-ref="dataSource" />
+  
+</beans>

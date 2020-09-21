@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nuc.Store.entity.BuyCarMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.nuc.Store.model.BuyCar" >
+    <id column="CarId" property="carid" jdbcType="INTEGER" />
+    <result column="UserId" property="userid" jdbcType="INTEGER" />
+    <result column="TotalManey" property="totalmaney" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    CarId, UserId, TotalManey
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from buycar
+    where CarId = #{carid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from buycar
+    where CarId = #{carid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.nuc.Store.model.BuyCar" >
+    insert into buycar (CarId, UserId, TotalManey
+      )
+    values (#{carid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{totalmaney,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.nuc.Store.model.BuyCar" >
+    insert into buycar
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="carid != null" >
+        CarId,
+      </if>
+      <if test="userid != null" >
+        UserId,
+      </if>
+      <if test="totalmaney != null" >
+        TotalManey,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="carid != null" >
+        #{carid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="totalmaney != null" >
+        #{totalmaney,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.nuc.Store.model.BuyCar" >
+    update buycar
+    <set >
+      <if test="userid != null" >
+        UserId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="totalmaney != null" >
+        TotalManey = #{totalmaney,jdbcType=CHAR},
+      </if>
+    </set>
+    where CarId = #{carid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.nuc.Store.model.BuyCar" >
+    update buycar
+    set UserId = #{userid,jdbcType=INTEGER},
+      TotalManey = #{totalmaney,jdbcType=CHAR}
+    where CarId = #{carid,jdbcType=INTEGER}
+  </update>
+</mapper>

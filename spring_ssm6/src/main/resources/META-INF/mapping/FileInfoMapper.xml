@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jyl.file.dao.FileInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.jyl.file.model.FileInfo" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="length" property="length" jdbcType="BIGINT" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="path" property="path" jdbcType="VARCHAR" />
+    <result column="contentType" property="contenttype" jdbcType="VARCHAR" />
+    <result column="objectClass" property="objectclass" jdbcType="VARCHAR" />
+    <result column="objectId" property="objectid" jdbcType="BIGINT" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, length, type, path, contentType, objectClass, objectId, created
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_fileinfo
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_fileinfo
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.jyl.file.model.FileInfo" >
+    insert into t_fileinfo (id, name, length, 
+      type, path, contentType, 
+      objectClass, objectId, created
+      )
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{length,jdbcType=BIGINT}, 
+      #{type,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, #{contenttype,jdbcType=VARCHAR}, 
+      #{objectclass,jdbcType=VARCHAR}, #{objectid,jdbcType=BIGINT}, #{created,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jyl.file.model.FileInfo" useGeneratedKeys="true" keyProperty="id">
+    insert into t_fileinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="length != null" >
+        length,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="path != null" >
+        path,
+      </if>
+      <if test="contenttype != null" >
+        contentType,
+      </if>
+      <if test="objectclass != null" >
+        objectClass,
+      </if>
+      <if test="objectid != null" >
+        objectId,
+      </if>
+      <if test="created != null" >
+        created,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="length != null" >
+        #{length,jdbcType=BIGINT},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null" >
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="contenttype != null" >
+        #{contenttype,jdbcType=VARCHAR},
+      </if>
+      <if test="objectclass != null" >
+        #{objectclass,jdbcType=VARCHAR},
+      </if>
+      <if test="objectid != null" >
+        #{objectid,jdbcType=BIGINT},
+      </if>
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jyl.file.model.FileInfo" >
+    update t_fileinfo
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="length != null" >
+        length = #{length,jdbcType=BIGINT},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null" >
+        path = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="contenttype != null" >
+        contentType = #{contenttype,jdbcType=VARCHAR},
+      </if>
+      <if test="objectclass != null" >
+        objectClass = #{objectclass,jdbcType=VARCHAR},
+      </if>
+      <if test="objectid != null" >
+        objectId = #{objectid,jdbcType=BIGINT},
+      </if>
+      <if test="created != null" >
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jyl.file.model.FileInfo" >
+    update t_fileinfo
+    set name = #{name,jdbcType=VARCHAR},
+      length = #{length,jdbcType=BIGINT},
+      type = #{type,jdbcType=VARCHAR},
+      path = #{path,jdbcType=VARCHAR},
+      contentType = #{contenttype,jdbcType=VARCHAR},
+      objectClass = #{objectclass,jdbcType=VARCHAR},
+      objectId = #{objectid,jdbcType=BIGINT},
+      created = #{created,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

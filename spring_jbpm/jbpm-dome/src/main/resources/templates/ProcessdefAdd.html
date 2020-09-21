@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="common/head :: commonHead('新增流程实例')"></head>
+
+<body>
+
+<div th:replace="common/header :: header"/>
+
+<div class="container-fluid">
+
+
+    <div class="row-fluid">
+
+        <div th:replace="common/left :: left"/>
+
+        <div class="span9">
+            <div class="row">
+                <div class="span6">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a th:href="@{/home/}">Home</a> <span class="divider">></span>
+                        </li>
+                        <li>
+                            <a th:href="@{/processdef/}">Processd Definition List</a> <span class="divider">></span>
+                        </li>
+                        <li class="active">Processd Add</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <form role="form"  method="post" th:action="@{/processdef/new}" id="form">
+
+                <div class="form-group" style="display: none;">
+                    <label for="name">名称</label>
+                    <input type="text" id="name" name="name" placeholder="请输入名称"  th:value="${name}">
+                    <!--<p class="help-block">这里是块级帮助文本的实例。</p>-->
+                </div>
+
+                <div class="form-group" style="display: none;">
+                    <label for="deploymentId">部署ID</label>
+                    <input type="text" class="form-control" id="deploymentId" name="deploymentId" th:value="${deploymentId}"
+                           placeholder="请输入部署ID">
+                </div>
+                <div class="form-group" style="display: none;">
+                    <label for="processId">处理ID</label>
+                    <input type="text" id="processId" name="processId" placeholder="请输入处理ID" th:value="${id}">
+                    <p class="help-block">BPMN文件中对应的processId</p>
+                </div>
+
+                <div class="form-group" >
+                    <label for="name">业务内容1</label>
+                    <input type="text" id="content1" name="content1" placeholder="请输入业务内容1" >
+                </div>
+
+                <div class="form-group" >
+                    <label for="name">业务内容2</label>
+                    <input type="text" id="content2" name="content2" placeholder="请输入业务内容2" >
+                </div>
+
+                <div class="form-group" >
+                    <label for="name">业务内容3</label>
+                    <input type="text" id="content3" name="content3" placeholder="请输入业务内容3" >
+                </div>
+
+
+                <button type="button" onclick="processdefNew()" class="btn btn-default">提交</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+<div th:replace="common/footer :: footer"/>
+<script>
+    function processdefNew() {
+        $.ajax({
+            type: 'POST',
+            url: '/processdef/new',
+            dataType:"json",
+            data: $("#form").serialize(),
+            success: function(data){
+                alert(data.msg)
+            },
+            error:function (error) {
+                alert(data.msg)
+            }
+
+        });
+    }
+
+</script>
+</body>
+
+</html>

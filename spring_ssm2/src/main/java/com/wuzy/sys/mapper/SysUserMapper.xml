@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wuzy.sys.dao.SysUserMapper" >
+  <resultMap id="BaseResultMap" type="com.wuzy.sys.model.SysUser" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="account" property="account" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_user" property="createUser" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="BIGINT" />
+    <result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    U.id,U.account,U.nick_name,U.password,U.create_time,U.create_user,U.status,U.birthday
+  </sql>
+
+  <select id="login" resultMap="BaseResultMap">
+	select <include refid="Base_Column_List" />
+	FROM SYS_USER U
+    WHERE U.ACCOUNT=#{account} AND U.PASSWORD=#{password}
+  </select>
+
+  <select id="getByAccount" resultMap="BaseResultMap">
+	select <include refid="Base_Column_List" />
+	FROM SYS_USER U
+    WHERE U.ACCOUNT=#{account}
+  </select>
+
+  <delete id="deleteById" parameterType="java.lang.Long" >
+    delete from SYS_USER
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.wuzy.sys.model.SysUser" >
+    insert into SYS_USER
+    (id, account, nick_name, password, create_time, create_user,status,birthday )
+    values
+    (#{id,jdbcType=BIGINT}, #{account,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+    #{createTime,jdbcType=TIMESTAMP}, #{create_user,jdbcType=BIGINT},#{status,jdbcType=BIGINT} ,#{birthday,jdbcType=TIMESTAMP} )
+  </insert>
+  <!--<insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.wuzy.common.model.UUser" >
+    insert into u_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="nickname != null" >
+        nickname,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="pswd != null" >
+        pswd,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="pswd != null" >
+        #{pswd,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null" >
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIGINT}
+      </if>
+    </trim>
+  </insert>-->
+  <!--<update id="updateByIdSelective" parameterType="com.wuzy.common.model.UUser" >
+    update u_user
+    <set >
+      <if test="nickname != null" >
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="pswd != null" >
+        pswd = #{pswd,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>-->
+  <update id="updateById" parameterType="com.wuzy.sys.model.SysUser" >
+    update SYS_USER U
+    set
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      account = #{account,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      birthday = #{birthday,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=BIGINT}
+      create_user = #{create_user,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+  
+</mapper>

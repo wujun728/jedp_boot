@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wuzy.sys.dao.SysPermissionMapper" >
+  <resultMap id="BaseResultMap" type="com.wuzy.sys.model.SysPermission" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="perm_code" property="permCode" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <!--<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_user" property="createUser" jdbcType="VARCHAR" />-->
+    <result column="status" property="status" jdbcType="BIGINT" />
+    <result column="sort" property="sort" jdbcType="BIGINT" />
+    <result column="type" property="type" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    U.id,U.title,U.perm_code,U.memo,U.status,U.sort,U.type
+  </sql>
+
+  <select id="getPermCodeByUid" resultType="string">
+	select P.PERM_CODE
+	FROM SYS_PERMISSION P LEFT JOIN SYS_ROLE_PERMISSION RP ON P.ID=RP.PERMISSION_ID
+	LEFT JOIN SYS_USER_ROLE UR ON RP.ROLE_ID= UR.ROLE_ID
+	WHERE UR.USER_ID= #{userId}
+  </select>
+
+
+</mapper>

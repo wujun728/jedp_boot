@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.nuc.Store.entity.AdminMapper" >
+  <resultMap id="BaseResultMap" type="cn.edu.nuc.Store.model.Admin" >
+    <id column="AdminNo" property="adminno" jdbcType="INTEGER" />
+    <result column="AdminName" property="adminname" jdbcType="VARCHAR" />
+    <result column="AdminPass" property="adminpass" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    AdminNo, AdminName, AdminPass
+  </sql>
+  <select id="selectByAdminName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from admin
+    where AdminName = #{adminname,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from admin
+    where AdminNo = #{adminno,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.nuc.Store.model.Admin" >
+    insert into admin (AdminNo, AdminName, AdminPass
+      )
+    values (#{adminno,jdbcType=INTEGER}, #{adminname,jdbcType=VARCHAR}, #{adminpass,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.nuc.Store.model.Admin" >
+    insert into admin
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="adminno != null" >
+        AdminNo,
+      </if>
+      <if test="adminname != null" >
+        AdminName,
+      </if>
+      <if test="adminpass != null" >
+        AdminPass,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="adminno != null" >
+        #{adminno,jdbcType=INTEGER},
+      </if>
+      <if test="adminname != null" >
+        #{adminname,jdbcType=VARCHAR},
+      </if>
+      <if test="adminpass != null" >
+        #{adminpass,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.nuc.Store.model.Admin" >
+    update admin
+    <set >
+      <if test="adminname != null" >
+        AdminName = #{adminname,jdbcType=VARCHAR},
+      </if>
+      <if test="adminpass != null" >
+        AdminPass = #{adminpass,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where AdminNo = #{adminno,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.nuc.Store.model.Admin" >
+    update admin
+    set AdminName = #{adminname,jdbcType=VARCHAR},
+      AdminPass = #{adminpass,jdbcType=VARCHAR}
+    where AdminNo = #{adminno,jdbcType=INTEGER}
+  </update>
+</mapper>

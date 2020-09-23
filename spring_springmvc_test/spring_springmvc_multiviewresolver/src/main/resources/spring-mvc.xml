@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- 使用注解的包，包括子集 -->
+    <context:component-scan base-package="com.jun.plugin"/>
+    
+    <bean id="stringConverter"    class="org.springframework.http.converter.StringHttpMessageConverter">  
+        <property name="supportedMediaTypes">  
+            <list>  
+                <value>text/plain;charset=UTF-8</value>  
+                <value>application/json;charset=UTF-8</value> 
+            </list>  
+        </property>  
+    </bean>  
+
+    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>  
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">  
+        <property name="messageConverters">  
+            <list>  
+                <ref bean="stringConverter" />  
+                <ref bean="jsonConverter" />  
+            </list>  
+        </property>  
+    </bean>  
+	 
+	<context:annotation-config/>  
+
+    <!-- 视图解析器 -->
+	<!-- <bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp"></property>
+	</bean> -->
+	
+	<bean id="viewResolver" class="com.jun.plugin.common.view.JeeDevViewResolver">
+        <property name="defaultViewResolver" ref="beanNameViewResolver"/>
+        <property name="viewResolverMap">
+            <map>
+                <entry>
+                    <key>
+                        <set>
+                            <value>.jsp</value>
+                        </set>
+                    </key>
+                    <ref bean="jspViewResolver"/>
+                </entry>
+                <entry>
+                    <key>
+                        <set>
+                            <value>.vm</value>
+                            <value>.htm</value>
+                        </set>
+                    </key>
+                    <ref bean="velocityViewResolver"/>
+                </entry>
+                <entry>
+                    <key><value>.ftl</value></key>
+                    <ref bean="freeMarkerViewResolver"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    
+    <bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+    
+    <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <!--<property name="suffix" value=".jsp"/>-->
+    </bean>
+    
+    <!--  Velocity ViewResolver Configuration -->
+    <bean id="velocityViewResolver" class = "org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+         <property name="order" value="0" />
+         <property name="contentType" value="text/html;charset=UTF-8" />
+         <property name="requestContextAttribute" value="req"/>
+    </bean>
+
+    <!-- Velocity Configuration -->     
+    <bean id="velocityConfig" class = "org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+         <property name="configLocation" value="/WEB-INF/velocity.properties"/>
+         <property name="resourceLoaderPath" value="/" />
+    </bean>
+    
+    <!--  FreeMarker ViewResolver Configuration -->
+    <bean id="freeMarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">  
+        <property name="order" value="0" />
+        <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>  
+    </bean> 
+    
+    
+    <!-- FreeMarker Configuration -->     
+    <bean id="freemarkerConfig"  class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">  
+       <property name="configLocation" value="/WEB-INF/freemarker.properties"/>
+        <property name="templateLoaderPath" value="/WEB-INF/ftl/"/>  
+         <property name="freemarkerVariables">
+             <map>
+                <entry key="xml_escape" value-ref="fmXmlEscape"/>
+            </map>
+         </property>
+    </bean>   
+    
+    <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
+
+</beans>

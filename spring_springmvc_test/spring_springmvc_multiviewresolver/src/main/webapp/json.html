@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+	<input type="button" value="提交JSON数据" onclick="fun1();">
+	<script type="text/javascript">
+		function fun1(){
+			$.ajax({
+	              type: 'POST',
+	              url: "view/demo/test5",
+	              contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
+	              data: JSON.stringify({"username":"sam","password":"12"}),//JSON.stringify()必须有,否则只会当做表单的格式提交
+	              dataType: "json",//期待返回的数据类型
+	              success: function(data){
+	                  alert("success:"+data);
+	              },
+	              error:function(data){
+	                  alert("error"+data); 
+	              }
+	            });
+		}
+	</script>
+</body>
+</html>

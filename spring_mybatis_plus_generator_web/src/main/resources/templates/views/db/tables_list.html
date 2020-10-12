@@ -1,0 +1,165 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="/layouts/default">
+<th:block layout:fragment="title">
+    数据库列表
+</th:block>
+<!-- head -->
+<th:block layout:fragment="head">
+    <!--页面自定义样式-->
+    <style>
+       /* body{
+            overflow-y:hidden;
+        }
+        !** style *!
+        .wraper {
+            height: 1280px;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+        .back-ball {
+            color: #fff;
+            border-radius: 22px;
+            padding: 10px;
+        }*/
+    </style>
+</th:block>
+<!-- content -->
+<th:block layout:fragment="content">
+    <div class="wraper">
+    <el-row>
+        <el-button :disabled="data_group.multipleSelection.length === 0" type="danger" @click="openDialog" plain>批量生成代码</el-button>
+    </el-row>
+    <el-table stripe="true" fixed class="fn-mt10" :data="data_group.list" highlight-current-row @selection-change="onSelectionChange">
+        <el-table-column type="selection" width="55"></el-table-column>
+        <el-table-column type="index" width="50"></el-table-column>
+        <el-table-column  prop="tableName" label="表名" align="center" min-width="5%" show-overflow-tooltip="true"></el-table-column>
+        <el-table-column  prop="comments" label="备注" align="center" min-width="15%" show-overflow-tooltip="true"></el-table-column>
+        <el-table-column align="center" min-width="5%" label="操作"  fixed="right">
+            <template scope="scope" >
+                <el-button @click="showColumns(scope.row.tableName,scope.row.comments)" type="primary" size="small" plain>查看表字段</el-button>
+            </template>
+        </el-table-column>
+    </el-table>
+
+    <!-- 新建/编辑弹出框start -->
+    <el-dialog title="批量生成代码" :visible.sync="dialogFormVisible" width="50%">
+        <el-form label-width="150px" :model="columnForm" ref="columnForm" label-position="right">
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="前缀：">
+                        <el-input placeholder="表名中需要截取的部分,无需截取则不填" v-model="columnForm.prefix" ></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="包名">
+                        <el-input v-model="columnForm.modelName" placeholder="生成代码的包名。eg:com.alibaba.fastjson">
+                            <template slot="prepend">com.</template>
+                        </el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="author：">
+                        <el-input v-model="columnForm.author" ></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="entityName：">
+                        <el-input v-model="columnForm.entityName" ></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="mapperName">
+                        <el-input v-model="columnForm.mapperName" ></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="xmlName：">
+                        <el-input v-model="columnForm.xmlName" ></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="serviceName：">
+                        <el-input v-model="columnForm.serviceName" ></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="serviceImplName">
+                        <el-input v-model="columnForm.serviceImplName" ></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="controllerName：">
+                        <el-input v-model="columnForm.controllerName" ></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="entityPackage：">
+                        <el-input v-model="columnForm.entityPackage" ></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="servicePackage">
+                        <el-input v-model="columnForm.servicePackage" ></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="serviceImplPackage：">
+                        <el-input v-model="columnForm.serviceImplPackage" ></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="mapperPackage：">
+                        <el-input v-model="columnForm.mapperPackage" ></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24" class="fn-pr20">
+                    <el-form-item class="fn-ml30" label="controllerPackage：">
+                        <el-input v-model="columnForm.controllerPackage" ></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+        </el-form>
+
+        <div slot="footer" class="dialog-footer">
+            <el-button @click="dialogFormVisible = false">取 消</el-button>
+            <el-button type="primary" @click="submitForm('columnForm')">生成并下载</el-button>
+        </div>
+    </el-dialog>
+
+    <el-backtop target=".wraper"></el-backtop>
+    </div>
+</th:block>
+
+<!-- js -->
+<th:block layout:fragment="js">
+<!--页面js-->
+    <script th:src="@{/js/code/tables.js}"></script>
+
+
+</th:block>
+</html>

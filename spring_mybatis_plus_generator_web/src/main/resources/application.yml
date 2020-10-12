@@ -1,0 +1,36 @@
+server:
+  port: 8088
+  display-name: code-generator
+
+spring:
+  datasource:
+    url: jdbc:h2:file:~/.h2/mybatisplus-gen;MODE=MYSQL
+    driver-class-name: org.h2.Driver
+    username: root
+    password: root
+    schema: classpath:sql/schema.sql
+    data: classpath:sql/data.sql
+  h2:
+    console:
+      # http://ip:port/h2-console
+      enabled: true
+      settings:
+        web-allow-others: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    open-in-view: true
+  application:
+    name: mybatisplus-generator-web
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates
+    mode: LEGACYHTML5
+    suffix: .html
+logging:
+  level:
+    com.reapal: info
+    com.com.baomidou: debug

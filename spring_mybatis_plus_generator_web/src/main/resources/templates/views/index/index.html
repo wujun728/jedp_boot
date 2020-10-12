@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>代码生成工具</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=1200"/>
+    <link rel="icon" th:href="@{/img/favicon.ico}" type="image/x-icon"/>
+    <link rel="stylesheet" th:href="@{/css/element-ui.css}"/>
+    <link rel="stylesheet" th:href="@{/css/util.css}">
+    <link rel="stylesheet" th:href="@{/css/index.css}"/>
+</head>
+<body>
+<div id="app" v-cloak v-loading="loading">
+    <div class="header">
+        <a href="#" class="logo">
+            <img th:src="@{/img/favicon.png}">
+            <span>MybatisPlus代码在线生成工具</span>
+        </a>
+        <div id="header" v-cloak>
+            <div class="menu">
+            </div>
+            <div class="header-login">
+                <el-dropdown>
+                    <span class="header-login-content">
+                        <img class="header-login-photo" th:src="@{/img/photo.png}"/>{{header.userName}}<i class="el-icon-arrow-down"></i>
+                    </span>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item><a href="#">修改密码</a></el-dropdown-item>
+                        <el-dropdown-item><a th:href="@{/logout}">退出</a></el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <!--<el-menu id="menu" :default-active="menu.activeMenuId" v-cloak background-color="#eef1f6" :default-openeds="[menu.menuItems[0].menuId]">-->
+        <el-menu id="menu" :default-active="menu.activeMenuId" v-cloak background-color="#eef1f6">
+            <template v-for="item in menu.menuItems">
+                <el-menu-item v-if="!item.subMenuItems" :index="item.menuId"><i :class="item.iconClass"></i>{{item.menuName}}<a :href="item.href" target="content"></a></el-menu-item>
+                <el-submenu v-else :index="item.menuId">
+                    <template slot="title"><i :class="item.iconClass"></i>{{item.menuName}}</template>
+                    <template v-for="item in item.subMenuItems">
+                        <el-menu-item v-if="!item.subMenuItems" :index="item.menuId">{{item.menuName}}<a :href="item.href" target="content"></a></el-menu-item>
+                        <template v-else>
+                            <el-submenu :index="item.menuId">
+                                <template slot="title">{{item.menuName}}</template>
+                                <el-menu-item :key="item.menuId" v-for="item in item.subMenuItems" :index="item.menuId">{{item.menuName}}<a :href="item.href" target="content"></a></el-menu-item>
+                            </el-submenu>
+                        </template>
+                    </template>
+                </el-submenu>
+            </template>
+        </el-menu>
+        <div id="navCollapse" class="nav-collapse">
+            <i class="el-icon-arrow-right"></i><i class="el-icon-arrow-left"></i>
+        </div>
+    </div>
+    <div class="main">
+        <iframe id="content" frameborder="0" name="content"></iframe>
+    </div>
+</div>
+
+<script th:src="@{/js/util/jquery.js}"></script>
+<script th:src="@{/js/util/vue.js}"></script>
+<script th:src="@{/js/util/vue-resource.js}"></script>
+<script th:src="@{/js/util/element-ui-2.12.0.js}"></script>
+<script th:src="@{/js/util/util-core.js}"></script>
+
+<script th:inline="javascript">
+    $UC = {
+        ctxPath: /*[[${#httpServletRequest.getContextPath()}]]*/ null,
+        ctxStatic: /*[[${#httpServletRequest.getContextPath()}]]*/ null
+    };
+    var userName = /*[[${userName}]]*/ null;
+</script>
+<script th:inline="javascript">
+    new Vue({
+        el: '#app',
+        data: function () {
+            var header = {
+                activeMenuId: 'menu1',
+                menuItems: [
+                    {menuId: 'menu1', menuName: '代码生成工具', menuNameAbbreviate: 'demo', href: '#'}
+                ],
+                userName: 'Admin'
+            };
+
+            var menus = {
+                menu1: {
+                    activeMenuId: '',
+                    menuItems: [
+                        {
+                            menuId: '01', menuName: '系统管理', href: '#', iconClass: 'el-icon-setting',
+                            subMenuItems: [
+                                {menuId: '012', menuName: '数据源管理', href: $UC.ctxPath + '/database-list', iconClass:''}
+                            ]
+                        },{
+                            menuId: '02', menuName: '数据库列表', href: '#', iconClass: 'el-icon-menu',
+                            subMenuItems: [
+                                {menuId: '022', menuName: '数据源管理', href: $UC.ctxPath + '/database-list'}
+                            ]
+                        },{
+                            menuId: '03', menuName: '常用工具', href: '#', iconClass: 'el-icon-news',
+                            subMenuItems: [
+                                {menuId: '039', menuName: '音乐播放器', href: $UC.ctxPath + '/tools/to-music'},
+                                {menuId: '030', menuName: 'MarkDown', href: $UC.ctxPath + '/tools/to-markdown'},
+                                {menuId: '031', menuName: '在线编辑器', href: $UC.ctxPath + '/tools/to-editor'},
+                                {menuId: '032', menuName: '状态图', href: $UC.ctxPath + '/tools/to-statechart'},
+                                {menuId: '033', menuName: '流程图', href: $UC.ctxPath + '/tools/to-flowchart'},
+                                {menuId: '034', menuName: '匿名夸夸群', href: $UC.ctxPath + '/tools/to-onlinechat'},
+                                {menuId: '035', menuName: '表单设计器', href: $UC.ctxPath + '/tools/to-form-making'},
+                                {menuId: '036', menuName: '大屏demo', href: $UC.ctxPath + '/tools/to-big-screen'},
+                                {menuId: '037', menuName: '报表', href: $UC.ctxPath + '/tools/to-vchart'},
+                                {menuId: '038', menuName: '文件对比工具', href: $UC.ctxPath + '/tools/to-code-diff'},
+                            ]
+                        }
+                    ]
+                }
+            };
+
+            return {
+                maskDiv: {}, // 当前显示的水印div节点DOM对象
+                inputText:'jackcooper',
+                loading: false,
+                header: header,
+                menus: menus,
+                menu: menus[header.activeMenuId]
+            };
+        },
+        created: function(){
+            this.init()
+            this.loadMenus();
+        },
+        destroy:function(){
+            // 组件销毁时去除生成在body节点下的水印节点
+            if (this.inputDestroy) {
+                this.removeMaskDiv()
+            }
+        },
+        watch:{
+            // 监听传入水印文本变化
+            inputText (){
+                this.$nextTick(() => {
+                    this.removeMaskDiv()
+                })
+            }
+        },
+        methods: {
+            onHeaderSelect: function (index) {
+                this.menu = this.menus[index];
+            },
+            init: function(){
+                this.menus.menu1.activeMenuId=this.menus.menu1.menuItems[0].subMenuItems[0].menuId;
+                document.getElementById("content").src = $UC.ctxPath + this.menus.menu1.menuItems[0].subMenuItems[0].href;
+                this.initWaterMark();
+            },
+            loadMenus: function () {
+                var _this = this;
+                $UU.http.get("/getDbList",
+                    {}
+                    , function (response) {
+                        //获取回调数据
+                        console.log(response.data);
+                        var dbMenus = [];
+                        response.data.data.forEach(function (e) {
+                            var menu = {};
+                            menu['menuId']= e.id;
+                            menu['menuName']= e.dbName;
+                            menu['href']= $UC.ctxPath +'/to-table-list?id='+e.id;
+                            dbMenus.push(menu);
+                        });
+                        _this.menus.menu1.menuItems[1].subMenuItems = dbMenus;
+                    }, {
+                        requestBody: true,
+                        before: function () {
+                            _this.btn_disabled = true;
+                        },
+                        after: function () {
+                            _this.btn_disabled = false;
+                        }
+                    });
+            },
+            initWaterMark () {
+                let canvas = document.createElement('canvas')
+                canvas.id = 'canvas'
+                canvas.width = '200' // 单个水印的宽高
+                canvas.height = '130'
+                this.maskDiv = document.createElement('div')
+                let ctx = canvas.getContext('2d')
+                ctx.font = 'normal 18px Microsoft Yahei' // 设置样式
+                ctx.fillStyle = 'rgba(112, 113, 114, 0.1)' // 水印字体颜色
+                ctx.rotate(30 * Math.PI / 180) // 水印偏转角度
+                ctx.fillText(this.inputText, 30, 20)
+                let src = canvas.toDataURL('image/png')
+                this.maskDiv.style.position = 'fixed'
+                this.maskDiv.style.zIndex = '9999'
+                this.maskDiv.id = '_waterMark'
+                this.maskDiv.style.top = '30px'
+                this.maskDiv.style.left = '0'
+                this.maskDiv.style.height = '100%'
+                this.maskDiv.style.width = '100%'
+                this.maskDiv.style.pointerEvents = 'none'
+                this.maskDiv.style.backgroundImage = 'URL(' + src + ')'
+                // 水印节点插到body下
+                document.body.appendChild(this.maskDiv)
+            },
+            Monitor () {
+                let body = document.getElementsByTagName('body')[0]
+                let options = {
+                    childList: true,
+                    attributes: true,
+                    characterData: true,
+                    subtree: true,
+                    attributeOldValue: true,
+                    characterDataOldValue: true
+                }
+                let observer = new MutationObserver(this.callback)
+                observer.observe(body, options) // 监听body节点
+            },
+            // DOM改变执行callback
+            callback (mutations, observer) {
+                // 当attribute属性被修改
+                if (mutations[0].target.id === '_waterMark') {
+                    this.removeMaskDiv()
+                }
+                // 当id被改变时
+                if (mutations[0].attributeName === 'id') {
+                    this.removeMaskDiv()
+                    this.init()
+                }
+                // 当节点被删除
+                if (mutations[0].removedNodes[0] && mutations[0].removedNodes[0].id === '_waterMark') {
+                    this.init()
+                }
+            },
+            /* public */
+            // 手动销毁水印DOM
+            removeMaskDiv () {
+                document.body.removeChild(this.maskDiv)
+            },
+            // 手动生成水印
+            createMaskDiv () {
+                this.init()
+            }
+        }
+
+    });
+
+    (function () {
+        var t = document.getElementById("navCollapse");
+        if (t) {
+            var e = document.body, n = t.parentElement;
+            t.onclick = function (t) {
+                e.className = -1 == e.className.indexOf(" collapsed") ? e.className + " collapsed" : e.className.replace(" collapsed", ""), t.stopPropagation()
+            }, n.onclick = function () {
+                -1 != e.className.indexOf(" collapsed") && (e.className = e.className.replace(" collapsed", ""))
+            }
+        }
+    })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+Description
+===========
+Sample application demonstrating how to integrate Spring MVC 3.1, jqGrid, and Spring Data JPA.
+
+To read the whole guide, please see the original blog:
+
+"Spring MVC 3.1, jqGrid, and Spring Data JPA Integration Guide"
+http://krams915.blogspot.com/2012/01/spring-mvc-31-jqgrid-and-spring-data_1887.html
+
+
+Building
+========
+Please visit http://krams915.blogspot.com/2012/01/spring-mvc-31-jqgrid-and-spring-data.html for full instructions
+
+
+Notes
+=====
+For more tutorials, please visit http://krams915.blogspot.com/

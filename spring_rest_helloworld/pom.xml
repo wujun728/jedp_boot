@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>springmvc-rest-helloworld</groupId>
-    <artifactId>springmvc-rest-helloworld</artifactId>
+    <groupId>com.jun.plugin</groupId>
+    <artifactId>spring_rest_helloworld</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
 

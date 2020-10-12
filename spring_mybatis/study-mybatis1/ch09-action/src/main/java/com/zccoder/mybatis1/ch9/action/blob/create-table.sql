@@ -1,5 +1,0 @@
-CREATE TABLE t_file(
-  id INT NOT NULL AUTO_INCREMENT,
-  file BLOB,
-  PRIMARY KEY (id)
-);

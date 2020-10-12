@@ -4,19 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.kiwipeach.demo</groupId>
-    <artifactId>SpringMVC-JasperReport</artifactId>
+    <groupId>com.jun.plugin</groupId>
+    <artifactId>spring_jasperreport</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <!--快速搭建SpringMVC框架，构建测试案例-->
     <dependencies>
         <!--oracle数据库驱动-->
-        <dependency>
+        <!-- <dependency>
             <groupId>cn.kiwipeach</groupId>
             <artifactId>ojdbc6</artifactId>
             <version>11.2.0.4</version>
-        </dependency>
+        </dependency> -->
         <!--duird数据源-->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -152,16 +152,16 @@
             <version>1.10</version>
         </dependency>
         <!--中国字体-->
-        <dependency>
+        <!-- <dependency>
             <groupId>cn.kiwipeach.demo</groupId>
-            <artifactId>jasperstudio-all-fonts</artifactId><!--自定义的中国字体包1099501218@qq.com-->
+            <artifactId>jasperstudio-all-fonts</artifactId>自定义的中国字体包1099501218@qq.com
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.ylzinfo</groupId>
-            <artifactId>ylz-iTextAsian</artifactId> <!--兼容STSong-Light,Pdf Embedded,PdfEncoding属性-->
+            <artifactId>ylz-iTextAsian</artifactId> 兼容STSong-Light,Pdf Embedded,PdfEncoding属性
             <version>1.0.0</version>
-        </dependency>
+        </dependency> -->
         <!--条形码-->
         <dependency>
             <groupId>net.sf.barcode4j</groupId>

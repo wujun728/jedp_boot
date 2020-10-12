@@ -1,4 +1,28 @@
-# Spring-activeMQ
+# spring_activemq
+
+jun_activemq集成了ActiveMQ的Topic及Queue及JMS消费者及生产者的使用订阅，包括docker环境安装等
+
+安装docker，推荐
+
+1、查询activemq
+docker search activemq
+
+2、拉取镜像
+docker pull docker.io/webcenter/activemq
+
+3、查询本地的镜像
+docker images
+
+4、创建activemq容器：61616是activemq的容器使用端口（映射为61617），8161是web页面管理端口（对外映射为8162）.
+docker run -d --name activemq_node1 -p 61617:61616 -p 8162:8161 docker.io/webcenter/activemq:latest
+
+5、查看创建的容器：
+docker ps
+
+6、页面查看web管理页面：
+activemq的web管理界面，http://127.0.0.1:8161/admin
+点击manage activemq broker就可以进入管理页面（需要输入账号密码），默认账号密码都是admin
+
   在业务逻辑的异步处理，系统解耦，分布式通信以及控制高并发的场景下，消息队列有着广泛的应用。
   本项目基于Spring这一平台，整合流行的开源消息队列中间件ActiveMQ,实现一个向ActiveMQ添加和读取消息的功能。
   并比较了两种模式：生产者-消费者模式和发布-订阅模式的区别。

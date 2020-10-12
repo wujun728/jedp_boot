@@ -6,18 +6,7 @@
   <packaging>pom</packaging>
   <modules>
   	<module>spring_activemq</module>
-  	<module>spring_core</module>
-  	<module>spring_fastdfs</module>
-  	<module>spring_generator</module>
-<!--   	<module>spring_neo4j</module> -->
-  	<module>spring_quartz</module>
-  	<module>spring_rabbitmq</module>
-  	<module>spring_redis</module>
-  	<module>spring_rest</module>
-  	<module>spring_security</module>
-  	<module>spring_shiro</module>
-  	<module>spring_test</module>
-  	<module>spring_websocket</module>
+  	 
   	 
   	
   </modules>

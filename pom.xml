@@ -6,8 +6,9 @@
   <packaging>pom</packaging>
   <modules>
   	<module>spring_activemq</module>
-  	 
-  	 
-  	
+
+
+
+  	<module>spring_validator</module>
   </modules>
 </project>

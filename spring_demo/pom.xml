@@ -10,8 +10,23 @@
     <packaging>war</packaging>
     <properties>
         <spring.version>4.1.1.RELEASE</spring.version>
+        <testng.version>6.8.7</testng.version>
     </properties>
     <dependencies>
+         
+    	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>2.11.1</version>
+		</dependency>
+    	<!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+		<dependency>
+		    <groupId>commons-beanutils</groupId>
+		    <artifactId>commons-beanutils</artifactId>
+		    <version>1.9.4</version>
+		</dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>

@@ -104,9 +104,6 @@ jun_spring
 jun_spring\spring_dbutil\README.md  优化步骤文档
 com.jun.plugin
  	       
- 	         
-spring_tiles   合并到spring_quartz 里面
-spring_ueditor_with_spring  重命名，spring_ueditor
-   
+ 	          
 mybatis+spring+springmvc+vue+easyui实现
 来自 <https://github.com/Ftine/Ajie-Forever-God_snack> 

@@ -103,37 +103,10 @@ jun_spring
         
 jun_spring\spring_dbutil\README.md  优化步骤文档
 com.jun.plugin
- 	      
-		         
-
- 
-spring_ssmzhengheactiviti_qingjiajibangongyongpinshenpiliucheng  迁移到spring_activti
-Spring_sso  kisso补充
-spring_store   跑起来
-spring_struts 2   补充
-spring_template_jqgrid  重命名spring_jqgrid 
-spring_test 合并到spring_test
-spring_test 2   重命名spring_test
-spring_test_dbunit       干掉
-spring_threads  调试
-spring_thymeleaf  调试
+ 	       
+ 	         
 spring_tiles   合并到spring_quartz 里面
 spring_ueditor_with_spring  重命名，spring_ueditor
-spring_velocity   调整
-spring_web_ssh   干掉
-spring_web_ssm  干掉
-spring_webapp   干掉
-Spring_task   新增
-spring_webim  调试
-spring_websocket  调试
-spring_websocket 2  干掉
-spring_websocket 3  *****合并到 spring_websocket
-spring_websocket2    干掉
-spring_webssh  干掉
-spring_wind  迁移到jun_framework
-spring_wind 2     干掉
-spring_xsd_canal   干掉
-spring_xxpay_master   干掉
-spring_xxpay_master2   干掉
+   
 mybatis+spring+springmvc+vue+easyui实现
 来自 <https://github.com/Ftine/Ajie-Forever-God_snack> 

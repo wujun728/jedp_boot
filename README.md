@@ -104,27 +104,9 @@ jun_spring
 jun_spring\spring_dbutil\README.md  优化步骤文档
 com.jun.plugin
  	      
-		        
-spring_ssh15  合并到 spring_ssh
+		         
 
-
-
-     
-spring_ssm_demo  合并到 spring_ssm
-spring_ssm_dubbo  调整  
-spring_ssm_sms   调整
-spring_ssm_update  调整，合并到ssm
-spring_ssm2   调整，spring_ssm_article
-spring_ssm4  迁移到jun_framework
-spring_ssm5   合并到ssm
-spring_ssm6  合并到ssm
-spring_ssm22  干掉
-spring_ssm23  干掉
-spring_ssm44   迁移到jun_framework
-spring_ssm77   *****spring_ssm
-spring_ssm111   合并到ssm
-spring_ssm2666  干掉
-spring_ssmdemo  调试
+ 
 spring_ssmzhengheactiviti_qingjiajibangongyongpinshenpiliucheng  迁移到spring_activti
 Spring_sso  kisso补充
 spring_store   跑起来
@@ -153,8 +135,5 @@ spring_wind 2     干掉
 spring_xsd_canal   干掉
 spring_xxpay_master   干掉
 spring_xxpay_master2   干掉
-
-
 mybatis+spring+springmvc+vue+easyui实现
 来自 <https://github.com/Ftine/Ajie-Forever-God_snack> 
-

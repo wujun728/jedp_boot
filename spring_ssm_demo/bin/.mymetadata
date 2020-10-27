@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project-module type="WEB" name="demo" id="demo" context-root="/demo" j2ee-spec="1.4" archive="demo.war">
-  <attributes>
-    <attribute name="webrootdir" value="src/main/webapp"/>
-  </attributes>
-</project-module>

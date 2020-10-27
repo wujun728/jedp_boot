@@ -104,30 +104,14 @@ jun_spring
 jun_spring\spring_dbutil\README.md  优化步骤文档
 com.jun.plugin
  	      
-		  
-		  
-spring_springtianxiadiyi  干掉
-spring_springtime  挪到jun_srpingboot
-spring_springwind2  挪到jedp_framework
-spring_ssh  调整 spring_S2SH
-spring_ssh (4) 调整 spring_ssh
-spring_ssh 2  合并到 spring_S2SH
-spring_ssh 3 干掉，合并到mvn_template
-spring_ssh_demo  合并到 spring_ssh
-spring_ssh_maven 合并到 spring_S2SH
-spring_ssh_showcase 干掉
-spring_ssh2  合并到 spring_S2SH
+		        
 spring_ssh15  合并到 spring_ssh
-spring_sshdemo  合并到 spring_ssh
-spring_sshe  n挪到 jedp_framework
-spring_ssm  重命名 spring_swagger
-spring_ssm 2  挪到 jun_springboot
-spring_ssm_bbs  调整
-spring_ssm_cluster  调整
+
+
+
+     
 spring_ssm_demo  合并到 spring_ssm
-spring_ssm_dubbo  调整
-spring_ssm_dubbo2  干掉
-spring_ssm_micro_service   干掉
+spring_ssm_dubbo  调整  
 spring_ssm_sms   调整
 spring_ssm_update  调整，合并到ssm
 spring_ssm2   调整，spring_ssm_article

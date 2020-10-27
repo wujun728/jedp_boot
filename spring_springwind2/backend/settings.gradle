@@ -1,7 +1,0 @@
-// SW - 云平台框架
-rootProject.name = 'SpringWind'
-
-// SpringCoud 相关服务模块
-include 'sw-registry'
-include 'sw-gateway'
-

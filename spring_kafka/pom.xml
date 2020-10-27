@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
  
   <groupId>com.jun.plugin</groupId>
-  <artifactId>jun_kafka</artifactId>
+  <artifactId>spring_kafka</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
    

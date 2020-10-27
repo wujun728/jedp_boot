@@ -103,33 +103,9 @@ jun_spring
         
 jun_spring\spring_dbutil\README.md  优化步骤文档
 com.jun.plugin
- 	    
-		
-		
-spring_springjdbc 干掉，干掉代码，
-spring_springjdbc_aop_ioc 调整，干掉，功能合并到ioc aop  jdbc
-spring_springjdbc_case  干掉
-spring_springjdbc_multipledb  调整，合并到spring_distributed_multidb
-spring_springjdbc11   干掉  
-spring_springjdbc22   合并到spring_springjdbc
-spring_springjdbc44  合并到spring_springjdbc
-spring_springjdbc55  重命名   spring_springjdbc
-spring_springmq  代码合并spring_activemq
-spring_springmultidatasource  调整
-spring_springmvc  调整
-spring_springmvc (2) 调整
-spring_springmvc_test  合并到spring_springmvc
-spring_springmvc2   合并到spring_springmvc
-spring_springmvc22 代码合并spring_springmvc
-spring_springmvcblzedskjsjian_jb51  干掉
-spring_springmvcdemo   代码合并spring_springmvc
-spring_springmvcliuyanban  代码合并spring_springmvc
-spring_springmybatislianbiaoshengchengdaima   合并到jun_code_generator
-spring_springpermission  调试
-spring_springrain   ***** 挪到jedp_framework,重命名jedp_spring4all_layui
-spring_springside.github.com  挪到jun_frontend
-spring_springside4  迁移到jun_springboot
-spring_springside42  干掉
+ 	      
+		  
+		  
 spring_springtianxiadiyi  干掉
 spring_springtime  挪到jun_srpingboot
 spring_springwind2  挪到jedp_framework

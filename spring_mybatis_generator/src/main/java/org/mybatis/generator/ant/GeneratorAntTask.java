@@ -39,44 +39,7 @@ import org.mybatis.generator.exception.InvalidConfigurationException;
 import org.mybatis.generator.exception.XMLParserException;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
-/**
- * This is an Ant task that will run the generator. The following is a sample
- * Ant script that shows how to run the generator from Ant:
- * 
- * <pre>
- *  &lt;project default="genfiles" basedir="."&gt;
- *    &lt;property name="generated.source.dir" value="${basedir}" /&gt;
- *    &lt;target name="genfiles" description="Generate the files"&gt;
- *      &lt;taskdef name="mbgenerator"
- *               classname="org.mybatis.generator.ant.GeneratorAntTask"
- *               classpath="mybatis-generator-core-x.x.x.jar" /&gt;
- *      &lt;mbgenerator overwrite="true" configfile="generatorConfig.xml" verbose="false" &gt;
- *        &lt;propertyset&gt;
- *          &lt;propertyref name="generated.source.dir"/&gt;
- *        &lt;/propertyset&gt;
- *      &lt;/mbgenerator&gt;
- *    &lt;/target&gt;
- *  &lt;/project&gt;
- * </pre>
- * 
- * The task requires that the attribute "configFile" be set to an existing XML
- * configuration file.
- * <p>
- * The task supports these optional attributes:
- * <ul>
- * <li>"overwrite" - if true, then existing Java files will be overwritten. if
- * false (default), then existing Java files will be untouched and the generator
- * will write new Java files with a unique name</li>
- * <li>"verbose" - if true, then the generator will log progress messages to the
- * Ant log. Default is false</li>
- * <li>"contextIds" - a comma delimited list of contaxtIds to use for this run</li>
- * <li>"fullyQualifiedTableNames" - a comma delimited list of fully qualified
- * table names to use for this run</li>
- * </ul>
- * 
- * 
- * @author Jeff Butler
- */
+ 
 public class GeneratorAntTask extends Task {
 
     private String configfile;

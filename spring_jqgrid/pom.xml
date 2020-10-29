@@ -55,11 +55,11 @@
         </dependency>
         
         <!-- AspectJ for Spring -->
-        <dependency>
+        <!-- <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjtools</artifactId>
             <version>1.6.10</version>
-        </dependency>
+        </dependency> -->
 				
         <!-- Logging -->
         <dependency>

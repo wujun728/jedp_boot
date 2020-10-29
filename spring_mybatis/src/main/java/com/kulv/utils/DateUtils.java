@@ -128,7 +128,7 @@ public class DateUtils {
 	 * @throws Exception
 	 */
 	public static List<String> getListDateBystartEnd(String startDate,String endDate) throws Exception{
-		List<String> dates = new ArrayList<>();
+		List<String> dates = new ArrayList<String>();
 		
 		String trueEndDate = getSpecifiedDayBefore(endDate);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

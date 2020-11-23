@@ -16,7 +16,7 @@ import com.zandili.demo.drools.test.BaseTest;
  * 
  * 4、问题是：最终小明可以喝多少瓶饮料；
  * 
- * @author airfey
+ * @author Wujun
  * 
  */
 public class DrinkTest extends BaseTest {

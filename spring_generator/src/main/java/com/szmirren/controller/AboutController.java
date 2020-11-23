@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 /**
  * 使用帮助
  * 
- * @author <a href="http://szmirren.com">Mirren</a>
+ * @author Wujun
  *
  */
 public class AboutController extends BaseController {

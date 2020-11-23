@@ -16,7 +16,7 @@ import java.util.Map;
 /**
  * 购买办公用品流程测试--包含事件子流程--异常事件
  *
- * @author henryyan
+ * @author Wujun
  */
 @ContextConfiguration("classpath:applicationContext-test-chapter10.xml")
 public class PurchaseErrorEventSubProcessTest extends SpringActivitiTestCase {

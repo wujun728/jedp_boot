@@ -14,7 +14,7 @@ import java.net.InetSocketAddress;
 /**
  * Storage Server Info
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.11
  */
 public class StorageServer extends TrackerServer {

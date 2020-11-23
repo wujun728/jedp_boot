@@ -5,7 +5,7 @@ import java.util.Date;
 import cn.springmvc.mybatis.entity.BaseEntity;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class News implements BaseEntity<String> {

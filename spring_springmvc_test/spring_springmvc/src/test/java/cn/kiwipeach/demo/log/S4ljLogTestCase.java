@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
  * Create Date: 2018/01/08
  * Description: 日志功能测试案例
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 public class S4ljLogTestCase {
 

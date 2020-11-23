@@ -25,7 +25,7 @@ import org.mybatis.generator.api.IntrospectedColumn;
 /**
  * The Class Ibatis2FormattingUtilities.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class Ibatis2FormattingUtilities {
     

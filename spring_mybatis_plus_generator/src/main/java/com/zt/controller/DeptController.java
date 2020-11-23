@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
  *  前端控制器
  * </p>
  *
- * @author CDHong
+ * @author Wujun
  * @since 2018-04-06
  */
 @Controller

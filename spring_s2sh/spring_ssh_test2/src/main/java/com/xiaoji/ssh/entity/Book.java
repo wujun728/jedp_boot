@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Book entity. @author MyEclipse Persistence Tools
+ * Book entity. @author Wujun
  */
 @Entity
 @Table(name = "book", catalog = "springtest")

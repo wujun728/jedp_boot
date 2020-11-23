@@ -7,7 +7,7 @@ import com.jun.plugin.fastnetty.server.NettyServer;
 import com.jun.plugin.fastnetty.server.ServerManager;
 
 /**
- * @author peiyu
+ * @author Wujun
  */
 public final class ServerManagerImpl implements ServerManager {
 

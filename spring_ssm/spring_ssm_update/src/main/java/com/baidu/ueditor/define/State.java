@@ -2,7 +2,7 @@ package com.baidu.ueditor.define;
 
 /**
  * 处理状态接口
- * @author hancong03@baidu.com
+ * @author Wujun
  *
  */
 public interface State {

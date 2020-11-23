@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Web 层工具类
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public abstract class WebUtils {
 

@@ -23,7 +23,7 @@ import org.mybatis.generator.api.dom.xml.XmlElement;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class SelectByExampleWithoutBLOBsElementGenerator extends

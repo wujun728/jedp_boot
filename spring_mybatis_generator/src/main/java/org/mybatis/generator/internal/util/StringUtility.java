@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public class StringUtility {
 

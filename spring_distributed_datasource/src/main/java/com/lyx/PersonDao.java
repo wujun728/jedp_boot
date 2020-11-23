@@ -129,7 +129,7 @@ public class PersonDao {
     /**
      * 实现RowMapper
      *
-     * @author Lenovo
+     * @author Wujun
      */
     private static class PeopleRowMapper implements RowMapper<People> {
         public People mapRow(ResultSet rs, int rowNum) throws SQLException {

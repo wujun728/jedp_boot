@@ -18,7 +18,7 @@ import org.apache.mina.filter.keepalive.KeepAliveRequestTimeoutHandler;
  * <p>Description:</p>
  * <p>Copyright: Copyright (c) 2014 2014-12-16 上午10:46:12</p>
  * <p>Company: 8637.com</p>
- * @author 鲍建明
+ * @author Wujun
  * @version 1.0
  */
 public class KeepAliveRequestTimeoutHandlerImpl implements KeepAliveRequestTimeoutHandler

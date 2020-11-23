@@ -22,7 +22,7 @@ import com.baomidou.kisso.common.util.RandomUtil;
  * 测试随机数工具类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-5-12
  */
 public class TestRandomUtil {

@@ -51,7 +51,7 @@ import org.mybatis.generator.api.dom.xml.XmlElement;
  * the documentation of that method for example of the regular expression
  * language used in Java.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class ColumnRenamingRule {

@@ -10,7 +10,7 @@ import java.lang.reflect.Field;
 import java.io.Serializable;
 
 /**
- * @author 陈雄华
+ * @author Wujun
  * @version 1.0
  */
 @Entity

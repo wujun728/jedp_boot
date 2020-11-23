@@ -9,7 +9,7 @@ import cn.springmvc.jpa.repository.BaseRepository;
 import cn.springmvc.jpa.repository.UserRoleRepository;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Repository

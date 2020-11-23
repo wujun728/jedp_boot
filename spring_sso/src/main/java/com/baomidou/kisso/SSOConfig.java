@@ -29,7 +29,7 @@ import java.util.List;
  * SSO 配置文件解析
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-12-05
  */
 @Data

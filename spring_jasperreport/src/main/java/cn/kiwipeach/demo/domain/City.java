@@ -19,7 +19,7 @@ package cn.kiwipeach.demo.domain;
  * Create Date: 2017/12/26
  * Description: 城市類
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 public class City {
     private String cityId;

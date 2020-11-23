@@ -19,7 +19,7 @@ package org.mybatis.generator.api;
  * This interface is used to supply names for DAO methods. Users can provide
  * different implementations if the supplied implementations aren't sufficient.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public interface DAOMethodNameCalculator {

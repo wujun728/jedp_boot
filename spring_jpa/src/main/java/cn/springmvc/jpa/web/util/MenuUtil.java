@@ -14,7 +14,7 @@ import cn.springmvc.jpa.web.vo.PermissionVo;
 /**
  * 菜单工具类
  * 
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class MenuUtil implements Serializable {

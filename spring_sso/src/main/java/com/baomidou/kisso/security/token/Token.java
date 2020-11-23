@@ -20,7 +20,7 @@ package com.baomidou.kisso.security.token;
  * SSO Token 票据
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-07-17
  */
 public interface Token {

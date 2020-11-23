@@ -22,7 +22,7 @@ import org.mybatis.generator.api.dom.xml.Attribute;
 import org.mybatis.generator.api.dom.xml.XmlElement;
 
 /**
- * @author Jeff Butler
+ * @author Wujun
  */
 public abstract class PropertyHolder {
     private Properties properties;

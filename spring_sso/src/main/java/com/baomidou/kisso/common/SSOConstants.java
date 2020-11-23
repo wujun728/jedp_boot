@@ -22,7 +22,7 @@ import java.nio.charset.Charset;
  * SSO 定义常量
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-07-17
  */
 public interface SSOConstants {

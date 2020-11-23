@@ -26,7 +26,7 @@ import org.mybatis.generator.config.Context;
  * A Java type resolver is used to make a default translation between a JDBC
  * type as returned from the database introspection process, and a Java type.
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public interface JavaTypeResolver {
     /**

@@ -15,7 +15,7 @@ import cn.springmvc.jpa.entity.OpenSurvey;
 import cn.springmvc.jpa.service.OpenSurveyService;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  *         production为生产环境，development为测试环境
  */

@@ -22,7 +22,7 @@ import java.util.ArrayList;
  * 字节组处理
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-01-09
  */
 public class ByteGroup {

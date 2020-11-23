@@ -54,7 +54,7 @@ import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
  * </pre>
  * 
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class RulesDelegate implements Rules {

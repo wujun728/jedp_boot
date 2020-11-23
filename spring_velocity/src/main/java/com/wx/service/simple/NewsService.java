@@ -6,7 +6,7 @@ import com.wx.common.base.model.Page;
 import com.wx.entity.simple.News;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface NewsService {

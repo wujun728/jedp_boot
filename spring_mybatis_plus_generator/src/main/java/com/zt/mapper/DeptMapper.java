@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  *  Mapper 接口
  * </p>
  *
- * @author CDHong
+ * @author Wujun
  * @since 2018-04-06
  */
 public interface DeptMapper extends BaseMapper<Dept> {

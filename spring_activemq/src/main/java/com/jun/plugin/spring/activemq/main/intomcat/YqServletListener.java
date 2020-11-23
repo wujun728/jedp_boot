@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServlet;
 
 /** 
  * 	
- * @author 	<a href="mailto:ketayao@gmail.com">ketayao</a>
+ * @author Wujun
  * Version  1.1.0
  * @since   2012-5-14 上午10:46:39 
  */

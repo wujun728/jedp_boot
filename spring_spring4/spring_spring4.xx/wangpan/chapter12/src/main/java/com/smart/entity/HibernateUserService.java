@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @author 陈雄华
+ * @author Wujun
  * @version 1.0
  */
 @Service("userService")

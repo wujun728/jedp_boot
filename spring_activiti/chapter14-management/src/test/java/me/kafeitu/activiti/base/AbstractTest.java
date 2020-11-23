@@ -10,7 +10,7 @@ import org.junit.Rule;
 /**
  * 抽象测试基类
  *
- * @author henryyan
+ * @author Wujun
  */
 public abstract class AbstractTest {
 

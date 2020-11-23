@@ -21,7 +21,7 @@ package com.baomidou.kisso.captcha;
  * https://github.com/rtyley/animated-gif-lib-for-java
  * </p>
  *
- * @author unknown
+ * @author Wujun
  * @since 2018-08-11
  */
 public class Quant {

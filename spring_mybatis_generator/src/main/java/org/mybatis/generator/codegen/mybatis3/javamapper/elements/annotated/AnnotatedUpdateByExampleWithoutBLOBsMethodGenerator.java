@@ -22,7 +22,7 @@ import org.mybatis.generator.codegen.mybatis3.javamapper.elements.UpdateByExampl
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public class AnnotatedUpdateByExampleWithoutBLOBsMethodGenerator extends
     UpdateByExampleWithoutBLOBsMethodGenerator {

@@ -22,7 +22,7 @@ import com.baomidou.kisso.security.token.Token;
  * SSO Token 失效异常
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-07-17
  */
 public class ExpiredTokenException extends KissoException {

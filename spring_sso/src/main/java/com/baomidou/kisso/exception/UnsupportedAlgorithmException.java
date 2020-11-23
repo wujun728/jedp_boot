@@ -20,7 +20,7 @@ package com.baomidou.kisso.exception;
  * 不支持算法异常
  * </p>
  *
- * @author hubin
+ * @author Wujun
  */
 public class UnsupportedAlgorithmException extends AuthenticationException {
 

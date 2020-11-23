@@ -9,7 +9,7 @@ import cn.springmvc.jpa.common.utils.Pagination;
 import cn.springmvc.jpa.entity.OpenSurvey;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface OpenSurveySolrRepository extends BaseSolrRepository<OpenSurveyDocument, String> {

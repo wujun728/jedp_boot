@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 /**
  * tcp server
  *
- * @author peiyu
+ * @author Wujun
  */
 public class NettyTCPServer extends AbstractNettyServer {
 

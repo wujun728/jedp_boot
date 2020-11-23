@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  * Server Info
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.23
  */
 public class FileInfo {

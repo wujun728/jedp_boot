@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 /**
  * 
- * @author Vincent.Wang
+ * @author Wujun
  *
  */
 public class CDDATAAdapter extends XmlAdapter<String, String> {

@@ -8,7 +8,7 @@ import org.springframework.scheduling.quartz.QuartzJobBean;
 /**
  * 非动态(固定的) JOB实现类. 配置有XML中
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public class TestFixedJobDetailBean extends QuartzJobBean {
 

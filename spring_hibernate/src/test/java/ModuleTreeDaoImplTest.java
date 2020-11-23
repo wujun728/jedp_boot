@@ -18,7 +18,7 @@ import com.ketayao.common.hibernate4.test.ModuleTree;
 
 /** 
  * 	
- * @author 	<a href="mailto:ketayao@gmail.com">ketayao</a>
+ * @author Wujun
  * Version  1.1.0
  * @since   2012-12-25 上午11:31:24 
  */

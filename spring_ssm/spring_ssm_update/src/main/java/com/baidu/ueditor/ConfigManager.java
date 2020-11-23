@@ -18,7 +18,7 @@ import com.baidu.ueditor.define.ActionMap;
 
 /**
  * 配置管理器
- * @author hancong03@baidu.com
+ * @author Wujun
  *
  */
 public final class ConfigManager {

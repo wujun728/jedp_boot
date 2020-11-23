@@ -16,7 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 /**
  * SessionManager 这里默认把session数据存储在redis的db1中
- * @author wuzy
+ * @author Wujun
  * 2017年1月2日 下午5:03:28
  */
 public class SessionManager extends DefaultWebSessionManager {

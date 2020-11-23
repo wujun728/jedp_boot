@@ -11,7 +11,7 @@ package org.csource.fastdfs;
 /**
  * load test class
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.11
  */
 public class TestLoad {
@@ -62,7 +62,7 @@ public class TestLoad {
   /**
    * discard file content callback class when download file
    *
-   * @author Happy Fish / YuQing
+   * @author Wujun
    * @version Version 1.0
    */
   public static class DownloadFileDiscard implements DownloadCallback {
@@ -77,7 +77,7 @@ public class TestLoad {
   /**
    * file uploader
    *
-   * @author Happy Fish / YuQing
+   * @author Wujun
    * @version Version 1.0
    */
   public static class Uploader {
@@ -117,7 +117,7 @@ public class TestLoad {
   /**
    * file downloader
    *
-   * @author Happy Fish / YuQing
+   * @author Wujun
    * @version Version 1.0
    */
   public static class Downloader {
@@ -152,7 +152,7 @@ public class TestLoad {
   /**
    * upload file thread
    *
-   * @author Happy Fish / YuQing
+   * @author Wujun
    * @version Version 1.0
    */
   public static class UploadThread extends Thread {
@@ -192,7 +192,7 @@ public class TestLoad {
   /**
    * download file thread
    *
-   * @author Happy Fish / YuQing
+   * @author Wujun
    * @version Version 1.0
    */
   public static class DownloadThread extends Thread {

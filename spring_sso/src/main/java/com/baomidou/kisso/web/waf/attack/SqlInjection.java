@@ -19,7 +19,7 @@ package com.baomidou.kisso.web.waf.attack;
  * SQL注入攻击
  * <p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-5-8
  */
 public class SqlInjection implements Istrip {

@@ -23,7 +23,7 @@ import cn.springmvc.jpa.service.UserService;
 import cn.springmvc.jpa.web.command.UserCommand;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Service

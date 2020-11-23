@@ -27,7 +27,7 @@ import java.net.UnknownHostException;
  * 获取IP地址类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-5-8
  */
 @Slf4j

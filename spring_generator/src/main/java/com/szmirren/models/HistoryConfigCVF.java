@@ -7,7 +7,7 @@ import javafx.scene.layout.HBox;
 /**
  * 配置文件设置项
  * 
- * @author Mirren
+ * @author Wujun
  *
  */
 public class HistoryConfigCVF {

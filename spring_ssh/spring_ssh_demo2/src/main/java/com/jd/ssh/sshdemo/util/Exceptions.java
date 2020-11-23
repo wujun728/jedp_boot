@@ -13,7 +13,7 @@ import java.io.StringWriter;
  * 
  * 参考了guava的Throwables。
  * 
- * @author calvin
+ * @author Wujun
  */
 public class Exceptions {
 

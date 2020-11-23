@@ -14,7 +14,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * 使用注解方式测试引擎
  *
- * @author henryyan
+ * @author Wujun
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext-test.xml")

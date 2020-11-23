@@ -50,7 +50,7 @@ import org.mybatis.generator.codegen.XmlConstants;
  * targetPackage and targetProject values on the sqlMapGenerator configuration
  * element.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class MapperConfigPlugin extends PluginAdapter {

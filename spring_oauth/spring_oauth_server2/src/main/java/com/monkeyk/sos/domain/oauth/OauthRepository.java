@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 处理 OAuth 相关业务的 Repository
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public interface OauthRepository extends Repository {
 

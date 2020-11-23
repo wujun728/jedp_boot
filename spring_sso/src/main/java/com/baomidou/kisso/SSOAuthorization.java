@@ -22,7 +22,7 @@ import com.baomidou.kisso.security.token.SSOToken;
  * SSO 权限授权接口
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-07-17
  */
 public interface SSOAuthorization {

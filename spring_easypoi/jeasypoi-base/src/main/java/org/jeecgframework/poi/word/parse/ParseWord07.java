@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 解析07版的Word,替换文字,生成表格,生成图片
  * 
- * @author JueYue
+ * @author Wujun
  * @date 2013-11-16
  * @version 1.0
  */
@@ -54,7 +54,7 @@ public class ParseWord07 {
 	/**
 	 * 添加图片
 	 * 
-	 * @Author JueYue
+	 * @author Wujun
 	 * @date 2013-11-20
 	 * @param obj
 	 * @param currentRun
@@ -77,7 +77,7 @@ public class ParseWord07 {
 	 * 根据条件改变值
 	 * 
 	 * @param map
-	 * @Author JueYue
+	 * @author Wujun
 	 * @date 2013-11-16
 	 */
 	private void changeValues(XWPFParagraph paragraph, XWPFRun currentRun, String currentText, List<Integer> runIndex, Map<String, Object> map) throws Exception {
@@ -98,7 +98,7 @@ public class ParseWord07 {
 	/**
 	 * 判断是不是迭代输出
 	 * 
-	 * @Author JueYue
+	 * @author Wujun
 	 * @date 2013-11-18
 	 * @return
 	 * @throws Exception
@@ -115,7 +115,7 @@ public class ParseWord07 {
 	/**
 	 * 解析所有的文本
 	 * 
-	 * @Author JueYue
+	 * @author Wujun
 	 * @date 2013-11-17
 	 * @param paragraphs
 	 * @param map
@@ -135,7 +135,7 @@ public class ParseWord07 {
 	/**
 	 * 解析这个段落
 	 * 
-	 * @Author JueYue
+	 * @author Wujun
 	 * @date 2013-11-16
 	 * @param paragraph
 	 * @param map
@@ -190,7 +190,7 @@ public class ParseWord07 {
 	/**
 	 * 解析这个表格
 	 * 
-	 * @Author JueYue
+	 * @author Wujun
 	 * @date 2013-11-17
 	 * @param table
 	 * @param map
@@ -223,7 +223,7 @@ public class ParseWord07 {
 	/**
 	 * 解析07版的Word并且进行赋值
 	 * 
-	 * @Author JueYue
+	 * @author Wujun
 	 * @date 2013-11-16
 	 * @return
 	 * @throws Exception
@@ -237,7 +237,7 @@ public class ParseWord07 {
 	/**
 	 * 解析07版的Word并且进行赋值
 	 * 
-	 * @Author JueYue
+	 * @author Wujun
 	 * @date 2013-11-16
 	 * @return
 	 * @throws Exception

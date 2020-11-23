@@ -19,7 +19,7 @@ import com.jun.plugin.vo.User;
 /**
  * 多视图解析器支持示例
  * 
- * @author huligong http://localhost:8080/view/demo/test1
+ * @author Wujun
  *         http://localhost:8080/view/demo/test2
  *         http://localhost:8080/view/demo/test3
  */

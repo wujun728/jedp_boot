@@ -7,7 +7,7 @@ import org.springframework.validation.Validator;
 import com.wx.web.command.NewsCommand;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class NewsValidator implements Validator {

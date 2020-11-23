@@ -36,7 +36,7 @@ import java.util.List;
  * SSO 单点登录服务抽象实现类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-12-03
  */
 @Slf4j

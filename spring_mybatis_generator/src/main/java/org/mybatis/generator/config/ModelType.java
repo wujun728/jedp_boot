@@ -20,7 +20,7 @@ import static org.mybatis.generator.internal.util.messages.Messages.getString;
 /**
  * Typesafe enum of different model types
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public enum ModelType {
     HIERARCHICAL("hierarchical"), //$NON-NLS-1$

@@ -20,7 +20,7 @@ import org.mybatis.generator.api.dom.java.JavaVisibility;
 import org.mybatis.generator.api.dom.java.Method;
 
 /**
- * @author Jeff Butler
+ * @author Wujun
  */
 public class SpringDAOTemplate extends AbstractDAOTemplate {
 

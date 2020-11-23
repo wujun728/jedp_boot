@@ -30,7 +30,7 @@ import java.security.spec.X509EncodedKeySpec;
  * EC 椭圆曲线密码
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2019-04-05
  */
 public class EC {

@@ -3,7 +3,7 @@ package com.andaily.springoauth.infrastructure.json;
 import net.sf.json.JsonConfig;
 
 /**
- * @author Shengzhao Li
+ * @author Wujun
  */
 
 public interface CustomJsonConfigurer {

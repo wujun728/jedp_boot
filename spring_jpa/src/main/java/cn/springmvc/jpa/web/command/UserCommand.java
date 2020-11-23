@@ -3,7 +3,7 @@ package cn.springmvc.jpa.web.command;
 import java.io.Serializable;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class UserCommand implements Serializable {

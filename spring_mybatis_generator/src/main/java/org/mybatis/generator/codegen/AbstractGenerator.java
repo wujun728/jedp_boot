@@ -23,7 +23,7 @@ import org.mybatis.generator.config.Context;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public abstract class AbstractGenerator {

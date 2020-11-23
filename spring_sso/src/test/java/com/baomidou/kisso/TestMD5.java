@@ -23,7 +23,7 @@ import com.baomidou.kisso.common.encrypt.MD5;
  * 测试 MD5加密工具类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-5-12
  */
 public class TestMD5 {

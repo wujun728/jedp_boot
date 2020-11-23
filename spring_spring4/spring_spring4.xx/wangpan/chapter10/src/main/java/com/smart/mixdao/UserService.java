@@ -9,7 +9,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Service;
 
 /**
- * @author 陈雄华
+ * @author Wujun
  * @version 1.0
  */
 @Service("userService")

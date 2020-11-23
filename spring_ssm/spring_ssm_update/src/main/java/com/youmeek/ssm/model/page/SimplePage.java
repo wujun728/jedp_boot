@@ -3,7 +3,7 @@ package com.youmeek.ssm.model.page;
 /**
  * 简单分页类
  * 
- * @author liufang
+ * @author Wujun
  * 
  */
 public class SimplePage implements Paginable {

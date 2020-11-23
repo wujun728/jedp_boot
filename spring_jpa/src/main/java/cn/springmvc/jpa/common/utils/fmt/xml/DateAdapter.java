@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 /**
  * 
- * @author Vincent.Wang
+ * @author Wujun
  *
  */
 public class DateAdapter extends XmlAdapter<Long, Date> {

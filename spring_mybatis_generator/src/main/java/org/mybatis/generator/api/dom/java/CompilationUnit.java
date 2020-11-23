@@ -22,7 +22,7 @@ import java.util.Set;
  * This interface describes methods common to all Java compilation units (Java
  * classes, interfaces, and enums).
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public interface CompilationUnit {
     

@@ -9,7 +9,7 @@ import java.util.Arrays;
 /**
  * 用户表单字段类型
  *
- * @author henryyan
+ * @author Wujun
  */
 public class UsersFormType extends AbstractFormType {
 

@@ -9,7 +9,7 @@ import com.jun.plugin.lucene.search.IndexHolder;
 
 /**
  * 测试索引过程
- * @author Winter Lau
+ * @author Wujun
  */
 public class LuceneTester {
 

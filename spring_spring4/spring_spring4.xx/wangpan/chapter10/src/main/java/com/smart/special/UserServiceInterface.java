@@ -6,7 +6,7 @@
 package com.smart.special;
 
 /**
- * @author 陈雄华
+ * @author Wujun
  * @version 1.0
  */
 public interface UserServiceInterface {

@@ -23,7 +23,7 @@ import org.junit.Test;
  * 	1.测试方法必须使用注解 org.JUnit4.Test 修饰。
 	2.测试方法必须使用 public void 修饰，而且不能带有任何参数。  
 	3.测试方法里面写断言方法。
- * @author 	<a href="mailto:ketayao@gmail.com">ketayao</a>
+ * @author Wujun
  * Version  1.1.0
  * @since   2012-12-5 下午4:25:41 
  */

@@ -1,7 +1,7 @@
 package cn.springmvc.mybatis.common.constants;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class Constants {

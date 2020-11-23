@@ -5,7 +5,7 @@ import java.util.List;
 import cn.springmvc.mybatis.entity.auth.Role;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface RoleService {

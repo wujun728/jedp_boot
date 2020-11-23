@@ -27,7 +27,7 @@ import com.baomidou.kisso.security.token.SSOToken;
  * SSO 单点登录服务
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-12-03
  */
 public interface IKissoService {

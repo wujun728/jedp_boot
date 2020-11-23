@@ -24,7 +24,7 @@ import java.io.Serializable;
  * JWT 访问票据
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-07-17
  */
 public class AccessToken implements Token, Serializable {

@@ -37,7 +37,7 @@ import java.math.BigDecimal;
  * Create Date: 2018/01/08
  * Description: Demo控制器
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 @Controller
 @RequestMapping("demo")

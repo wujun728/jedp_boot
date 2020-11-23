@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.wx.common.exception.BusinessException;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Controller

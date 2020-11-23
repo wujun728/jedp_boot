@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class NewsCommand implements Serializable {

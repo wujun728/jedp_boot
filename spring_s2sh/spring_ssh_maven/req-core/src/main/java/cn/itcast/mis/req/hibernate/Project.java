@@ -3,7 +3,7 @@ package cn.itcast.mis.req.hibernate;
 import java.io.Serializable;
 import java.util.Date;
 
-/** @author Hibernate CodeGenerator */
+/** @author Wujun
 public class Project implements Serializable {
 
     /** nullable persistent field */
@@ -84,7 +84,7 @@ public class Project implements Serializable {
     private Date finishReceivedDate;
     private Date acceptReceivedDate;
 
-    private Integer selfDoneFlag; //ÏúÊÛ×Ô²ÉÍê³É±êÖ¾
+    private Integer selfDoneFlag; //ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½É±ï¿½Ö¾
     
     public Project(Integer projectId, String projectName,
 			Boolean projectApprovestatus, Double yearreceivedAmount,

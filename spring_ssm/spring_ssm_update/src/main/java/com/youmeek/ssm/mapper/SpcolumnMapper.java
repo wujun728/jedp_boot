@@ -55,7 +55,7 @@ public interface SpcolumnMapper {
 
     /**
      * 获取所有一级标题
-     * @Author frank.fang
+     * @author Wujun
      * @Date 2016/5/5 9:41
      */
     List<Spcolumn> getAllSpCol();

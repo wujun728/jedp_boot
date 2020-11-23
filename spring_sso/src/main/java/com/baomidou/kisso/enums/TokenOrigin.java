@@ -20,7 +20,7 @@ package com.baomidou.kisso.enums;
  * Token 登录授权来源
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-08-07
  */
 public enum TokenOrigin {

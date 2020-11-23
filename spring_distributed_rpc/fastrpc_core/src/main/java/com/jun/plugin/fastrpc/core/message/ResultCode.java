@@ -3,7 +3,7 @@ package com.jun.plugin.fastrpc.core.message;
 /**
  * 消息返回码
  *
- * @author peiyu
+ * @author Wujun
  */
 public enum ResultCode {
 

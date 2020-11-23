@@ -11,7 +11,7 @@ package org.csource.fastdfs;
 /**
  * Download file callback interface
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.4
  */
 public interface DownloadCallback {

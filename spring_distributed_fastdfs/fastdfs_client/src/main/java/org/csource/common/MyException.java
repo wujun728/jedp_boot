@@ -11,7 +11,7 @@ package org.csource.common;
 /**
  * My Exception
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.0
  */
 public class MyException extends Exception {

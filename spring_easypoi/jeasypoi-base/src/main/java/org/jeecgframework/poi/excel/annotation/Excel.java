@@ -23,7 +23,7 @@ import java.lang.annotation.Target;
 /**
  * Excel 导出基本注释
  * 
- * @author JueYue
+ * @author Wujun
  * @date 2014年6月20日 下午10:25:12
  */
 @Retention(RetentionPolicy.RUNTIME)
@@ -167,7 +167,7 @@ public @interface Excel {
 	
 	/**
 	 * 值的替换是否支持替换多个(默认true,若数据库值本来就包含逗号则需要配置该值为false)
-	 * @author taoYan
+	 * @author Wujun
 	 * @since 2018年8月1日
 	 */
 	public boolean multiReplace() default true;

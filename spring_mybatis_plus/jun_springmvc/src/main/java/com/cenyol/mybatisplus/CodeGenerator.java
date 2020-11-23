@@ -18,7 +18,7 @@ import java.util.Properties;
 import java.util.Scanner;
 
 /**
- * @author Cenyol mail: mr.cenyol@gmail.com
+ * @author Wujun
  * @date 2019-09-23 15:28
  */
 @Slf4j

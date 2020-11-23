@@ -11,7 +11,7 @@ import com.jyl.util.ParamChecker;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年6月7日 上午9:38:19
  */
 public class DateFormatter {

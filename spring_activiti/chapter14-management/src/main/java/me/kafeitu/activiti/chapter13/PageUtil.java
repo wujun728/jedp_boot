@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 分页工具
  *
- * @author henryyan
+ * @author Wujun
  */
 public class PageUtil {
 

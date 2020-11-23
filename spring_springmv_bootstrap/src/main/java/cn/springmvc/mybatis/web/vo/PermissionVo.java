@@ -5,7 +5,7 @@ import java.util.List;
 import cn.springmvc.mybatis.entity.BaseEntity;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class PermissionVo implements BaseEntity<String> {

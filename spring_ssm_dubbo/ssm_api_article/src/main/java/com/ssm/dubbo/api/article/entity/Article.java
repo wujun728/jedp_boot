@@ -3,7 +3,7 @@ package com.ssm.dubbo.api.article.entity;
 import java.io.Serializable;
 
 /**
- * @author 13
+ * @author Wujun
  * @project_name ssm-dubbo
  * @date 2019-01-02
  */

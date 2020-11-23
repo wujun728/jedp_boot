@@ -19,7 +19,7 @@ import com.jyl.wechat.util.WechatUtil;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年7月29日 下午4:20:09
  */
 @Controller

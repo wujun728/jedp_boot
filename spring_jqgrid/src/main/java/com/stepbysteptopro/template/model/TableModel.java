@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * 
- * @author Aliaksei Yaustratsyeu 
+ * @author Wujun
  *
  */
 public class TableModel<T> {

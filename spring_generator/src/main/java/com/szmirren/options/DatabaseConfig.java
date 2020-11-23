@@ -3,7 +3,7 @@ package com.szmirren.options;
 /**
  * 数据库连接配置文件
  * 
- * @author Mirren
+ * @author Wujun
  *
  */
 public class DatabaseConfig {

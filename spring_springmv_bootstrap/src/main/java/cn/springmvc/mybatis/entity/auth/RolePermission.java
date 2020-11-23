@@ -3,7 +3,7 @@ package cn.springmvc.mybatis.entity.auth;
 import cn.springmvc.mybatis.entity.BaseEntity;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class RolePermission implements BaseEntity<String> {

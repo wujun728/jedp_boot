@@ -3,7 +3,7 @@ package cn.springmvc.jpa.common.utils.db;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class DynamicDataSource extends AbstractRoutingDataSource {

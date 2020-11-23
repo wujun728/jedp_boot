@@ -20,7 +20,7 @@ package com.baomidou.kisso.exception;
  * 未发现签名异常
  * </p>
  *
- * @author hubin
+ * @author Wujun
  */
 public class MissingSignatureException extends AuthenticationException {
 }

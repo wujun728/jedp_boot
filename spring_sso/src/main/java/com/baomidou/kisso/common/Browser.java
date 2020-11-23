@@ -24,7 +24,7 @@ import com.baomidou.kisso.common.encrypt.MD5;
  * 验证浏览器基本信息
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-08-05
  */
 public class Browser {

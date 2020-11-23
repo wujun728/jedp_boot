@@ -16,7 +16,7 @@ import redis.clients.jedis.JedisPoolConfig;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年7月6日 下午8:47:56
  */
 public class JedisService {

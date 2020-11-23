@@ -23,7 +23,7 @@ import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
 /**
  * The Class OutputUtilities.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class OutputUtilities {
     

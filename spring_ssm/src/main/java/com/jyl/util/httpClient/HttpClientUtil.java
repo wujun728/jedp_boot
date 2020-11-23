@@ -18,7 +18,7 @@ import org.apache.http.util.EntityUtils;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年8月3日 上午10:42:11
  */
 public class HttpClientUtil {

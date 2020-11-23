@@ -21,7 +21,7 @@ import java.util.Arrays;
 /**
  * protocol common functions
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.18
  */
 public class ProtoCommon {

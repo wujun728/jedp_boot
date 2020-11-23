@@ -23,7 +23,7 @@ import javax.servlet.http.HttpSession;
  * 图片验证码内容存储 Session 设置 1 分钟过期
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2018-08-11
  */
 public class CaptchaStoreSession implements ICaptchaStore {

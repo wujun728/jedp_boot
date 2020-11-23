@@ -21,7 +21,7 @@ import java.util.Arrays;
  * Note: the instance of this class is NOT thread safe !!!
  * if not necessary, do NOT set storage server instance
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.27
  */
 public class StorageClient {
@@ -1772,7 +1772,7 @@ public class StorageClient {
     /**
      * Upload file by file buff
      *
-     * @author Happy Fish / YuQing
+     * @author Wujun
      * @version Version 1.12
      */
     public static class UploadBuff implements UploadCallback {

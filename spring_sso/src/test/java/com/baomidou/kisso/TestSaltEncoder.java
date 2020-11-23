@@ -23,7 +23,7 @@ import com.baomidou.kisso.common.util.RandomUtil;
  * 测试盐值加密工具类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2016-01-20
  */
 public class TestSaltEncoder {

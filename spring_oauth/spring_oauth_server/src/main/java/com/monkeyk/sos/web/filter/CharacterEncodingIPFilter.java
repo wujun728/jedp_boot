@@ -16,7 +16,7 @@ import java.io.IOException;
  * <p/>
  * 设置字符编码并记录IP地址
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public class CharacterEncodingIPFilter extends CharacterEncodingFilter {
 

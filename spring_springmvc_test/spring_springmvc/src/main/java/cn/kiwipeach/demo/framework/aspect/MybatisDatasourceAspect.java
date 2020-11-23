@@ -31,7 +31,7 @@ import java.lang.reflect.Method;
  * Create Date: 2018/01/15
  * Description: 数据源自动切换切面类
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 @Component
 public class MybatisDatasourceAspect {

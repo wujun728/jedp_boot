@@ -20,7 +20,7 @@ package com.baomidou.kisso.captcha;
  * 图片验证码票据存储接口
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2018-08-11
  */
 public interface ICaptchaStore {

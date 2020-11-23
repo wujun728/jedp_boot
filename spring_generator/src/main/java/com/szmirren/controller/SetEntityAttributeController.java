@@ -46,7 +46,7 @@ import javafx.util.Callback;
 /**
  * 实体类属性控制器
  * 
- * @author <a href="http://szmirren.com">Mirren</a>
+ * @author Wujun
  *
  */
 public class SetEntityAttributeController extends BaseController {

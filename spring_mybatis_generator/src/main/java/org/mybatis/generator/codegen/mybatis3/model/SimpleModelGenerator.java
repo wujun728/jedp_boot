@@ -39,7 +39,7 @@ import org.mybatis.generator.codegen.RootClassInfo;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class SimpleModelGenerator extends AbstractJavaGenerator {

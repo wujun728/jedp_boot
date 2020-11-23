@@ -7,7 +7,7 @@ import net.spy.memcached.MemcachedClient;
 import org.springframework.stereotype.Component;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Component

@@ -21,7 +21,7 @@ import static org.mybatis.generator.internal.util.StringUtility.composeFullyQual
  * This class holds the actual catalog, schema, and table name returned from the
  * database introspection.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class ActualTableName {

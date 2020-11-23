@@ -1,7 +1,7 @@
 package com.wx.web.vo;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class Tag {

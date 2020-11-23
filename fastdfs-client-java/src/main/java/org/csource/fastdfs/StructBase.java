@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  * C struct body decoder
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.17
  */
 public abstract class StructBase {

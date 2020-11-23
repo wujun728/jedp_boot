@@ -2,7 +2,7 @@ package com.youmeek.ssm.pojo;
 
 /**
  * 事件实体类
- * @author frank.fang
+ * @author Wujun
  * date 16/4/20 15:08
  */
 public class Event extends AbstractMybatisEntity {

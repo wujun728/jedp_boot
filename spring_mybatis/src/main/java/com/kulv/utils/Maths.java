@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 /**
  * Double类型的相加，相减，相乘
  * 黄依蔓
- * @author huangyiman
+ * @author Wujun
  *
  */
 public class Maths {

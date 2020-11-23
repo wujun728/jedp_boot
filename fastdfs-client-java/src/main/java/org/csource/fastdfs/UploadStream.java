@@ -7,7 +7,7 @@ import java.io.OutputStream;
 /**
  * Upload file by stream
  *
- * @author zhouzezhong & Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.11
  */
 public class UploadStream implements UploadCallback {

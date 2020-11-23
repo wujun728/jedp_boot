@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * Storage client for 1 field file id: combined group name and filename
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.21
  */
 public class StorageClient1 extends StorageClient {

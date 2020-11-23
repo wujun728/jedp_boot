@@ -38,7 +38,7 @@ import org.mybatis.generator.codegen.mybatis3.xmlmapper.SimpleXMLMapperGenerator
 import org.mybatis.generator.config.PropertyRegistry;
 
 /**
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class SimpleJavaClientGenerator extends AbstractJavaClientGenerator {

@@ -9,7 +9,7 @@ import java.util.List;
 import com.jun.plugin.fastnetty.core.message.OutputMessage;
 
 /**
- * @author peiyu
+ * @author Wujun
  */
 public class DefaultMessageCodec extends ByteToMessageCodec<OutputMessage> {
 

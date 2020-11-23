@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年5月31日 上午11:07:53
  */
 public class UserList {

@@ -18,7 +18,7 @@ package org.mybatis.generator.internal.db;
 /**
  * Typesafe enum of known database dialects.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public enum DatabaseDialects {
 

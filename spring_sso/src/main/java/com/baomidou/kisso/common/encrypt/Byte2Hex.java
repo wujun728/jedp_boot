@@ -22,7 +22,7 @@ import java.util.Formatter;
  * 字节 16进制字串转换工具类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2016-01-20
  */
 public class Byte2Hex {

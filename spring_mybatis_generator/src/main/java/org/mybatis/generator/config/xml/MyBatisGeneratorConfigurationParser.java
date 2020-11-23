@@ -66,7 +66,7 @@ import org.w3c.dom.NodeList;
 /**
  * This class parses configuration files into the new Configuration API
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public class MyBatisGeneratorConfigurationParser {
     private Properties extraProperties;

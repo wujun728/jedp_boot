@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 /**
  * 定义抽象的 Domain父类, 将公共属性放于些
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public abstract class AbstractDomain implements Serializable {
 

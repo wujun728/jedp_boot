@@ -46,7 +46,7 @@ import org.mybatis.generator.internal.db.DatabaseIntrospector;
 /**
  * The Class Context.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class Context extends PropertyHolder {
     

@@ -8,7 +8,7 @@ import com.ketayao.learn.dao.DogDao;
 import com.ketayao.learn.entity.Dog;
 
 /** 
- * @author 	<a href="mailto:ketayao@gmail.com">ketayao</a>
+ * @author Wujun
  * @since   2013年12月5日 上午11:02:59 
  */
 @Repository

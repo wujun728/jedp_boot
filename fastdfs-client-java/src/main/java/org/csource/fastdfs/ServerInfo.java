@@ -15,7 +15,7 @@ import java.net.Socket;
 /**
  * Server Info
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.7
  */
 public class ServerInfo {

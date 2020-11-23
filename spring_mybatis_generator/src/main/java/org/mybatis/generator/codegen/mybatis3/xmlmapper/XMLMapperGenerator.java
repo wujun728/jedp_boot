@@ -46,7 +46,7 @@ import org.mybatis.generator.codegen.mybatis3.xmlmapper.elements.UpdateByPrimary
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class XMLMapperGenerator extends AbstractXmlGenerator {

@@ -16,7 +16,7 @@ import org.apache.commons.dbcp.BasicDataSource;
 import com.smart.User;
 
 /**
- * @author 陈雄华
+ * @author Wujun
  * @version 1.0
  */
 @Service("hiberService")

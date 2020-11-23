@@ -15,7 +15,7 @@ import com.puff.storage.Storage;
 
 /**
  * HttpSession实现
- * @author dongchao
+ * @author Wujun
  */
 @SuppressWarnings("deprecation")
 public class DistributedSession implements HttpSession {

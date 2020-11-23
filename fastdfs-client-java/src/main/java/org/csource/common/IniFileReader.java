@@ -15,7 +15,7 @@ import java.util.Hashtable;
 /**
  * ini file reader / parser
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.0
  */
 public class IniFileReader {

@@ -3,7 +3,7 @@ package com.szmirren.options;
 /**
  * 配置信息
  * 
- * @author Mirren
+ * @author Wujun
  *
  */
 public class HistoryConfig {

@@ -27,7 +27,7 @@ import org.apache.commons.logging.LogFactory;
 		</java>
 	</target>
 	
- * @author Winter Lau
+ * @author Wujun
  */
 public class IndexUpdater {
 

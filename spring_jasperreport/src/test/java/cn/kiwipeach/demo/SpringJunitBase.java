@@ -26,7 +26,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Create Date: 2018/01/08
  * Description: Spring测试单元基类
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({

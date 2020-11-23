@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * 登陆验证过滤器
  *
- * @author qingyi xuelongqy@foxmail.com
+ * @author Wujun
  * @version V1.0
  * @ClassName: LoginFilter
  * @Package cn.qingyi.Filter

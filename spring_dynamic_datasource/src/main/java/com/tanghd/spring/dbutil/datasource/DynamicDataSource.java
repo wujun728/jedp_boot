@@ -24,7 +24,7 @@ import com.tanghd.spring.dbutil.health.SlaveDataSourceHealthChecker;
  * 继承{@link org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource}
  * 配置主从数据源后，根据选择，返回对应的数据源。多个从库的情况下，会平均的分配从库，用于负载均衡。
  * 
- * @author tanghd
+ * @author Wujun
  *
  */
 public class DynamicDataSource extends AbstractRoutingDataSource {

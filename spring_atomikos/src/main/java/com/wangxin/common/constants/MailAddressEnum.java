@@ -7,7 +7,7 @@ import com.wangxin.common.properties.ConstantProperties;
 
 /**
  * @Description 收件配置，RPT_MAIL_ADDRESS_T.MAIL_TYPE对应的值
- * @author 王鑫
+ * @author Wujun
  * @date Apr 25, 2017 9:39:46 AM
  */
 public enum MailAddressEnum {

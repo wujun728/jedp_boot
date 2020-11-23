@@ -4,7 +4,7 @@ import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.ExecutionListener;
 
 /**
- * @author henryyan
+ * @author Wujun
  */
 public class HandleErrorInfoForPaymentListener implements ExecutionListener {
 

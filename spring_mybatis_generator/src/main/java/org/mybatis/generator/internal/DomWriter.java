@@ -38,8 +38,8 @@ import org.w3c.dom.Text;
  * is very much based on the class dom.Writer from the Apache Xerces examples,
  * but I've simplified and updated it.
  * 
- * @author Andy Clark, IBM (Original work)
- * @author Jeff Butler (derivation)
+ * @author Wujun
+ * @author Wujun
  */
 public class DomWriter {
     

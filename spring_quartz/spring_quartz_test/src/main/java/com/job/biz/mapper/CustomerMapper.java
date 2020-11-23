@@ -5,7 +5,7 @@ import com.job.biz.model.Customer;
 /**
  * 用户Mapper
  * 
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface CustomerMapper extends BaseMapper<Integer, Customer> {

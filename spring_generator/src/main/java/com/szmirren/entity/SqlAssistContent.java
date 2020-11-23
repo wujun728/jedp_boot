@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * SqlAssist的实体类
  * 
- * @author <a href="http://szmirren.com">Mirren</a>
+ * @author Wujun
  *
  */
 public class SqlAssistContent {

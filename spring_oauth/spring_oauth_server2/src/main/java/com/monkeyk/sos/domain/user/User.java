@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 定义用户
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public class User extends AbstractDomain {
 

@@ -18,7 +18,7 @@ package org.jeecgframework.poi.excel.entity.params;
 /**
  * Excel 校验对象
  * 
- * @author JueYue
+ * @author Wujun
  * @date 2014年6月29日 下午4:24:59
  */
 public class ExcelVerifyEntity {

@@ -28,7 +28,7 @@ import com.baomidou.kisso.web.waf.WafHelper;
  * Request请求过滤包装
  * <p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-5-8
  */
 public class WafRequestWrapper extends HttpServletRequestWrapper {

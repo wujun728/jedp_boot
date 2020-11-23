@@ -22,7 +22,7 @@ import cn.springmvc.jpa.repository.OpenSurveyRepository;
 import cn.springmvc.jpa.service.OpenSurveyService;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Service

@@ -23,7 +23,7 @@ import java.util.List;
  * BeanCopy ExcelException 属于自定义数据，属于可自定义依赖
  * 工具类尽可能还是需要减少对其他java的包的依赖
  *
- * @author wenxuan.wang
+ * @author Wujun
  */
 public class ExcelUtil {
     /**

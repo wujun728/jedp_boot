@@ -32,7 +32,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 /**
  * RPC服务端实现
  *
- * @author peiyu
+ * @author Wujun
  */
 public final class FastRpcServer implements IServer {
 

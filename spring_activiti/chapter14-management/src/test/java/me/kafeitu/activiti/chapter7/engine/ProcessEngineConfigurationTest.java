@@ -22,7 +22,7 @@ import static org.junit.Assert.assertNotNull;
  */
 
 /**
- * @author henryyan
+ * @author Wujun
  */
 public class ProcessEngineConfigurationTest {
 

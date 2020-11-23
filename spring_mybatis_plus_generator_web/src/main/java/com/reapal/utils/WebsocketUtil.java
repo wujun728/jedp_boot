@@ -6,7 +6,7 @@ import java.net.InetSocketAddress;
 import javax.websocket.RemoteEndpoint.Async;
 
 /**
- * @author jack-cooper
+ * @author Wujun
  * @version 1.0.0
  * @ClassName WebsocketUtil.java
  * @Description websocket工具类

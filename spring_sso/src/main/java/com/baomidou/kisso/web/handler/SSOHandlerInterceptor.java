@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  * SSO Handler 拦截器接口
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-12-19
  */
 public interface SSOHandlerInterceptor {

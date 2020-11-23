@@ -17,7 +17,7 @@ import com.jyl.util.randomCode.RandomCodeUtils;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年7月13日 上午10:27:51
  */
 public class ValidateCodeAuthenticationFilter extends UsernamePasswordAuthenticationFilter {

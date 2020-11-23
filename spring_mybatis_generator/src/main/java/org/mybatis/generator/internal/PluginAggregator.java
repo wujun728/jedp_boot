@@ -41,7 +41,7 @@ import org.mybatis.generator.config.Context;
  * This class does not follow the normal plugin lifecycle and should not be
  * subclassed by clients.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public final class PluginAggregator implements Plugin {

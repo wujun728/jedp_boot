@@ -30,7 +30,7 @@ import com.baomidou.kisso.common.SSOConstants;
  * HmacSHA256 算法
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2018-08-05
  */
 public class HmacSHA256 {

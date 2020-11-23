@@ -6,7 +6,7 @@ import com.andaily.springoauth.service.dto.UserDto;
 /**
  * 15-5-18
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public class UserDtoResponseHandler extends AbstractResponseHandler<UserDto> {
 

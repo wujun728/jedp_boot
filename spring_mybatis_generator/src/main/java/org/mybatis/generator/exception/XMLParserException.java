@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * The Class XMLParserException.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class XMLParserException extends Exception {
 

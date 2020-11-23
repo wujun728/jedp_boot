@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 /**
  * LoginInterceptor类的描述
  *
- * @author qingyi xuelongqy@foxmail.com
+ * @author Wujun
  * @version V1.0
  * @ClassName: LoginInterceptor
  * @Package cn.qingyi.Interceptor

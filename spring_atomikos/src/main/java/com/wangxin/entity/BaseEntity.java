@@ -7,7 +7,7 @@ import com.wangxin.common.constants.Constants;
 
 /** 
  * @Description 实体类基类
- * @author 王鑫 
+ * @author Wujun
  * @date Apr 25, 2017 10:39:24 AM  
  */
 public class BaseEntity implements Serializable {

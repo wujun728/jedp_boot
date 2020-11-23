@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 /**
  * Web层辅助类
  * 
- * @author ShenHuaJie
+ * @author Wujun
  * @version 2016年4月2日 下午4:19:28
  */
 public class WebUtil {

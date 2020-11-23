@@ -154,7 +154,7 @@ import java.util.Vector;
  * by Karl von Randow. Released as 1.9.</li>
  * </ul>
  * 
- * @author Marco Schmidt
+ * @author Wujun
  */
 @SuppressWarnings("unchecked")
 public class ImageInfo {

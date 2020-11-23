@@ -1,7 +1,7 @@
 package cn.springmvc.common.constants;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class Constants {

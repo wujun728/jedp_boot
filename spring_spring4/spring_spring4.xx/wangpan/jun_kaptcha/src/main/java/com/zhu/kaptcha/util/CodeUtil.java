@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 处理验证码
  * 接收前端输入的验证码传给后台验证是否正确
- * @author zhu
+ * @author Wujun
  *
  */
 public class CodeUtil {

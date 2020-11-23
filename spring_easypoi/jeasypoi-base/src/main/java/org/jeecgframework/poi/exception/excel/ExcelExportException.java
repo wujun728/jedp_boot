@@ -20,7 +20,7 @@ import org.jeecgframework.poi.exception.excel.enums.ExcelExportEnum;
 /**
  * 导出异常
  * 
- * @author JueYue
+ * @author Wujun
  * @date 2014年6月19日 下午10:56:18
  */
 public class ExcelExportException extends RuntimeException {

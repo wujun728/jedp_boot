@@ -21,7 +21,7 @@ import java.util.concurrent.TimeoutException;
  * 前4字节表示本次报文长度
  * 根据此长度,读取剩余的数据报文
  *
- * @author peiyu
+ * @author Wujun
  */
 public class FastChannel implements IChannel {
 

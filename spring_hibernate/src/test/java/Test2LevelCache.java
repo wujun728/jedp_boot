@@ -25,7 +25,7 @@ import com.ketayao.learn.hibernate.test.HibernateUtil;
 
 /**
  * 
- * @author <a href="mailto:ketayao@gmail.com">ketayao</a> Version 1.1.0
+ * @author Wujun
  * @since 2012-9-5 上午11:36:58
  */
 public class Test2LevelCache {

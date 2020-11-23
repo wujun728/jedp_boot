@@ -26,7 +26,7 @@ import org.mybatis.generator.exception.ShellException;
 /**
  * The Class DefaultShellCallback.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class DefaultShellCallback implements ShellCallback {
     

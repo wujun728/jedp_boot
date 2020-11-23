@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * data 工具类
- * @author wuzy
+ * @author Wujun
  * 2017年1月2日 下午12:44:23
  */
 public class DataUtil {

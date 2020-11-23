@@ -6,7 +6,7 @@ import org.activiti.engine.delegate.JavaDelegate;
 import org.activiti.engine.runtime.Job;
 
 /**
- * @author henryyan
+ * @author Wujun
  */
 public class JobExecuteFailExecutor implements JavaDelegate {
 

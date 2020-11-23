@@ -16,7 +16,7 @@ import org.mvel2.MVEL;
 
 /**
  *
- * @author johns
+ * @author Wujun
  */
 public class MvelTest {
 

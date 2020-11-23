@@ -11,7 +11,7 @@ import com.tanghd.spring.dbutil.datasource.DynamicDataSource;
 /**
  * 有{@link com.tanghd.spring.dbutil.aop.DataSourceChange}注解的方法，调用时会切换到指定的数据源
  * 
- * @author tanghd
+ * @author Wujun
  *
  */
 public class DataSourceAdvisor implements MethodBeforeAdvice, AfterReturningAdvice, ThrowsAdvice {

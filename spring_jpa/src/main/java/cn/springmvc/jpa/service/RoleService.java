@@ -6,7 +6,7 @@ import cn.springmvc.jpa.entity.Role;
 import cn.springmvc.jpa.entity.User;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface RoleService {

@@ -17,7 +17,7 @@ package org.mybatis.generator.logging;
 
 /**
  * 
- * @author Clinton Begin
+ * @author Wujun
  */
 public interface Log {
 

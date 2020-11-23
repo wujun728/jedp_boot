@@ -8,7 +8,7 @@ import com.ipeony.ssm.entity.User;
 /**
  * 
  * 功能描述： 数据管理统一接口
- * @author 作者 13071472
+ * @author Wujun
  * @version 1.0.0
  * @date 2013年11月6日 下午6:31:20
  */

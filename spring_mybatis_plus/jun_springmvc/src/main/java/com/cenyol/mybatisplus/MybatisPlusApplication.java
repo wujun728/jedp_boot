@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Date;
 
 /**
- * @author Cenyol mail: mr.cenyol@gmail.com
+ * @author Wujun
  */
 @Controller
 @SpringBootApplication

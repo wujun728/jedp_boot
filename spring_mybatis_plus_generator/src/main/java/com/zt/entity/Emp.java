@@ -11,7 +11,7 @@ import java.io.Serializable;
  * 
  * </p>
  *
- * @author CDHong
+ * @author Wujun
  * @since 2018-04-06
  */
 public class Emp extends Model<Emp> {

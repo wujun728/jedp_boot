@@ -23,7 +23,7 @@ import com.baomidou.kisso.security.token.SSOToken;
  * 用户不自定义权限，默认用此类来代替
  * </p>
  *
- * @author 441558032@qq.com
+ * @author Wujun
  * @since 2016-12-15
  */
 public class AuthDefaultImpl implements SSOAuthorization {

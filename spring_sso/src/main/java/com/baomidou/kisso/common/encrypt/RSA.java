@@ -54,7 +54,7 @@ import com.baomidou.kisso.common.util.Base64Util;
  * 非对称加密算法可以用来对对称加密的密钥加密，这样保证密钥的安全也就保证了数据的安全
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-6-17
  */
 public class RSA {

@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  * Create Date: 2017/11/01
  * Description: 员工管理相关接口服务
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 public interface EmployService {
     /**

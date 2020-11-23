@@ -40,7 +40,7 @@ import org.mybatis.generator.codegen.mybatis3.javamapper.elements.sqlprovider.Pr
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class SqlProviderGenerator extends AbstractJavaGenerator {

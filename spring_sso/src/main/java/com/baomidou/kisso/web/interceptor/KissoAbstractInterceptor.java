@@ -24,7 +24,7 @@ import com.baomidou.kisso.web.handler.SSOHandlerInterceptor;
  * kisso 拦截器接口
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-12-23
  */
 public abstract class KissoAbstractInterceptor {

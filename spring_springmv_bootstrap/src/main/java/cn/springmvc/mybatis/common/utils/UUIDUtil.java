@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class UUIDUtil {

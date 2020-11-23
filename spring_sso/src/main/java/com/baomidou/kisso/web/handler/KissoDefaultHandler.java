@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
  * SSO 默认拦截处理器，自定义 Handler 可继承该类。
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-12-19
  */
 public class KissoDefaultHandler implements SSOHandlerInterceptor {

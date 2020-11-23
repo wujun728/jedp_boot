@@ -22,7 +22,7 @@ import com.stepbysteptopro.template.service.UserService;
 /**
  * Controller are getting users for users list page.
  * 
- * @author Aliaksei Yaustratsyeu 
+ * @author Wujun
  */
 @Controller
 @RequestMapping("/users")

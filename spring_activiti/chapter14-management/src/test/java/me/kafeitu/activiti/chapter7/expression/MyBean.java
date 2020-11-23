@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * 自定义的Bean对象
  *
- * @author henryyan
+ * @author Wujun
  */
 class MyBean implements Serializable {
 

@@ -18,7 +18,7 @@ package org.mybatis.generator.config;
 /**
  * This class holds constants useful in the XML and Java merging operations.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class MergeConstants {

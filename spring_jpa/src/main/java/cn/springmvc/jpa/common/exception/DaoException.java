@@ -1,7 +1,7 @@
 package cn.springmvc.jpa.common.exception;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class DaoException extends RuntimeException {

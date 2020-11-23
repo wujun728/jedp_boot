@@ -20,7 +20,7 @@ import org.mybatis.generator.api.dom.OutputUtilities;
 /**
  * The Class TextElement.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class TextElement extends Element {
     

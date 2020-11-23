@@ -11,7 +11,7 @@ package org.csource.common;
 /**
  * name(key) and value pair model
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.0
  */
 public class NameValuePair {

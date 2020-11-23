@@ -36,7 +36,7 @@ import cn.springmvc.jpa.service.UserService;
 import cn.springmvc.jpa.web.util.MenuUtil;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class AuthorizingRealmImpl extends AuthorizingRealm {

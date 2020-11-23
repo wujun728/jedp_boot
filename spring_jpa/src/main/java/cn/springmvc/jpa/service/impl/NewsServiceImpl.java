@@ -12,7 +12,7 @@ import cn.springmvc.jpa.repository.NewsRepository;
 import cn.springmvc.jpa.service.NewsService;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Service

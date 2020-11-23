@@ -19,7 +19,7 @@ package com.baomidou.kisso.web.waf.attack;
  * 攻击过滤父类
  * <p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-12-08
  */
 public interface Istrip {

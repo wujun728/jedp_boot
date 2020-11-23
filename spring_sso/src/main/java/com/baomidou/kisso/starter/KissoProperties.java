@@ -25,7 +25,7 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
  * Spring boot starter 启动配置
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-07-18
  */
 @ConfigurationProperties(prefix = "kisso")

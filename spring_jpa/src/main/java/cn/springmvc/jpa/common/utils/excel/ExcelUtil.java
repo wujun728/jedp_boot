@@ -13,7 +13,7 @@ import cn.springmvc.jpa.common.exception.BusinessException;
 /**
  * Excel工具类
  * 
- * @author Vincent.wang
+ * @author Wujun
  * 
  */
 public class ExcelUtil {

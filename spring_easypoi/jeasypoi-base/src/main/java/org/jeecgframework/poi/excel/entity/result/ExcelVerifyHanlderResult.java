@@ -18,7 +18,7 @@ package org.jeecgframework.poi.excel.entity.result;
 /**
  * Excel导入处理返回结果
  * 
- * @author JueYue
+ * @author Wujun
  * @date 2014年6月23日 下午11:03:29
  */
 public class ExcelVerifyHanlderResult {

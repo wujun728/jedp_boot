@@ -15,7 +15,7 @@ import org.apache.shiro.session.mgt.eis.SessionDAO;
 import org.apache.shiro.session.mgt.eis.SessionIdGenerator;
 /**
  * Redis SessionDao
- * @author wuzy
+ * @author Wujun
  * 2017年1月2日 下午5:23:03
  */
 public class RedisSessionDao implements SessionDAO {

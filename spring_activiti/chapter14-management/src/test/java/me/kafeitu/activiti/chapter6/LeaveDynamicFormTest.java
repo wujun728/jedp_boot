@@ -25,7 +25,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * 动态表单请假流程单元测试
  *
- * @author henryyan
+ * @author Wujun
  */
 public class LeaveDynamicFormTest extends AbstractTest {
 

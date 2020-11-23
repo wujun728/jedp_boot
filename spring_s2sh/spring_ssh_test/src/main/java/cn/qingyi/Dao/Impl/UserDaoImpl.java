@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * 用户持久类
  *
- * @author qingyi xuelongqy@foxmail.com
+ * @author Wujun
  * @Title: UserDaoImpl类
  * @Description: 用户持久类
  * @version: V1.0
@@ -39,7 +39,7 @@ public class UserDaoImpl implements UserDao {
      * @return the boolean
      * @Title: login方法
      * @Description: 用户登录验证
-     * @author qingyi xuelongqy@foxmail.com
+     * @author Wujun
      * @date 2017 -03-15 14:55:16
      */
     @Override

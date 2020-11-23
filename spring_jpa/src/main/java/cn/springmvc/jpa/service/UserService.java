@@ -7,7 +7,7 @@ import cn.springmvc.jpa.entity.User;
 import cn.springmvc.jpa.web.command.UserCommand;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface UserService {
@@ -31,7 +31,7 @@ public interface UserService {
      *            临时用户对象
      * @param usr
      *            当前用户
-     * @author wangxin
+     * @author Wujun
      */
     public void updatePassword(UserCommand userCommand, User user);
 

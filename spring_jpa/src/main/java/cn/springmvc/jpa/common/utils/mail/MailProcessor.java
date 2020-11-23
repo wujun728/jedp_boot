@@ -7,7 +7,7 @@ import cn.springmvc.jpa.common.exception.BusinessException;
 /**
  * 邮件工具类，传几个必要参数可直接发送邮件
  * 
- * @author Vincent.wang
+ * @author Wujun
  * 
  */
 public class MailProcessor {

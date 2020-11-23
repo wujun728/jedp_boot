@@ -32,7 +32,7 @@ import java.util.TreeMap;
  * MD5加密工具类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-5-9
  */
 @Slf4j

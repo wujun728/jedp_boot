@@ -18,7 +18,7 @@ import java.io.IOException;
  * Note: the instance of this class is NOT thread safe !!!
  *       if not necessary, do NOT set storage server instance
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.27
  */
 public class StorageClient1 extends StorageClient {

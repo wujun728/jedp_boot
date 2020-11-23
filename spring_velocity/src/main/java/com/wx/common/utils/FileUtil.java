@@ -14,7 +14,7 @@ import com.wx.common.exception.BusinessException;
 /**
  * 文件操作工具类
  * 
- * @author Vincent.wang
+ * @author Wujun
  */
 public class FileUtil {
 

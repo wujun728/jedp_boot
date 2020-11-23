@@ -45,7 +45,7 @@ import org.mybatis.generator.api.dom.java.TopLevelClass;
  * on fields it knows about. Anything you add, or fields in a super class will
  * not be factored into the hash code.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class EqualsHashCodePlugin extends PluginAdapter {

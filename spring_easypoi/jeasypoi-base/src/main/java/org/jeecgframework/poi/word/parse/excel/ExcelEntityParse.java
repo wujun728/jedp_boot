@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 解析实体类对象 复用注解
  * 
- * @author JueYue
+ * @author Wujun
  * @date 2014年8月9日 下午10:30:57
  */
 public class ExcelEntityParse extends ExportBase {

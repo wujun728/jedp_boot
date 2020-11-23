@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author jack-cooper
+ * @author Wujun
  * @version 1.0.0
  * @ClassName Speak.java
  * @Description 聊天对象

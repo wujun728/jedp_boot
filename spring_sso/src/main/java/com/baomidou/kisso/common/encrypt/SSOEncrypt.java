@@ -20,7 +20,7 @@ package com.baomidou.kisso.common.encrypt;
  * SSO 对称加密接口
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-5-9
  */
 public interface SSOEncrypt {

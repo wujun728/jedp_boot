@@ -28,7 +28,7 @@ import org.mybatis.generator.internal.util.StringUtility;
  * the methods and objects to create, and certain attributes related to those
  * objects.
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public abstract class BaseRules implements Rules {
 

@@ -7,7 +7,7 @@ import com.szmirren.common.StrUtil;
 /**
  * 实体类的上下文
  * 
- * @author <a href="http://szmirren.com">Mirren</a>
+ * @author Wujun
  *
  */
 public class EntityContent {

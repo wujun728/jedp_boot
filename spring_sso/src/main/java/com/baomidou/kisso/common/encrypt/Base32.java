@@ -31,8 +31,8 @@ import com.baomidou.kisso.exception.KissoException;
  * decode to the same byte array.
  * </p>
  *
- * @author sweis@google.com (Steve Weis)
- * @author Neal Gafter
+ * @author Wujun
+ * @author Wujun
  */
 public class Base32 {
 

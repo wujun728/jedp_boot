@@ -15,7 +15,7 @@ import java.net.Socket;
 /**
  * Tracker server group
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.17
  */
 public class TrackerGroup {

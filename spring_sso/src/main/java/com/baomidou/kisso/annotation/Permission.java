@@ -26,7 +26,7 @@ import java.lang.annotation.Target;
  * kisso 权限注解
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2016-03-07
  */
 @Target(ElementType.METHOD)

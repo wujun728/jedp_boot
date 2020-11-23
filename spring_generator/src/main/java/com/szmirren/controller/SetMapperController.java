@@ -40,7 +40,7 @@ import javafx.util.Callback;
 /**
  * Assist属性的配置文件
  * 
- * @author <a href="http://szmirren.com">Mirren</a>
+ * @author Wujun
  *
  */
 public class SetMapperController extends BaseController {

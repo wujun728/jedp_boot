@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * @author frank.fang
+ * @author Wujun
  *         date 2016/5/5.
  */
 @Service
@@ -49,7 +49,7 @@ public class EditorServiceImpl implements EditorService {
 
     /**
      * 存储文件并返回路径
-     * @Author frank.fang
+     * @author Wujun
      * @Date 2016/5/5 14:46
      */
     @Override

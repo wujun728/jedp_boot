@@ -21,7 +21,7 @@ package com.baomidou.kisso.captcha;
  * http://tool.c7sky.com/webcolor/
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2018-08-13
  */
 public interface ColorType {

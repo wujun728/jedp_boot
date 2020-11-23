@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Cell 取值服务 判断类型处理数据 1.判断Excel中的类型 2.根据replace替换值 3.handler处理数据 4.判断返回类型转化数据返回
  * 
- * @author JueYue
+ * @author Wujun
  * @date 2014年6月26日 下午10:42:28
  */
 public class CellValueServer {
@@ -87,7 +87,7 @@ public class CellValueServer {
 	/**
 	 * 获取日期类型数据
 	 * 
-	 * @Author JueYue
+	 * @author Wujun
 	 * @date 2013年11月26日
 	 * @param entity
 	 * @param value
@@ -254,7 +254,7 @@ public class CellValueServer {
 	 * @param replace 数据库中字典查询出来的数组
 	 * @param result excel单元格获取的值
 	 * @param multiReplace 是否支持多值替换
-	 * @author taoYan
+	 * @author Wujun
 	 * @since 2018年8月7日
 	 */
 	private Object replaceValue(String[] replace, Object result,boolean multiReplace) {

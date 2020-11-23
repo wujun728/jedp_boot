@@ -32,7 +32,7 @@ import com.baomidou.kisso.common.util.StringUtils;
  * Google TOTP 算法
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2018-08-05
  */
 public class TOTP {

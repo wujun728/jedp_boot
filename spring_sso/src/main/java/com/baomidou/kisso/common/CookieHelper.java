@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletResponse;
  * 注意：在cookie的名或值中不能使用分号（;）、逗号（,）、等号（=）以及空格
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-5-8
  */
 @Slf4j

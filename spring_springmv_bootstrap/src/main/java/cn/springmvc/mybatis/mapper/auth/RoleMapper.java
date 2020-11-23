@@ -6,7 +6,7 @@ import cn.springmvc.mybatis.entity.auth.Role;
 import cn.springmvc.mybatis.mapper.BaseMapper;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface RoleMapper extends BaseMapper<String, Role> {

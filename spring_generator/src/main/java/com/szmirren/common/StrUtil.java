@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * 字符串工具
  * 
- * @author Mirren
+ * @author Wujun
  *
  */
 public class StrUtil {

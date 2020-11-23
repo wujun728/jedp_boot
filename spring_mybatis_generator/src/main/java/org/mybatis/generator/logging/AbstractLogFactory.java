@@ -18,7 +18,7 @@ package org.mybatis.generator.logging;
 /**
  * Defines the interface for creating Log implementations.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public interface AbstractLogFactory {

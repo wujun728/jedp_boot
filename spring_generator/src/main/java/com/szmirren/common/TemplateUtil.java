@@ -20,7 +20,7 @@ import com.szmirren.view.AlertUtil;
 /**
  * 模板工具
  * 
- * @author Mirren
+ * @author Wujun
  *
  */
 public class TemplateUtil {

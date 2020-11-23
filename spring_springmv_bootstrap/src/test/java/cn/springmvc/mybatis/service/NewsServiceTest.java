@@ -16,7 +16,7 @@ import cn.springmvc.mybatis.entity.simple.News;
 import cn.springmvc.mybatis.service.simple.NewsService;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  *         production为生产环境，development为测试环境
  */

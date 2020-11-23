@@ -11,7 +11,7 @@ package com.myschool.mima.bean;
  * <p>Description:</p>
  * <p>Copyright: Copyright (c) 2014 2014-12-17 上午9:25:25</p>
  * <p>Company: 8637.com</p>
- * @author 鲍建明
+ * @author Wujun
  * @version 1.0
  */
 public class AbstractMessage

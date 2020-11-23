@@ -31,7 +31,7 @@ import org.mybatis.generator.codegen.mybatis3.javamapper.elements.UpdateByPrimar
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public class AnnotatedUpdateByPrimaryKeyWithoutBLOBsMethodGenerator extends
     UpdateByPrimaryKeyWithoutBLOBsMethodGenerator {

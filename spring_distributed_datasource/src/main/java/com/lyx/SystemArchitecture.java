@@ -6,7 +6,7 @@ import org.aspectj.lang.annotation.Pointcut;
 /**
  * 在这里只定义pointcut
  *
- * @author Lenovo
+ * @author Wujun
  */
 @Aspect
 public class SystemArchitecture {

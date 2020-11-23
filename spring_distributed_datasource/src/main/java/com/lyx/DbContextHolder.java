@@ -1,7 +1,7 @@
 package com.lyx;
 
 /**
- * @author Lenovo
+ * @author Wujun
  */
 public class DbContextHolder {
     // 利用ThreadLocal解决线程安全问题

@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * Entity: Leave
  *
- * @author HenryYan
+ * @author Wujun
  */
 @Entity
 @Table(name = "LEAVE")

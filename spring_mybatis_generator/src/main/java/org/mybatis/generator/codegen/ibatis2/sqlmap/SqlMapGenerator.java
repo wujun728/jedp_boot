@@ -46,7 +46,7 @@ import org.mybatis.generator.codegen.ibatis2.sqlmap.elements.UpdateByPrimaryKeyW
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class SqlMapGenerator extends AbstractXmlGenerator {

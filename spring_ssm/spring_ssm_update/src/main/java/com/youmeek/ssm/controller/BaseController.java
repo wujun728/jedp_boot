@@ -15,7 +15,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 
 /**
- * @author frank.fang
+ * @author Wujun
  * date 2016/4/27.
  */
 public class BaseController {

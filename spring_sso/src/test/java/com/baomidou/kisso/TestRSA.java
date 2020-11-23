@@ -27,7 +27,7 @@ import com.baomidou.kisso.common.util.Base64Util;
  * 测试RSA
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-6-17
  */
 public class TestRSA {

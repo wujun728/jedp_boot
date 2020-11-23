@@ -24,7 +24,7 @@ import com.baomidou.kisso.common.SSOConstants;
  * 提供基于 PKCS7 算法的加解密
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-01-09
  */
 public class PKCS7Encoder {

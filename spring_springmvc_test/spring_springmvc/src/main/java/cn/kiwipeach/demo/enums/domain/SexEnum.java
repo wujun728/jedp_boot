@@ -19,7 +19,7 @@ package cn.kiwipeach.demo.enums.domain;
  * Create Date: 2018/01/16
  * Description: 性别枚举类
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 public enum  SexEnum {
     MAN,WOMAN;

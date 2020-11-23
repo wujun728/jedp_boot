@@ -41,7 +41,7 @@ import com.google.common.collect.Lists;
 /**
  * 当行读取数据
  * 
- * @author JueYue
+ * @author Wujun
  * @param <T>
  * @date 2015年1月1日 下午7:59:39
  */

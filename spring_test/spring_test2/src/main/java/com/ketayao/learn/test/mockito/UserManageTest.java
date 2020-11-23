@@ -31,7 +31,7 @@ import org.mockito.stubbing.Answer;
 
 /** 
  * 使用注解
- * @author 	<a href="mailto:ketayao@gmail.com">ketayao</a>
+ * @author Wujun
  * Version  1.1.0
  * @since   2012-12-6 上午11:06:41 
  */

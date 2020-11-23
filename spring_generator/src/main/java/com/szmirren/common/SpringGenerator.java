@@ -2,7 +2,7 @@ package com.szmirren.common;
 /**
  * SpringGenerator相关属性的常量
  * 
- * @author <a href="http://szmirren.com">Mirren</a>
+ * @author Wujun
  *
  */
 public interface SpringGenerator {

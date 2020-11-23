@@ -41,7 +41,7 @@ import com.baomidou.kisso.exception.UnparsableSignatureException;
  * 签名
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2019-04-05
  */
 public class Signature {

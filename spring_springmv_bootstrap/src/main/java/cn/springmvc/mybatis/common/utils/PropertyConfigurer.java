@@ -12,7 +12,7 @@ import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 /**
  * Property工具类
  * 
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class PropertyConfigurer extends PropertyPlaceholderConfigurer {

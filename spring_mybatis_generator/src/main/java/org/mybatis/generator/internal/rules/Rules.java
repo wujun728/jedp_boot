@@ -23,7 +23,7 @@ import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
  * including the methods and objects to create, and certain attributes related
  * to those objects.
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public interface Rules {
 

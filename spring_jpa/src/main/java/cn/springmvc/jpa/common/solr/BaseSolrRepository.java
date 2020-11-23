@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface BaseSolrRepository<T, PK extends Serializable> extends BaseCommonRepository<T, PK> {

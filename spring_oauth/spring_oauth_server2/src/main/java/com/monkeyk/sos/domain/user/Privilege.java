@@ -3,7 +3,7 @@ package com.monkeyk.sos.domain.user;
 /**
  * 用户权限
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public enum Privilege {
 

@@ -14,7 +14,7 @@ import org.apache.mina.filter.keepalive.KeepAliveMessageFactory;
  * <p>Description:</p>
  * <p>Copyright: Copyright (c) 2014 2014-12-16 上午9:13:14</p>
  * <p>Company: 8637.com</p>
- * @author 鲍建明
+ * @author Wujun
  * @version 1.0
  */
 public class KeepAliveMessageFactoryImpl implements KeepAliveMessageFactory 
@@ -26,7 +26,7 @@ public class KeepAliveMessageFactoryImpl implements KeepAliveMessageFactory
     
 	/**
      * @see 返回给客户端的心跳包数据 return 返回结果才是客户端收到的心跳包数据
-     * @author Herman.Xiong
+     * @author Wujun
      */
     public Object getRequest(IoSession session) {
     	//此处发送给客户端的心跳数据包
@@ -35,7 +35,7 @@ public class KeepAliveMessageFactoryImpl implements KeepAliveMessageFactory
 
     /**
      * @see 接受到的客户端数据包
-     * @author Herman.Xiong
+     * @author Wujun
      */
     public Object getResponse(IoSession session, Object request) {
         return request;
@@ -43,7 +43,7 @@ public class KeepAliveMessageFactoryImpl implements KeepAliveMessageFactory
 
     /**
      * @see 判断是否是客户端发送来的的心跳包此判断影响 KeepAliveRequestTimeoutHandler实现类判断是否心跳包发送超时
-     * @author Herman.Xiong
+     * @author Wujun
      */
     public boolean isRequest(IoSession session, Object message) {
         if(message.equals(HEARTBEATRESPONSE)){
@@ -55,7 +55,7 @@ public class KeepAliveMessageFactoryImpl implements KeepAliveMessageFactory
 
     /**
      * @see  判断发送信息是否是心跳数据包此判断影响 KeepAliveRequestTimeoutHandler实现类 判断是否心跳包发送超时
-     * @author Herman.Xiong
+     * @author Wujun
      */
     public boolean isResponse(IoSession session, Object message) {
         if(message.equals(HEARTBEATREQUEST)){

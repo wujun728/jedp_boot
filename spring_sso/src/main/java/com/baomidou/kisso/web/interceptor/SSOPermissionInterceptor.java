@@ -35,7 +35,7 @@ import java.lang.reflect.Method;
  * kisso 权限拦截器（必须在 kisso 拦截器之后执行）
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2016-04-03
  */
 @Slf4j

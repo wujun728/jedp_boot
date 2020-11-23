@@ -23,7 +23,7 @@ import org.mybatis.generator.config.GeneratedKey;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public class AnnotatedInsertSelectiveMethodGenerator extends
     InsertSelectiveMethodGenerator {

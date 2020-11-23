@@ -58,28 +58,28 @@ public interface EventDetailMapper {
 
     /**
      * 根据消防员id和事件id获取所有事件详情
-     * @Author frank.fang
+     * @author Wujun
      * @Date 2016/4/25 17:17
      */
     List<EventDetail> getEventDetailByManAndEventId(@Param("firemanId") Integer firemanId, @Param("eventId") Integer eventId);
 
     /**
      * 根据事件id获取所有事件详情
-     * @Author frank.fang
+     * @author Wujun
      * @Date 2016/4/25 17:35
      */
     List<EventDetail> getEventDetailByEventId(@Param("eventId") Integer eventId);
 
     /**
      *
-     * @Author frank.fang
+     * @author Wujun
      * @Date 2016/4/28 17:07
      */
     Page<EventDetail> listEventDetail();
 
     /**
      *
-     * @Author frank.fang
+     * @author Wujun
      * @Date 2016/5/3 9:54
      */
     void delByIdList(@Param("idList") List<String> idList);

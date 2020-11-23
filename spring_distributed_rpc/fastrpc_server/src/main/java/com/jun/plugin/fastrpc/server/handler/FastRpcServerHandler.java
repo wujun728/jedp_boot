@@ -3,7 +3,7 @@ package com.jun.plugin.fastrpc.server.handler;
 import com.jun.plugin.fastrpc.core.channel.IChannel;
 
 /**
- * @author peiyu
+ * @author Wujun
  */
 public class FastRpcServerHandler implements IRpcServerHandler {
 

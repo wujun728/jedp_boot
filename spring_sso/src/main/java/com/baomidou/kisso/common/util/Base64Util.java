@@ -27,7 +27,7 @@ import com.baomidou.kisso.common.encrypt.base64.UrlBase64;
  * 依赖bcprov-jdk14-1.48.jar
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-6-17
  */
 public class Base64Util {

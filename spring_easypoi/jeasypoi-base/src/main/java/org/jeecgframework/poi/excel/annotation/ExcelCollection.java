@@ -24,7 +24,7 @@ import java.util.ArrayList;
 /**
  * 导出的集合
  * 
- * @author JueYue 2013年8月24日
+ * @author Wujun
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)

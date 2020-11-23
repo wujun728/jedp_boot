@@ -32,7 +32,7 @@ import org.mybatis.generator.internal.util.StringUtility;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public class JavaTypeResolverDefaultImpl implements JavaTypeResolver {
 

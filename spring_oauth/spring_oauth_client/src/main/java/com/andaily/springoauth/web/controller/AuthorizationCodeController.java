@@ -21,7 +21,7 @@ import java.util.UUID;
 /**
  * Handle 'authorization_code'  type actions
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 @Controller
 public class AuthorizationCodeController {

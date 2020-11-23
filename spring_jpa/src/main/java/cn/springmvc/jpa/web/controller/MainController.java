@@ -20,7 +20,7 @@ import cn.springmvc.jpa.web.command.UserCommand;
 import cn.springmvc.jpa.web.util.WebUtil;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Controller

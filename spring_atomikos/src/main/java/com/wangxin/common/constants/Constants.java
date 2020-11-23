@@ -5,7 +5,7 @@ import java.util.Map;
 
 /** 
  * @Description 常量类
- * @author 王鑫 
+ * @author Wujun
  * @date Apr 24, 2017 12:53:11 PM  
  */
 public class Constants {

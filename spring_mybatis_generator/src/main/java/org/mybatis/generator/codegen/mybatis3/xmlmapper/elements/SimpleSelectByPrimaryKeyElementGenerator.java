@@ -27,7 +27,7 @@ import org.mybatis.generator.codegen.mybatis3.MyBatis3FormattingUtilities;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class SimpleSelectByPrimaryKeyElementGenerator extends

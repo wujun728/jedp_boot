@@ -23,7 +23,7 @@ import io.jsonwebtoken.Jws;
  * JWT 刷新票据
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-07-17
  */
 public class RefreshToken implements Token {

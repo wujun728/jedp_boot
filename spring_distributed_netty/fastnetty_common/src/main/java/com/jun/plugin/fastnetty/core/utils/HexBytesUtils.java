@@ -1,7 +1,7 @@
 package com.jun.plugin.fastnetty.core.utils;
 
 /**
- * @author peiyu
+ * @author Wujun
  */
 public final class HexBytesUtils {
 

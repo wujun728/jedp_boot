@@ -5,7 +5,7 @@ import org.apache.shiro.cache.CacheException;
 
 /**
  * 缓存管理
- * @author wuzy
+ * @author Wujun
  * 2017年1月17日 下午10:20:49
  */
 public class YCacheManager implements org.apache.shiro.cache.CacheManager{

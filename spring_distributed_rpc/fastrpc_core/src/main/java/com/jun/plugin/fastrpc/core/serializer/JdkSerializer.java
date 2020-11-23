@@ -7,7 +7,7 @@ import com.jun.plugin.fastrpc.core.message.IMessage;
 /**
  * jdk默认的序列化
  *
- * @author peiyu
+ * @author Wujun
  */
 public class JdkSerializer implements ISerializer {
 

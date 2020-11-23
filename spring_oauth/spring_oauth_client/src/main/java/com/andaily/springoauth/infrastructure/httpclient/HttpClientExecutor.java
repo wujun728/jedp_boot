@@ -23,7 +23,7 @@ import java.util.*;
  * Wrapper HttpClient operations
  * Default request method: GET
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public class HttpClientExecutor {
 

@@ -28,7 +28,7 @@ import org.mybatis.generator.api.dom.java.TopLevelClass;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class ProviderDeleteByExampleMethodGenerator extends

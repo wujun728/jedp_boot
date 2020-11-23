@@ -28,7 +28,7 @@ import java.util.Map;
  * Create Date: 2018/01/25
  * Description: 自定义视图
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 public class CustomView implements View {
     @Override

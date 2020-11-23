@@ -15,7 +15,7 @@ import com.jyl.util.thread.ThreadPoolService;
 
 /**
  * 
- * @author Long
+ * @author Wujun
  *
  */
 class ThreadPool {

@@ -1,7 +1,7 @@
 package cn.springmvc.mybatis.web.vo;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class PageFile {

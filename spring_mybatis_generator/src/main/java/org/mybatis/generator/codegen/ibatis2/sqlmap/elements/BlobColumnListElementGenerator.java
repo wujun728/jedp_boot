@@ -25,7 +25,7 @@ import org.mybatis.generator.codegen.ibatis2.Ibatis2FormattingUtilities;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class BlobColumnListElementGenerator extends AbstractXmlElementGenerator {

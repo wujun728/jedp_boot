@@ -14,7 +14,7 @@ import java.io.OutputStream;
 /**
  * upload file callback interface
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.0
  */
 public interface UploadCallback {

@@ -9,7 +9,7 @@ import com.zandili.demo.drools.test.BaseTest;
 /**
  * 演示高尔夫推理题
  * 
- * @author airfey
+ * @author Wujun
  * 
  */
 public class GolferTest extends BaseTest {

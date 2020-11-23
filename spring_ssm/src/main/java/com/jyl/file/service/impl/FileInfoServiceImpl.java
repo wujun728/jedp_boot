@@ -20,7 +20,7 @@ import com.jyl.file.util.FileManagerException;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年6月1日 下午5:10:54
  */
 @Service

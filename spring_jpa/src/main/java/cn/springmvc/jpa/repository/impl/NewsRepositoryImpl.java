@@ -12,7 +12,7 @@ import cn.springmvc.jpa.repository.BaseRepository;
 import cn.springmvc.jpa.repository.NewsRepository;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Repository

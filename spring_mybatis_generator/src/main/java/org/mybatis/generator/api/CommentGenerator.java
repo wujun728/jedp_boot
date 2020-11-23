@@ -29,7 +29,7 @@ import org.mybatis.generator.api.dom.xml.XmlElement;
  * Implementations of this interface are used to generate comments for the
  * various artifacts.
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public interface CommentGenerator {
 

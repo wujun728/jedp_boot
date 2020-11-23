@@ -20,7 +20,7 @@ package com.baomidou.kisso.exception;
  * SSO 异常
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-5-9
  */
 public class KissoException extends RuntimeException {

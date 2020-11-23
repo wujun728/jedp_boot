@@ -15,7 +15,7 @@ import com.wx.mapper.simple.NewsMapper;
 import com.wx.service.simple.NewsService;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Service

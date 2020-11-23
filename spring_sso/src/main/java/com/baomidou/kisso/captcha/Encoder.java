@@ -23,7 +23,7 @@ import java.io.OutputStream;
  * Gif 编码器
  * </p>
  *
- * @author unknown
+ * @author Wujun
  * @since 2018-08-11
  */
 public class Encoder {

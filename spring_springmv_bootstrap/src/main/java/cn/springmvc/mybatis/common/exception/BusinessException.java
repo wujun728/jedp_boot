@@ -1,7 +1,7 @@
 package cn.springmvc.mybatis.common.exception;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class BusinessException extends RuntimeException {

@@ -22,7 +22,7 @@ import org.mybatis.generator.codegen.mybatis3.javamapper.elements.CountByExample
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public class AnnotatedCountByExampleMethodGenerator extends
     CountByExampleMethodGenerator {

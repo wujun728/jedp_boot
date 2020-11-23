@@ -48,11 +48,11 @@ import java.util.*;
  * <p>A cache aspect is serializable if its {@code CacheManager} and
  * {@code CacheOperationSource} are serializable.
  *
- * @author Costin Leau
- * @author Juergen Hoeller
- * @author Chris Beams
- * @author Phillip Webb
- * @author Sam Brannen
+ * @author Wujun
+ * @author Wujun
+ * @author Wujun
+ * @author Wujun
+ * @author Wujun
  * @since 3.1
  */
 public abstract class CacheAspectSupport implements InitializingBean {

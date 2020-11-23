@@ -20,7 +20,7 @@ package com.baomidou.kisso.exception;
  * 认证异常
  * </p>
  *
- * @author hubin
+ * @author Wujun
  */
 public class AuthenticationException extends KissoException {
 

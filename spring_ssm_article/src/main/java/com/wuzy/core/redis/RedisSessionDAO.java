@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * RedisSessionDAO 操作
- * @author wuzy
+ * @author Wujun
  * 2016年12月18日 下午8:50:31
  */
 public class RedisSessionDAO extends AbstractSessionDAO{

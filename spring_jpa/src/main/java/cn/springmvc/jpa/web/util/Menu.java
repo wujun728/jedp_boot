@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class Menu {

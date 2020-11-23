@@ -16,7 +16,7 @@ import com.jd.ssh.sshdemo.service.BaseService;
  * 版权所有 2013 qshihua。
  * ----------------------------------------------------------------------------
  * 
- * @author qshihua
+ * @author Wujun
  * 
  * @version 0.1 2013-01-06
  */

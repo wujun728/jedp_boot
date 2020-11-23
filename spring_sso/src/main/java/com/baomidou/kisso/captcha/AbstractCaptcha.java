@@ -33,7 +33,7 @@ import lombok.experimental.Accessors;
  * 验证码抽象类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2018-08-11
  */
 @Data

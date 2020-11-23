@@ -21,7 +21,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * @author henryyan
+ * @author Wujun
  */
 public class LeaveFormKeyTest extends AbstractTest {
 

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @Desc: jpa 保存数据库链接信息
- * @author jackcooper
+ * @author Wujun
  */
 @Repository
 public interface TableStrategyConfigDao extends JpaRepository<TableStrategyConfig, Long> {

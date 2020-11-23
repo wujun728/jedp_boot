@@ -12,7 +12,7 @@ import org.apache.shiro.cache.Cache;
 import org.apache.shiro.util.CollectionUtils;
 /**
  * Redis-shiro-Cache
- * @author wuzy
+ * @author Wujun
  * 2016年12月18日 下午9:42:42
  */
 import org.slf4j.Logger;

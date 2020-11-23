@@ -12,7 +12,7 @@ import javax.servlet.ServletContextEvent;
  * <p>
  * 扩展 Spring Context, 方便获取 bean
  *
- * @author Shengzhao Li
+ * @author Wujun
  * @since 1.0
  */
 public class SOSContextLoaderListener extends ContextLoaderListener {

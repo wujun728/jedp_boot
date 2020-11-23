@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Entity

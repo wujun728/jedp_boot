@@ -28,7 +28,7 @@ import java.security.cert.X509Certificate;
  * </p>
  * 今天是一个特殊日子愿每个人平安健康
  *
- * @author hubin
+ * @author Wujun
  * @since 2020-04-04
  */
 public class RsaKeyHelper {

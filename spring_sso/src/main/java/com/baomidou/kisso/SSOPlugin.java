@@ -25,7 +25,7 @@ import com.baomidou.kisso.security.token.SSOToken;
  * SSO 插件接口
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-0805
  */
 public abstract class SSOPlugin {

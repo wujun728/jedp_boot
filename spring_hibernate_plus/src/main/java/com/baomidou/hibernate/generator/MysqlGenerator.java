@@ -28,7 +28,7 @@ import com.baomidou.hibernateplus.generator.config.rules.NamingStrategy;
  * 代码生成器演示
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @date 2016-12-01
  */
 public class MysqlGenerator {

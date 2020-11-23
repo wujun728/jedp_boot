@@ -11,7 +11,7 @@ import java.util.*;
 
 /**
  * 缓存实现
- * @author wuzy
+ * @author Wujun
  * 2017年1月17日 下午10:20:21
  */
 public class YCache<K, V> implements org.apache.shiro.cache.Cache<K, V> {

@@ -16,7 +16,7 @@ import java.util.Arrays;
 /**
  * Tracker client
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.19
  */
 public class TrackerClient {

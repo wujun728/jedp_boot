@@ -27,7 +27,7 @@ import org.mybatis.generator.codegen.mybatis3.javamapper.elements.SelectByExampl
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public class AnnotatedSelectByExampleWithoutBLOBsMethodGenerator extends
     SelectByExampleWithoutBLOBsMethodGenerator {

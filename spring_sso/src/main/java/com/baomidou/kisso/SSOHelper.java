@@ -28,7 +28,7 @@ import java.io.IOException;
  * SSO 帮助类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2016-01-21
  */
 public class SSOHelper {

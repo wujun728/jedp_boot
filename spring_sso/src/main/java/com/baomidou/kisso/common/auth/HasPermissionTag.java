@@ -32,7 +32,7 @@ import com.baomidou.kisso.security.token.SSOToken;
  * <kisso:hasPermission name="需要验证的内容">判断内容<kisso:hasPermission><br>
  * </p>
  *
- * @author 441558032@qq.com
+ * @author Wujun
  * @since 2016-12-15
  */
 public class HasPermissionTag extends BodyTagSupport {

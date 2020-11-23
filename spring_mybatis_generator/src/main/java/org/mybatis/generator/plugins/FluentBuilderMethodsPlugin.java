@@ -35,7 +35,7 @@ import java.util.List;
  * The plugin will create the additional Method <code>public MyDomainClass withValue(Object v)</code>
  *
  *
- * @author Stefan Lack
+ * @author Wujun
  */
 public class FluentBuilderMethodsPlugin extends  PluginAdapter {
 

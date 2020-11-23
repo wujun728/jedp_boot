@@ -27,7 +27,7 @@ import java.io.IOException;
  * Waf防火墙过滤器
  * <p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-5-8
  */
 @Slf4j

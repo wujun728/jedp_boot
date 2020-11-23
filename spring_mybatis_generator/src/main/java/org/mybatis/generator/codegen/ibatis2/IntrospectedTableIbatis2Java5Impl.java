@@ -17,7 +17,7 @@ package org.mybatis.generator.codegen.ibatis2;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class IntrospectedTableIbatis2Java5Impl extends

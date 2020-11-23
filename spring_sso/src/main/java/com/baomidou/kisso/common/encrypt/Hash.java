@@ -27,7 +27,7 @@ import com.baomidou.kisso.exception.KissoException;
  * HASH 算法类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-5-9
  */
 public class Hash {

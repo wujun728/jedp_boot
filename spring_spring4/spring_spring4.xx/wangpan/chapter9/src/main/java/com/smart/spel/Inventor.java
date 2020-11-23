@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * @author : linkx(topiter@163.com)
+ * @author Wujun
  * @date: 2015/8/1
  */
 public class Inventor {

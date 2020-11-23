@@ -33,7 +33,7 @@ import org.mybatis.generator.codegen.mybatis3.ListUtilities;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class ProviderInsertSelectiveMethodGenerator extends

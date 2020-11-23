@@ -50,7 +50,7 @@ import org.mybatis.generator.internal.XmlFileMergerJaxp;
  * <li>Call one of the generate() methods</li>
  * </ol>
  *
- * @author Jeff Butler
+ * @author Wujun
  * @see org.mybatis.generator.config.xml.ConfigurationParser
  */
 public class MyBatisGenerator {

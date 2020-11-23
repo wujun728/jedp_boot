@@ -4,7 +4,7 @@ import cn.springmvc.mybatis.entity.simple.ImportExcel;
 import cn.springmvc.mybatis.mapper.BaseMapper;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface ImportExcelMapper extends BaseMapper<String, ImportExcel> {

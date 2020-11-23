@@ -13,7 +13,7 @@ import cn.springmvc.mybatis.entity.auth.User;
 import cn.springmvc.mybatis.security.Principal;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class WebUtil {

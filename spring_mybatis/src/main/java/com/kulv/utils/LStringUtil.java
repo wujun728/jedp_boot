@@ -6,7 +6,7 @@ import java.util.Random;
  * 
  * 常用的字符处理类：例如获取随机数
  * 
- * @author dds
+ * @author Wujun
  * 
  */
 public class LStringUtil {

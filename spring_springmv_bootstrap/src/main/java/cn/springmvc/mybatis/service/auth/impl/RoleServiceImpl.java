@@ -19,7 +19,7 @@ import cn.springmvc.mybatis.mapper.auth.RolePermissionMapper;
 import cn.springmvc.mybatis.service.auth.RoleService;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Service

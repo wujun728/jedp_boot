@@ -5,7 +5,7 @@ import java.lang.annotation.*;
 /**
  * ${DESCRIPTION}
  *
- * @author liuburu
+ * @author Wujun
  * @create 2018/01/18
  **/
 @Target({ElementType.PARAMETER})

@@ -23,7 +23,7 @@ import java.util.List;
  * Create Date: 2018/01/16
  * Description: 统一分页返回实体
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 public class Pageable<T> extends BaseResponse {
     /**

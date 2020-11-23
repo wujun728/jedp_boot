@@ -23,7 +23,7 @@ import java.util.List;
 import static org.testng.Assert.*;
 
 /*
-  * @author Shengzhao Li
+  * @author Wujun
   */
 public class OauthRepositoryJdbcTest extends AbstractRepositoryTest {
 

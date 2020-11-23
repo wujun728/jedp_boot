@@ -20,7 +20,7 @@ package com.baomidou.kisso.exception;
  * AES 异常
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-01-09
  */
 public class AESException extends Exception {

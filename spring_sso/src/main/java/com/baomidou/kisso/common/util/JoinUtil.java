@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  * 字符串 JoinUtil 工具类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2019-04-05
  */
 public class JoinUtil {

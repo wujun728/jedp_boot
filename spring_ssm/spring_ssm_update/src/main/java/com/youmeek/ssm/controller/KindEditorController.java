@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author frank.fang
+ * @author Wujun
  *         date 2016/5/4.
  */
 @Controller

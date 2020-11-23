@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * 处理用户, 账号, 安全相关业务
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 @Service("userService")
 public class UserServiceImpl implements UserService {

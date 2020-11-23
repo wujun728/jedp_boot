@@ -7,7 +7,7 @@ import com.sun.xml.internal.bind.marshaller.CharacterEscapeHandler;
 
 /**
  * 
- * @author Vincent.Wang
+ * @author Wujun
  *
  */
 @SuppressWarnings("restriction")

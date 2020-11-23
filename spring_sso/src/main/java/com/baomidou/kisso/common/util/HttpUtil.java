@@ -30,7 +30,7 @@ import java.util.Map;
  * HTTP工具类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-07-17
  */
 @Slf4j

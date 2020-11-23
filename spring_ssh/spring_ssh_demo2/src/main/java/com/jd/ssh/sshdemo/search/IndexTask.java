@@ -2,7 +2,7 @@ package com.jd.ssh.sshdemo.search;
 
 /**
  * 索引更新操作
- * @author Winter Lau
+ * @author Wujun
  */
 public interface IndexTask {
 

@@ -35,7 +35,7 @@ import java.util.List;
  * Create Date: 2018/01/14
  * Description: 测试多数据源,特别提醒：Mapper不要从SpringJunit中获取，否则多数据源自动切换功能不生效，将会使用默认数据源进行操作
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 public class MulityDatasourceTestCase {
 

@@ -10,7 +10,7 @@ import com.jyl.system.user.model.User;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年6月7日 上午10:34:12
  */
 public class SecurityUtils {

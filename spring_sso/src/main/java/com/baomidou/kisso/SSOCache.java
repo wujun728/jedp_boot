@@ -22,7 +22,7 @@ import com.baomidou.kisso.security.token.SSOToken;
  * SSO 缓存接口
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-11-03
  */
 public interface SSOCache {

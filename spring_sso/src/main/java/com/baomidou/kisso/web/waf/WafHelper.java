@@ -22,7 +22,7 @@ import com.baomidou.kisso.web.waf.attack.XSS;
  * Web防火墙工具类
  * <p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-5-8
  */
 public class WafHelper {

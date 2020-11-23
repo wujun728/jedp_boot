@@ -22,7 +22,7 @@ import org.mybatis.generator.api.IntrospectedTable;
  * conditional model. In this model we do not generate primary key or record
  * with BLOBs classes if the class would only hold one field.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class ConditionalModelRules extends BaseRules {

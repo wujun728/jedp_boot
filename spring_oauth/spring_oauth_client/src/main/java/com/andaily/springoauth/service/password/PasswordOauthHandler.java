@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
  * How to use?
  * Please see unit-test <code>PasswordOauthHandlerTest</code>
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public class PasswordOauthHandler {
 

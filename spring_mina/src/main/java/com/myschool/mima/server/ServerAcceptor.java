@@ -36,7 +36,7 @@ import com.myschool.mima.keepAlive.KeepAliveRequestTimeoutHandlerImpl;
  * <p>Description:</p>
  * <p>Copyright: Copyright (c) 2014 2014-12-16 上午11:22:44</p>
  * <p>Company: 8637.com</p>
- * @author 鲍建明
+ * @author Wujun
  * @version 1.0
  */
 public class ServerAcceptor

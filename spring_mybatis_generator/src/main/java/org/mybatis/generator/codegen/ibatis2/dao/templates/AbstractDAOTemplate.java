@@ -31,7 +31,7 @@ import org.mybatis.generator.api.dom.java.Parameter;
  * configureXXX methods to specify the unique properties of the desired DAO
  * objects.
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public abstract class AbstractDAOTemplate {
     

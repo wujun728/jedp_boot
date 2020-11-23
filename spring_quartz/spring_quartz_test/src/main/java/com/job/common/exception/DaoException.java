@@ -1,7 +1,7 @@
 package com.job.common.exception;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class DaoException extends RuntimeException {

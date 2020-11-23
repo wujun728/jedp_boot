@@ -36,7 +36,7 @@ import com.myschool.mima.bean.Message;
  * </p>
  * <p>Copyright: Copyright (c) 2014 2014-12-12 上午11:55:10</p>
  * <p>Company: 8637.com</p>
- * @author 鲍建明
+ * @author Wujun
  * @version 1.0
  */
 public class ServerHandler extends IoHandlerAdapter

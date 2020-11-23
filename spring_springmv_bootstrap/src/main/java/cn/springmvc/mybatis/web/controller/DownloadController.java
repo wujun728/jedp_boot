@@ -26,7 +26,7 @@ import cn.springmvc.mybatis.common.utils.FileUtil;
 import cn.springmvc.mybatis.common.utils.ZipUtil;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Controller

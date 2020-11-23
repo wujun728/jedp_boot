@@ -12,7 +12,7 @@ import spring_mvc.validator.Inf.Between;
 
 /**
  * 自定义校验
- * @author Administrator
+ * @author Wujun
  *
  */
 public class BetweenImpl implements ConstraintValidator<Between, Date> {

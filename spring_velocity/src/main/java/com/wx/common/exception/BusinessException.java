@@ -1,7 +1,7 @@
 package com.wx.common.exception;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class BusinessException extends RuntimeException {

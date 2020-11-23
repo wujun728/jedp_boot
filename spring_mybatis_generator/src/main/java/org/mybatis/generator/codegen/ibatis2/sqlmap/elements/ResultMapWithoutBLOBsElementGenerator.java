@@ -26,7 +26,7 @@ import org.mybatis.generator.config.PropertyRegistry;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class ResultMapWithoutBLOBsElementGenerator extends

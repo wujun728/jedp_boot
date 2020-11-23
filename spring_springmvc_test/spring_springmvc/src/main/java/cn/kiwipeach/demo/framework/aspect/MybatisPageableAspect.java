@@ -34,7 +34,7 @@ import java.util.List;
  * Create Date: 2018/01/17
  * Description: Mybatis自动分页切面
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 @Component
 public class MybatisPageableAspect {

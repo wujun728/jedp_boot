@@ -21,7 +21,7 @@ import org.apache.poi.ss.formula.functions.T;
 
 /**
  * 导出Excel
- * @author Administrator
+ * @author Wujun
  *
  */
 public class ExportExcel<T> {

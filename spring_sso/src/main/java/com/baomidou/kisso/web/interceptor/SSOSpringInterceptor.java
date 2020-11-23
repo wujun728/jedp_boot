@@ -37,7 +37,7 @@ import java.lang.reflect.Method;
  * kisso spring 拦截器，Controller 方法调用前处理。
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-11-10
  */
 @Slf4j

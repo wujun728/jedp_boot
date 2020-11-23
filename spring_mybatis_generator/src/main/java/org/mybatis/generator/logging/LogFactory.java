@@ -23,7 +23,7 @@ import org.mybatis.generator.internal.ObjectFactory;
  * Factory for creating loggers. Uses runtime introspection to determine the
  * AbstractLogFactory implementation.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class LogFactory {

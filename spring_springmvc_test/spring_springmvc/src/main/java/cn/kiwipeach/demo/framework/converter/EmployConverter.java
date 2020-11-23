@@ -25,7 +25,7 @@ import java.math.BigDecimal;
  * Create Date: 2018/01/18
  * Description: 定义分页参数转换器:目的是将把前台字符串参数转化到Pageable中去
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 final public class EmployConverter implements Converter<String, Employ> {
 

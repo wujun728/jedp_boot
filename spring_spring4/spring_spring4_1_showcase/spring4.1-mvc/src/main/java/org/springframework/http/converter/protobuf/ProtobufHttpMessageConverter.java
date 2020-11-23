@@ -52,8 +52,8 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * <p>Tested against Protobuf version 2.5.0.
  *
- * @author Alex Antonov
- * @author Brian Clozel
+ * @author Wujun
+ * @author Wujun
  * @since 4.1
  */
 public class ProtobufHttpMessageConverter extends AbstractHttpMessageConverter<Message> {

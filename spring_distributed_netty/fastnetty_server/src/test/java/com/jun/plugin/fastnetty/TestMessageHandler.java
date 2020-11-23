@@ -7,7 +7,7 @@ import com.jun.plugin.fastnetty.handler.MessageHandler;
 import com.jun.plugin.fastnetty.handler.MessageSender;
 
 /**
- * @author peiyu
+ * @author Wujun
  */
 public class TestMessageHandler implements MessageHandler {
 

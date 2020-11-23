@@ -1,7 +1,7 @@
 package com.jun.plugin.fastrpc.client;
 
 /**
- * @author peiyu
+ * @author Wujun
  */
 public interface ITestService {
 

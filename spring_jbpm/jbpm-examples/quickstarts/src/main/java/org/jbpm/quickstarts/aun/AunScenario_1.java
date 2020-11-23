@@ -30,7 +30,7 @@ import org.kie.api.task.model.TaskSummary;
  *  6. L5L6Approval
  *  7. HR Processing
  *  
- * @author kylin
+ * @author Wujun
  *
  */
 public class AunScenario_1 {

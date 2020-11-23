@@ -31,7 +31,7 @@ import java.util.List;
 
 /**
  * 事件service
- * @author frank.fang
+ * @author Wujun
  * date 2016/4/15.
  */
 @Service

@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 只是个测试
  * 
- * @author airfey
+ * @author Wujun
  * 
  */
 public class Message implements Serializable{

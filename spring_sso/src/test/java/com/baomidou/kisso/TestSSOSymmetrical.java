@@ -23,7 +23,7 @@ import com.baomidou.kisso.common.encrypt.SSOSymmetrical;
  * 测试 AES 加密
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2016-08-11
  */
 public class TestSSOSymmetrical {

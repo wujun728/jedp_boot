@@ -14,7 +14,7 @@ import static com.monkeyk.sos.infrastructure.CacheConstants.CLIENT_DETAILS_CACHE
 /**
  * 2015/11/16
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 @Repository("oauthRepositoryJdbc")
 public class OauthRepositoryJdbc implements OauthRepository {

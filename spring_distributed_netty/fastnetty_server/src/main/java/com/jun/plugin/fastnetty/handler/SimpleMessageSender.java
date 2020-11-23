@@ -6,7 +6,7 @@ import io.netty.channel.Channel;
 
 /**
  * 简单的消息发送器
- * @author peiyu
+ * @author Wujun
  */
 public class SimpleMessageSender implements MessageSender {
 

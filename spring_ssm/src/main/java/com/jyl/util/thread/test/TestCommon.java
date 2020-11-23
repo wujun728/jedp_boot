@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年7月12日 上午11:21:07
  */
 public class TestCommon {

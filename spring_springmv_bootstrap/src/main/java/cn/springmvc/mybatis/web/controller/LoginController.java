@@ -18,7 +18,7 @@ import cn.springmvc.mybatis.web.util.WebUtil;
 import cn.springmvc.mybatis.web.validator.UserValidator;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Controller

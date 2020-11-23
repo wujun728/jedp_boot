@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.ketayao.learn.hibernate.test.annotation.TuDog;
 
 /** 
- * @author 	<a href="mailto:ketayao@gmail.com">ketayao</a>
+ * @author Wujun
  * @since   2013年12月5日 上午10:35:57 
  */
 @RunWith(SpringJUnit4ClassRunner.class)

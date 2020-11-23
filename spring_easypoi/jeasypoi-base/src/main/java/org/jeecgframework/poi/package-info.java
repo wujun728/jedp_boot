@@ -1,5 +1,5 @@
 /**
- * @author JueYue
+ * @author Wujun
  * @date 2014年2月10日
  * @version 1.0
  * 对POI进行封装,通过注解的使用,完成POI的简易重复操作

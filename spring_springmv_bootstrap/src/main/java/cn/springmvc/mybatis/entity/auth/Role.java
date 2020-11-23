@@ -5,7 +5,7 @@ import cn.springmvc.mybatis.entity.BaseEntity;
 /**
  * 角色
  *
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class Role implements BaseEntity<String> {

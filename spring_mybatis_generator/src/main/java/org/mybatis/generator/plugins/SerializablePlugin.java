@@ -35,7 +35,7 @@ import org.mybatis.generator.api.dom.java.TopLevelClass;
  * Important: This is a simplistic implementation of serializable and does not
  * attempt to do any versioning of classes.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class SerializablePlugin extends PluginAdapter {

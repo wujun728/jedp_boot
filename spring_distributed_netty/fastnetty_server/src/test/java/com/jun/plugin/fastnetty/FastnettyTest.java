@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @author peiyu
+ * @author Wujun
  */
 public class FastnettyTest {
 

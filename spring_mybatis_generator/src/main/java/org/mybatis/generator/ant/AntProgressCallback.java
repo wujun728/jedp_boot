@@ -22,7 +22,7 @@ import org.mybatis.generator.internal.NullProgressCallback;
 /**
  * This callback logs progress messages with the Ant logger.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class AntProgressCallback extends NullProgressCallback {
 

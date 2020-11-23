@@ -20,7 +20,7 @@ package com.baomidou.kisso.common.encrypt;
  * 算法类型枚举类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2016-01-20
  */
 public enum Algorithm {

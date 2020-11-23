@@ -2,7 +2,7 @@ package com.youmeek.ssm.pojo;
 
 /**
  * 消防员实体类
- * @author frank.fang
+ * @author Wujun
  * date 16/4/20 15:08
  */
 public class Fireman extends AbstractMybatisEntity {

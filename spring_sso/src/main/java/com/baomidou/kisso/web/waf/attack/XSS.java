@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
  * XSS脚本攻击
  * <p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2014-5-8
  */
 public class XSS implements Istrip {

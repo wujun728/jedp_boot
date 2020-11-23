@@ -8,7 +8,7 @@ import java.util.Collection;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年6月7日 上午9:40:09
  */
 public class ParamChecker {

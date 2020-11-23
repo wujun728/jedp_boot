@@ -27,7 +27,7 @@ import org.mybatis.generator.internal.util.StringUtility;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class SimpleSelectAllElementGenerator extends

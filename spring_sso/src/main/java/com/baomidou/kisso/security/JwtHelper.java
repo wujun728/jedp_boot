@@ -38,7 +38,7 @@ import java.util.Base64;
  * SSO Token 签名验证辅助类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-07-19
  */
 public class JwtHelper {

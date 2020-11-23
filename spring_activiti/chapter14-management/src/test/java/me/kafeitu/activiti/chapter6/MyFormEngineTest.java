@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 /**
  * 自定义表单引擎
  *
- * @author henryyan
+ * @author Wujun
  */
 public class MyFormEngineTest extends AbstractTest {
 

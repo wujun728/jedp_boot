@@ -6,7 +6,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
 /**
- * @author Shengzhao Li
+ * @author Wujun
  */
 public class TestApplicationContextInitializer implements ApplicationContextInitializer<AbstractApplicationContext> {
 

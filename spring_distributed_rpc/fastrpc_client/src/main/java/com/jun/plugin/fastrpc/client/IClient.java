@@ -13,7 +13,7 @@ import com.jun.plugin.fastrpc.core.serializer.ISerializer;
 /**
  * Rpc客户端接口
  *
- * @author peiyu
+ * @author Wujun
  */
 public interface IClient extends Closeable {
 

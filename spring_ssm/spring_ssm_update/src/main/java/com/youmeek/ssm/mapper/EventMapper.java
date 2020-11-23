@@ -55,7 +55,7 @@ public interface EventMapper {
 
     /**
      * 获取所有事件
-     * @author frank.fang
+     * @author Wujun
      * date 16/4/20 14:47
      * @return
      */

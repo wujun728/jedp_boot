@@ -5,7 +5,7 @@ package com.jyl.wechat.dto;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年8月1日 下午8:46:41
  */
 public class AccessTokenResponseDTO {

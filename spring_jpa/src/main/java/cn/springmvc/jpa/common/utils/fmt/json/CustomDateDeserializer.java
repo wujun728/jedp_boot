@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 
 /**
  * 
- * @author Vincent.Wang
+ * @author Wujun
  *
  */
 public class CustomDateDeserializer extends JsonDeserializer<Date> {

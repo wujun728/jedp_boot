@@ -19,7 +19,7 @@ import com.jd.ssh.sshdemo.service.AdminService;
 /**
  * 用户注册的Controller.
  * 
- * @author calvin
+ * @author Wujun
  */
 @Controller
 @RequestMapping(value = "/register")

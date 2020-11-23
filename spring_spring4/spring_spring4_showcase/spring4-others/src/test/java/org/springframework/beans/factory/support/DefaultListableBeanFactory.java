@@ -58,12 +58,12 @@ import java.util.concurrent.ConcurrentHashMap;
  * have a look at {@link StaticListableBeanFactory}, which manages existing
  * bean instances rather than creating new ones based on bean definitions.
  *
- * @author Rod Johnson
- * @author Juergen Hoeller
- * @author Sam Brannen
- * @author Costin Leau
- * @author Chris Beams
- * @author Phillip Webb
+ * @author Wujun
+ * @author Wujun
+ * @author Wujun
+ * @author Wujun
+ * @author Wujun
+ * @author Wujun
  * @see StaticListableBeanFactory
  * @see PropertiesBeanDefinitionReader
  * @see org.springframework.beans.factory.xml.XmlBeanDefinitionReader

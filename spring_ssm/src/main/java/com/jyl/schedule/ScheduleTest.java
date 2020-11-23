@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年7月28日 下午9:15:21
  */
 @Component

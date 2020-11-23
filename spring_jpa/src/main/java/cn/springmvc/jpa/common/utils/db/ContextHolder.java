@@ -1,7 +1,7 @@
 package cn.springmvc.jpa.common.utils.db;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class ContextHolder {

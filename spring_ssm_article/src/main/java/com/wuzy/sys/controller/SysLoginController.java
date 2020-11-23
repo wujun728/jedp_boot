@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * 后台系统登陆Controller
- * @author wuzy
+ * @author Wujun
  * 2016年12月8日 下午10:25:21
  */
 

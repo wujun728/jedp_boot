@@ -41,7 +41,7 @@ import org.mybatis.generator.internal.util.StringUtility;
 /**
  * The Class DefaultCommentGenerator.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class DefaultCommentGenerator implements CommentGenerator {
 

@@ -35,7 +35,7 @@ import java.util.Map;
 /**
  * 快速生成报表案例
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  * @create 2018/07/24
  */
 public class JaspersoftReportTest extends SpringJunitBase {

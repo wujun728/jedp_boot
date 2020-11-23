@@ -22,7 +22,7 @@ import com.ketayao.learn.hibernate.test.HibernateUtil;
 
 /** 
  * 	
- * @author 	<a href="mailto:ketayao@gmail.com">ketayao</a>
+ * @author Wujun
  * Version  1.1.0
  * @since   2013-5-14 下午2:34:55 
  */

@@ -1,7 +1,7 @@
 package com.jun.plugin.fastlock;
 
 /**
- * @author peiyu
+ * @author Wujun
  */
 public class FastLockException extends RuntimeException {
 

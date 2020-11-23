@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * 
- * @author dongchao
+ * @author Wujun
  *
  */
 public class DistributedSessionReqeust extends HttpServletRequestWrapper {

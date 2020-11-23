@@ -24,7 +24,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * @author Jeff Butler
+ * @author Wujun
  */
 public class ParserEntityResolver implements EntityResolver {
 

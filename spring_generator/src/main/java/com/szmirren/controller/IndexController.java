@@ -76,7 +76,7 @@ import javafx.util.Callback;
 /**
  * 首页的控制器
  * 
- * @author <a href="http://szmirren.com">Mirren</a>
+ * @author Wujun
  *
  */
 public class IndexController extends BaseController {

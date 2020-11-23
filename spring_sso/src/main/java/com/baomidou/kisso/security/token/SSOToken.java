@@ -36,7 +36,7 @@ import java.util.Date;
  * SSO Token
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-07-17
  */
 @Slf4j

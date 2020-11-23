@@ -26,7 +26,7 @@ import org.junit.Test;
  * 测试 SSOToken
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2017-08-07
  */
 public class TestSSOToken {

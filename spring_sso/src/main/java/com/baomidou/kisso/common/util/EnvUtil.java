@@ -26,7 +26,7 @@ import java.util.Properties;
  * 获取系统环境变量工具类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-1-13
  */
 public class EnvUtil {

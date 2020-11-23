@@ -22,7 +22,7 @@ import com.jyl.util.servlet.HttpServletUtil;
 
 /**
  * 
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年5月30日 下午2:43:53
  */
 @Controller

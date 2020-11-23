@@ -3,7 +3,7 @@ package com.youmeek.ssm.model.page;
 /**
  * 分页接口
  * 
- * @author liufang
+ * @author Wujun
  * 
  */
 public interface Paginable {

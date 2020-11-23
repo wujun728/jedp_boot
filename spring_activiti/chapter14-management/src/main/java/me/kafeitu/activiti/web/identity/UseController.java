@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * 用户相关控制器
  *
- * @author HenryYan
+ * @author Wujun
  */
 @Controller
 @RequestMapping("/user")

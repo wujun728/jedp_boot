@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletRequest;
  * 图片验证码接口
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2018-08-11
  */
 public interface ICaptcha extends Serializable {

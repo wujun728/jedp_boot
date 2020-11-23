@@ -21,7 +21,7 @@ import org.mybatis.generator.api.dom.java.Method;
 import org.mybatis.generator.api.dom.java.Parameter;
 
 /**
- * @author Jeff Butler
+ * @author Wujun
  */
 public class IbatisDAOTemplate extends AbstractDAOTemplate {
 

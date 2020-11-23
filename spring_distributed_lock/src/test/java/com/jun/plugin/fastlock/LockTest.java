@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 
 /**
- * @author peiyu
+ * @author Wujun
  */
 public class LockTest {
 

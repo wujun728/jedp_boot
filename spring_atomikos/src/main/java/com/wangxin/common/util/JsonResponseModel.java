@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 
 /**
  * @Description: 客户端响应jsonModel
- * @author xupeijun
+ * @author Wujun
  * @date 2017年4月26日 下午3:24:28
  * @version
  */

@@ -13,7 +13,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.apache.commons.dbcp.BasicDataSource;
 
 /**
- * @author 陈雄华
+ * @author Wujun
  * @version 1.0
  */
 @Service("userService")

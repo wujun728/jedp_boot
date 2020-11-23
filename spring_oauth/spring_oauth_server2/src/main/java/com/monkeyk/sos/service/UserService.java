@@ -6,7 +6,7 @@ import com.monkeyk.sos.domain.dto.UserOverviewDto;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
- * @author Shengzhao Li
+ * @author Wujun
  */
 public interface UserService extends UserDetailsService {
 

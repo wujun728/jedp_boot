@@ -3,7 +3,7 @@ package com.jun.plugin.fastrpc.core.message;
 /**
  * RPC响应对象
  *
- * @author peiyu
+ * @author Wujun
  */
 public class ResponseMessage implements IMessage {
 

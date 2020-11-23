@@ -3,7 +3,7 @@ package com.szmirren.models;
 /**
  * Table的key与packageName属性
  * 
- * @author <a href="http://szmirren.com">Mirren</a>
+ * @author Wujun
  *
  */
 public class TableAttributeKeyValueTemplateVO {

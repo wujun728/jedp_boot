@@ -5,7 +5,7 @@ import java.util.concurrent.locks.Lock;
 /**
  * 分布式锁接口，支持超时，有效防止死锁
  * 实现java.util.concurrent.locks.Lock接口
- * @author peiyu
+ * @author Wujun
  */
 public interface FastLock extends Lock {
 

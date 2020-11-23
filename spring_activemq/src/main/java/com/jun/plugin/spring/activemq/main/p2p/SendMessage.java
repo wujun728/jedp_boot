@@ -15,7 +15,7 @@ import org.apache.commons.logging.LogFactory;
 
 
 /**
- * @author chenchao
+ * @author Wujun
  */
 public class SendMessage {
 	private String user = ActiveMQConnection.DEFAULT_USER;

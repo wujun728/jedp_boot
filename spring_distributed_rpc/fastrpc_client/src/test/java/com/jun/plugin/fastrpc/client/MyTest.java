@@ -3,7 +3,7 @@ package com.jun.plugin.fastrpc.client;
 import java.util.Arrays;
 
 /**
- * @author peiyu
+ * @author Wujun
  */
 public class MyTest {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package xiong.exception;
 
 /**
- * @author wangxiaoxiong
+ * @author Wujun
  */
 public class ExcelException extends Exception {
     /**

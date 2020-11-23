@@ -21,7 +21,7 @@ import cn.kiwipeach.demo.enums.business.BusinessEnums;
  * Create Date: 2018/01/17
  * Description: 分页请求参数
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 public class BaseResponse {
 

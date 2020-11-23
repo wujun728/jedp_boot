@@ -47,7 +47,7 @@ import org.xml.sax.SAXException;
 /**
  * This class handles the task of merging changes into an existing XML file.
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public class XmlFileMergerJaxp {
     private static class NullEntityResolver implements EntityResolver {

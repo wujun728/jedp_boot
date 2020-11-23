@@ -19,7 +19,7 @@ import com.ketayao.common.util.MyBeanUtils;
  * 
  * 提供hql分页查询，拷贝更新等一些常用功能。
  * 
- * @author liufang
+ * @author Wujun
  * 
  * @param <T>
  *            entity class

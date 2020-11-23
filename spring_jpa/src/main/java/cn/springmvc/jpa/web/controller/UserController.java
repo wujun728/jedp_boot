@@ -23,7 +23,7 @@ import cn.springmvc.jpa.web.util.WebUtil;
 import cn.springmvc.jpa.web.validator.UserValidator;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 @Controller

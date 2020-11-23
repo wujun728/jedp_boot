@@ -3,7 +3,7 @@ package com.szmirren.common;
 /**
  * jdbc类型
  * 
- * @author Mirren
+ * @author Wujun
  *
  */
 public class JDBCType {

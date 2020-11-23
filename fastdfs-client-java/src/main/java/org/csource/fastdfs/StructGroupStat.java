@@ -11,7 +11,7 @@ package org.csource.fastdfs;
 /**
  * C struct body decoder
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.18
  */
 public class StructGroupStat extends StructBase {

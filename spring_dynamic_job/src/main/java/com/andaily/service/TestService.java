@@ -1,7 +1,7 @@
 package com.andaily.service;
 
 /**
- * @author Shengzhao Li
+ * @author Wujun
  */
 public interface TestService {
 

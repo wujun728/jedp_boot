@@ -16,7 +16,7 @@
 package org.mybatis.generator.config;
 
 /**
- * @author Jeff Butler
+ * @author Wujun
  */
 public abstract class TypedPropertyHolder extends PropertyHolder {
 

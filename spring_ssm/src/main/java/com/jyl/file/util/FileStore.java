@@ -8,7 +8,7 @@ import java.io.InputStream;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年6月2日 上午9:19:58
  */
 public interface FileStore {

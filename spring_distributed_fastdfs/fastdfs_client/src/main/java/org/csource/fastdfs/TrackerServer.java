@@ -17,7 +17,7 @@ import java.net.Socket;
 /**
  * Tracker Server Info
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.11
  */
 public class TrackerServer {

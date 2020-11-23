@@ -22,7 +22,7 @@ import org.springframework.web.servlet.view.AbstractView;
 /**
  * 基础抽象Excel View
  * 
- * @author JueYue
+ * @author Wujun
  * @date 2015年2月28日 下午1:41:05
  */
 public abstract class MiniAbstractExcelView extends AbstractView {

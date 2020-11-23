@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * 测试用Spring方式创建引擎对象
  *
- * @author henryyan
+ * @author Wujun
  */
 public class CreateEngineUseSpringProxy {
 

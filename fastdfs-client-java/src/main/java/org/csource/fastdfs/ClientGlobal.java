@@ -22,7 +22,7 @@ import java.util.Properties;
 /**
  * Global variables
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.11
  */
 public class ClientGlobal {

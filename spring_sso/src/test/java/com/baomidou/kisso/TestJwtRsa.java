@@ -35,7 +35,7 @@ import java.util.Map;
  * 测试 RSA 工具类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2020-04-04
  */
 public class TestJwtRsa {

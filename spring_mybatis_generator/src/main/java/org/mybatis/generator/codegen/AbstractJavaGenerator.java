@@ -29,7 +29,7 @@ import org.mybatis.generator.config.PropertyRegistry;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public abstract class AbstractJavaGenerator extends AbstractGenerator {

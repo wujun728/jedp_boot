@@ -24,7 +24,7 @@ import static com.baomidou.kisso.common.OperatingSystem.OS.WINDOWS;
  * 操作系统判断
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2018-09-15
  */
 public class OperatingSystem {

@@ -17,7 +17,7 @@ import java.io.OutputStream;
 /**
  * upload file callback class, local file sender
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.0
  */
 public class UploadLocalFileSender implements UploadCallback {

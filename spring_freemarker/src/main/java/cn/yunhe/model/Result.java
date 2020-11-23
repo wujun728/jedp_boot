@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 /**
  * 返回统一JSON结构
  * 
- * @author YUNHE
+ * @author Wujun
  *
  */
 @JsonInclude(Include.NON_NULL)

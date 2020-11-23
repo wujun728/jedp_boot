@@ -10,7 +10,7 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 
 /**
  * WebScoket配置处理器
- * @author Goofy
+ * @author Wujun
  * @Date 2015年6月11日 下午1:15:09
  */
 @Component

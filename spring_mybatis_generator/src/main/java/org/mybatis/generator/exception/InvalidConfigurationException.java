@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * The Class InvalidConfigurationException.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class InvalidConfigurationException extends Exception {
     

@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年8月5日 上午10:02:08
  */
 public class TextMessageHandle extends AbstractMessageHandle{

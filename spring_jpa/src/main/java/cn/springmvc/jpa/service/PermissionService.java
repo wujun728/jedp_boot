@@ -6,7 +6,7 @@ import cn.springmvc.jpa.entity.Permission;
 import cn.springmvc.jpa.entity.User;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface PermissionService {

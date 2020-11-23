@@ -19,7 +19,7 @@ import java.util.Arrays;
 /**
  * Storage client for 2 fields file id: group name and filename
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.24
  */
 public class StorageClient {
@@ -1767,7 +1767,7 @@ public class StorageClient {
     /**
      * Upload file by file buff
      *
-     * @author Happy Fish / YuQing
+     * @author Wujun
      * @version Version 1.12
      */
     public static class UploadBuff implements UploadCallback {

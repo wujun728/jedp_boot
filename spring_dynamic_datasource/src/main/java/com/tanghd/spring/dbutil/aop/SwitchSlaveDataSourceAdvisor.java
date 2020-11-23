@@ -11,7 +11,7 @@ import com.tanghd.spring.dbutil.datasource.DynamicDataSource;
 /**
  * 默认符合切面的方法调用，都会直接切换使用从库
  * 
- * @author tanghd
+ * @author Wujun
  *
  */
 public class SwitchSlaveDataSourceAdvisor implements MethodBeforeAdvice, AfterReturningAdvice, ThrowsAdvice {

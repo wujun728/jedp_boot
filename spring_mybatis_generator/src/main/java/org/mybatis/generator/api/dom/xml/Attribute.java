@@ -18,7 +18,7 @@ package org.mybatis.generator.api.dom.xml;
 /**
  * The Class Attribute.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class Attribute implements Comparable<Attribute>{
     

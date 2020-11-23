@@ -21,7 +21,7 @@ import java.util.Set;
 /**
  * This class contains a list of Java reserved words.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class JavaReservedWords {

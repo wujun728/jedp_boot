@@ -6,7 +6,7 @@ import cn.springmvc.jpa.entity.OpenSurvey;
 
 /**
  * 
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface OpenSurveyRepository {

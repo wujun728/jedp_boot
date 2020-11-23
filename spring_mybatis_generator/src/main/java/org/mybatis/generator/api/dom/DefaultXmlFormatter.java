@@ -23,7 +23,7 @@ import org.mybatis.generator.config.Context;
  * This class is the default formatter for generated XML.  This class will use the
  * built in formatting of the DOM classes directly.
  * 
- * @author Jeff Butler
+ * @author Wujun
  *
  */
 public class DefaultXmlFormatter implements XmlFormatter {

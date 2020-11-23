@@ -44,7 +44,7 @@ import org.mybatis.generator.internal.rules.Rules;
  * of the housekeeping methods needed to implement a code generator, with only
  * the actual code generation methods left unimplemented.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public abstract class IntrospectedTable {

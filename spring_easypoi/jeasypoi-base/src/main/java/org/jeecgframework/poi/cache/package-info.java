@@ -4,7 +4,7 @@
  * 缓存获取方式,URL或者URL+index(EXcel的)
  */
 /**
- * @author JueYue
+ * @author Wujun
  * @date 2014年2月10日
  * @version 1.0
  */

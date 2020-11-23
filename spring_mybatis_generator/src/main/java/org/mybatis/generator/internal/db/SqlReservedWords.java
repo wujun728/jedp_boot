@@ -27,7 +27,7 @@ import java.util.Set;
  * This list is based on the list from Drupal Handbook:
  * http://drupal.org/node/141051 With additions for DB2
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class SqlReservedWords {

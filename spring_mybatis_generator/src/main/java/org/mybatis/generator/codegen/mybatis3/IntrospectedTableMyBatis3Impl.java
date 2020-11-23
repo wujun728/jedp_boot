@@ -42,7 +42,7 @@ import org.mybatis.generator.internal.ObjectFactory;
 /**
  * The Class IntrospectedTableMyBatis3Impl.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class IntrospectedTableMyBatis3Impl extends IntrospectedTable {
     

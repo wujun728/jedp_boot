@@ -38,8 +38,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author Manuel Laflamme
- * @author Last changed by: $Author: gommma $
+ * @author Wujun
+ * @author Wujun
  * @version $Revision: 1031 $ $Date: 2009-09-12 17:13:43 +0200 (sab, 12 set 2009) $
  * @since 1.0 (Mar 8, 2002)
  */

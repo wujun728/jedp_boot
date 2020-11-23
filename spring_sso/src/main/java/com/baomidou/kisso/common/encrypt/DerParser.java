@@ -33,7 +33,7 @@ import java.math.BigInteger;
  * There are many DER decoders in JRE but using them will tie this program to a
  * specific JCE/JVM.
  *
- * @author zhang
+ * @author Wujun
  */
 public class DerParser {
   // Classes

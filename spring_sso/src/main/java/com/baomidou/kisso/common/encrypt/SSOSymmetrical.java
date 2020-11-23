@@ -58,7 +58,7 @@ import java.security.Key;
  * RC4——所谓的RC4），因为RSA从来就没有正式发布过这个算法。
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2016-08-11
  */
 @Slf4j

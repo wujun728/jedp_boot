@@ -39,7 +39,7 @@ import org.jeecgframework.poi.util.PoiPublicUtil;
 /**
  * 样式帮助类
  * 
- * @author JueYue
+ * @author Wujun
  * @date 2015年5月9日 下午4:04:24
  */
 public class StylerHelper {
@@ -242,7 +242,7 @@ public class StylerHelper {
 	/**
 	 * Implementation of {@link HtmlHelper} for XSSF files.
 	 * 
-	 * @author Ken Arnold, Industrious Media LLC
+	 * @author Wujun
 	 */
 	private class XSSFHtmlHelper implements HtmlHelper {
 

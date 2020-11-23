@@ -17,7 +17,7 @@ import cn.springmvc.jpa.entity.User;
 import cn.springmvc.jpa.service.NewsService;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  * 
  *         production为生产环境，development为测试环境
  */

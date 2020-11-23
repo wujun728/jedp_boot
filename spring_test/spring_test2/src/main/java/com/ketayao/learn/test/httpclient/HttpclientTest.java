@@ -33,7 +33,7 @@ import org.junit.Test;
 
 /** 
  * 	
- * @author 	<a href="mailto:ketayao@gmail.com">ketayao</a>
+ * @author Wujun
  * Version  1.1.0
  * @since   2012-12-16 下午3:05:53 
  */

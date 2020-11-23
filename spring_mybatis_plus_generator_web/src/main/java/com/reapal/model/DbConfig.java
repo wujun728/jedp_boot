@@ -10,7 +10,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * @author jackcooper
+ * @author Wujun
  */
 @Entity
 @Data

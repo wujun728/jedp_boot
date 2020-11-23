@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * @author jack-cooper
+ * @author Wujun
  * @version 1.0.0
  * @ClassName EditorController.java
  * @Description 在线编辑器

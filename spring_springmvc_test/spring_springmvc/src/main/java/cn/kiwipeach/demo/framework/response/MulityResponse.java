@@ -23,7 +23,7 @@ import java.util.List;
  * Create Date: 2018/01/16
  * Description: 多条记录返回实体对象类
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 public class MulityResponse<T> extends BaseResponse {
     /**

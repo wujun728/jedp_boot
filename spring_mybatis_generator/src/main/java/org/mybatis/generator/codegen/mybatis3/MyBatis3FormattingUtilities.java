@@ -23,7 +23,7 @@ import org.mybatis.generator.api.IntrospectedColumn;
 /**
  * The Class MyBatis3FormattingUtilities.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class MyBatis3FormattingUtilities {
     

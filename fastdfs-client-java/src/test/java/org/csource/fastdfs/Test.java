@@ -13,7 +13,7 @@ import org.csource.common.NameValuePair;
 /**
  * client test
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.18
  */
 public class Test {

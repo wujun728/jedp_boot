@@ -33,7 +33,7 @@ import com.baomidou.kisso.exception.UnsupportedAlgorithmException;
  * 签名者
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2019-04-05
  */
 public class Signer {

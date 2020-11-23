@@ -4,7 +4,7 @@ import org.apache.cxf.common.util.Base64Utility;
 
 /**
  * http://localhost:8080/jbpm-console/rest-api.jsp
- * @author kylin
+ * @author Wujun
  *
  */
 public interface Constants {

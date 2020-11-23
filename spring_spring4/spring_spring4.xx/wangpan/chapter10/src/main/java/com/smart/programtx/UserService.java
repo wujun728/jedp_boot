@@ -20,7 +20,7 @@ import javax.sql.DataSource;
 
 
 /**
- * @author 陈雄华
+ * @author Wujun
  * @version 1.0
  *          功能说明：
  */

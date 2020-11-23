@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /*
-  * @author Shengzhao Li
+  * @author Wujun
   */
 public class PasswordHandlerTest {
 

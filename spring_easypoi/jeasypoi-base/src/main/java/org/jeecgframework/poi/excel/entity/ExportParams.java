@@ -22,7 +22,7 @@ import org.jeecgframework.poi.excel.export.styler.ExcelExportStylerDefaultImpl;
 /**
  * Excel 导出参数
  * 
- * @author JueYue
+ * @author Wujun
  * @version 1.0 2013年8月24日
  */
 public class ExportParams extends ExcelBaseParams {

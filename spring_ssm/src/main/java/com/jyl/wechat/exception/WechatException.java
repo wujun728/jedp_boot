@@ -5,7 +5,7 @@ package com.jyl.wechat.exception;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年8月5日 上午10:27:43
  */
 public class WechatException extends RuntimeException{

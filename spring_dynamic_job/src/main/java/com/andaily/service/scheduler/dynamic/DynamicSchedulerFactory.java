@@ -11,7 +11,7 @@ import java.util.Date;
 /**
  * 对JOb操作的核心类
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public final class DynamicSchedulerFactory implements InitializingBean {
 

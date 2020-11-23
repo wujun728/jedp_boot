@@ -27,7 +27,7 @@ import com.baomidou.kisso.exception.UnsupportedAlgorithmException;
  * 非对称验签
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2019-04-08
  */
 public class VerifyAsymmetric implements IVerify {

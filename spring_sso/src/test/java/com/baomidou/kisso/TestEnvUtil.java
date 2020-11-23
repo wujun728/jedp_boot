@@ -24,7 +24,7 @@ import com.baomidou.kisso.common.util.EnvUtil;
  * 测试系统环境探测工具类
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2016-01-21
  */
 public class TestEnvUtil {

@@ -29,7 +29,7 @@ import com.szmirren.options.UnitTestConfig;
 /**
  * 配置文件工具
  * 
- * @author Mirren
+ * @author Wujun
  *
  */
 public class ConfigUtil {

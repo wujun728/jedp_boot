@@ -2,7 +2,7 @@ package com.youmeek.ssm;
 
 /**
  * 常量
- * @Author frank.fang
+ * @author Wujun
  * @Date 2016/4/27 17:41
  */
 public class Constants {

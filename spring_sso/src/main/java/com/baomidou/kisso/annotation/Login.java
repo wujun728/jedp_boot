@@ -27,7 +27,7 @@ import java.lang.annotation.Target;
  * 不验证是否登录，忽略当前方法。
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-11-10
  */
 @Target(ElementType.METHOD)

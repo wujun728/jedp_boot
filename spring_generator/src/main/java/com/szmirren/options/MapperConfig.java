@@ -11,7 +11,7 @@ import javafx.collections.ObservableList;
 /**
  * Sql属性的配置文件
  * 
- * @author <a href="http://szmirren.com">Mirren</a>
+ * @author Wujun
  *
  */
 public class MapperConfig {

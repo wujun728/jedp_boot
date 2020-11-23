@@ -1,7 +1,7 @@
 package cn.springmvc.mybatis.common.utils.db;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public class ContextHolder {

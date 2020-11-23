@@ -3,7 +3,7 @@ package cn.springmvc.jpa.common.redis;
 import org.springframework.data.redis.core.RedisTemplate;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public abstract class RedisBaseService<K, V> {

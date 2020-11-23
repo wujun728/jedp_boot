@@ -49,7 +49,7 @@ import org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl;
 /**
  * This class creates the different objects needed by the generator.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class ObjectFactory {
     

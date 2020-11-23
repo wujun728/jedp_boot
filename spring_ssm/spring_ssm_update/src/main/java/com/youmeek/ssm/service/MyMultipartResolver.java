@@ -5,7 +5,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author frank.fang
+ * @author Wujun
  *         date 2016/5/4.
  */
 public class MyMultipartResolver extends CommonsMultipartResolver {

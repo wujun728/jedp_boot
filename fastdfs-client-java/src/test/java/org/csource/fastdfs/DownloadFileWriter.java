@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * DowloadCallback test
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.3
  */
 public class DownloadFileWriter implements DownloadCallback {

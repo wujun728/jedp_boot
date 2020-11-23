@@ -18,7 +18,7 @@ package org.jeecgframework.poi.handler.inter;
 /**
  * 接口自定义处理类
  * 
- * @author JueYue
+ * @author Wujun
  * @date 2015年1月16日 下午8:06:26
  * @param <T>
  */

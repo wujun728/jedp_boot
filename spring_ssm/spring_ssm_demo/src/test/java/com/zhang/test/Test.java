@@ -13,7 +13,7 @@ import com.zhang.model.User;
 import com.zhang.service.UserServiceI;
 
 /**
- * @author ZhangHao 
+ * @author Wujun
  * @date  2013-7-17
  */
 @RunWith(SpringJUnit4ClassRunner.class)

@@ -22,7 +22,7 @@ import java.math.BigInteger;
  * An ASN.1 TLV. The object is not parsed. It can
  * only handle integers and strings.
  *
- * @author zhang
+ * @author Wujun
  */
 public class Asn1Object {
   protected final int type;

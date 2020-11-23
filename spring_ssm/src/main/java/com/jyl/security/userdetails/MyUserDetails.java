@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.User;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年6月20日 上午11:00:24
  */
 public class MyUserDetails extends User{

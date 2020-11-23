@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 /**
  * load test class
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.20
  */
 public class Monitor {

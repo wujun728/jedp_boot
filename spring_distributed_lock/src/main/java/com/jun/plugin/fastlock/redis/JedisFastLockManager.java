@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @author peiyu
+ * @author Wujun
  */
 public class JedisFastLockManager implements FastLockManager {
 

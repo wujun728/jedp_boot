@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 /**
  * 定义请求action类型
- * @author hancong03@baidu.com
+ * @author Wujun
  *
  */
 @SuppressWarnings("serial")

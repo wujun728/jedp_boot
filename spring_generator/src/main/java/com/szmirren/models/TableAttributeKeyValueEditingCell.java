@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 /**
  * table中列的监听与改变
  * 
- * @author <a href="http://szmirren.com">Mirren</a>
+ * @author Wujun
  *
  */
 public class TableAttributeKeyValueEditingCell extends TableCell<TableAttributeKeyValue, String> {

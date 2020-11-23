@@ -18,7 +18,7 @@ import org.apache.commons.logging.LogFactory;
 /**
  * activeMQ:http://localhost:8161/admin/queues.jsp
  * 	
- * @author 	<a href="mailto:ketayao@gmail.com">ketayao</a>
+ * @author Wujun
  * Version  1.1.0
  * @since   2012-11-26 下午2:57:51
  */

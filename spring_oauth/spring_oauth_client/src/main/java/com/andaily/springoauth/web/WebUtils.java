@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * @author Shengzhao Li
+ * @author Wujun
  */
 public abstract class WebUtils {
 

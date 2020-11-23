@@ -9,7 +9,7 @@ import javafx.scene.control.ComboBox;
 /**
  * Table的key与packageName属性
  * 
- * @author <a href="http://szmirren.com">Mirren</a>
+ * @author Wujun
  *
  */
 public class TableAttributeKeyValueTemplate {

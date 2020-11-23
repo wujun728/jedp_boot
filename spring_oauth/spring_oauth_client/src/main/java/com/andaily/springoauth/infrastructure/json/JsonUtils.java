@@ -5,7 +5,7 @@ import net.sf.json.JsonConfig;
 import net.sf.json.util.PropertySetStrategy;
 
 /**
- * @author Shengzhao Li
+ * @author Wujun
  */
 public abstract class JsonUtils {
 

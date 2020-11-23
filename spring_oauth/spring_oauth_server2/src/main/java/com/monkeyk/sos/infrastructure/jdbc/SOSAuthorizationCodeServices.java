@@ -12,7 +12,7 @@ import static com.monkeyk.sos.infrastructure.CacheConstants.AUTHORIZATION_CODE_C
 /**
  * 2016/7/23
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public class SOSAuthorizationCodeServices extends JdbcAuthorizationCodeServices {
 

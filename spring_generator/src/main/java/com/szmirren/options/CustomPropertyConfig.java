@@ -10,7 +10,7 @@ import javafx.collections.ObservableList;
 /**
  * 自定义属性的配置文件
  * 
- * @author <a href="http://szmirren.com">Mirren</a>
+ * @author Wujun
  *
  */
 public class CustomPropertyConfig {

@@ -26,7 +26,7 @@ import java.security.MessageDigest;
  * 盐值加密工具类（常用登录密码加密）
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2016-01-20
  */
 @Slf4j

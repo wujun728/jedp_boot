@@ -34,7 +34,7 @@ import org.mybatis.generator.config.Context;
  * This adapter does not implement the <tt>validate</tt> method - all plugins
  * must perform validation.
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public abstract class PluginAdapter implements Plugin {

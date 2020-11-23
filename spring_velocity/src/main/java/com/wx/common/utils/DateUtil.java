@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * 时间与日期的工具类
  * 
- * @author Vincent.wang
+ * @author Wujun
  * 
  */
 public class DateUtil {

@@ -14,7 +14,7 @@ import org.apache.lucene.document.TextField;
 
 /**
  * user 和 docment 互转
- * @author DF
+ * @author Wujun
  *
  */
 public class UserConvert implements LucenceConvert<User> {

@@ -14,7 +14,7 @@ import com.jun.plugin.fastnetty.handler.SimpleMessageSender;
 import java.util.Set;
 
 /**
- * @author peiyu
+ * @author Wujun
  */
 @Sharable
 class NettyMessageHandler extends SimpleChannelInboundHandler<ByteBuf> {

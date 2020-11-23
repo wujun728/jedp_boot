@@ -10,7 +10,7 @@ import cn.springmvc.mybatis.mapper.BaseMapper;
 /**
  * 用户Dao
  * 
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface UserMapper extends BaseMapper<String, User> {
@@ -31,7 +31,7 @@ public interface UserMapper extends BaseMapper<String, User> {
      * @param id
      *            店铺ID
      * @return
-     * @author wangxin
+     * @author Wujun
      */
     public List<User> findUserByShop(String organizeId);
 

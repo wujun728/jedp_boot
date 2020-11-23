@@ -1,7 +1,7 @@
 package com.jun.plugin.fastnetty.core.message;
 
 /**
- * @author peiyu
+ * @author Wujun
  */
 public interface OutputMessage extends FastNettyMessage {
     byte[] toBytes();

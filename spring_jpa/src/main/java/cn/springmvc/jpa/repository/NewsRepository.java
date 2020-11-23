@@ -5,7 +5,7 @@ import java.util.List;
 import cn.springmvc.jpa.entity.News;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface NewsRepository {

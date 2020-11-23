@@ -14,7 +14,7 @@ import redis.clients.jedis.JedisPoolConfig;
 
 /**
  * redis储存
- * @author dongchao
+ * @author Wujun
  *
  */
 public class RedisStorage implements Storage {

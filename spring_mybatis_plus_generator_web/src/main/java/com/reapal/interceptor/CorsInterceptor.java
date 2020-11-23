@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author jack-cooper
+ * @author Wujun
  * @version 1.0.0
  * @ClassName CorsInterceptor.java
  * @Description 处理跨域

@@ -21,7 +21,7 @@ package com.baomidou.kisso.common.util;
  * String 工具类
  * </p>
  *
- * @author D.Yang
+ * @author Wujun
  * @since 2016-08-18
  */
 public class StringUtils {

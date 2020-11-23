@@ -6,7 +6,7 @@ import com.andaily.springoauth.service.dto.AccessTokenDto;
 /**
  * 15-5-18
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public class AccessTokenResponseHandler extends AbstractResponseHandler<AccessTokenDto> {
 

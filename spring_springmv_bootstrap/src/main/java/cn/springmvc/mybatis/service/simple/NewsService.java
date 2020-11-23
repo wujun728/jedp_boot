@@ -7,7 +7,7 @@ import cn.springmvc.mybatis.entity.auth.User;
 import cn.springmvc.mybatis.entity.simple.News;
 
 /**
- * @author Vincent.wang
+ * @author Wujun
  *
  */
 public interface NewsService {

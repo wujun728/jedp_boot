@@ -28,7 +28,7 @@ import org.mybatis.generator.internal.ObjectFactory;
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  * 
  */
 public class IntrospectedTableMyBatis3SimpleImpl extends IntrospectedTableMyBatis3Impl {

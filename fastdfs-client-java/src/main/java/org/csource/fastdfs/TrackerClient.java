@@ -19,7 +19,7 @@ import java.util.Arrays;
  * Tracker client for request to tracker server
  * Note: the instance of this class is NOT thread safe !!!
  *
- * @author Happy Fish / YuQing
+ * @author Wujun
  * @version Version 1.19
  */
 public class TrackerClient {

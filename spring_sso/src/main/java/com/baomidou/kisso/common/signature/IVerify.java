@@ -22,7 +22,7 @@ import java.security.Provider;
  * 验签接口
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2019-04-08
  */
 public interface IVerify {

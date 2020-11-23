@@ -30,7 +30,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 /** 
  * 	
- * @author 	<a href="mailto:ketayao@gmail.com">ketayao</a>
+ * @author Wujun
  * Version  1.1.0
  * @since   2012-12-6 下午2:31:07 
  */

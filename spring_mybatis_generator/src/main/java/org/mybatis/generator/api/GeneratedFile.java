@@ -19,7 +19,7 @@ package org.mybatis.generator.api;
 /**
  * Abstract class that holds information common to all generated files.
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public abstract class GeneratedFile {
     

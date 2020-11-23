@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
  * <p>
  * Spring bean容器， 启动时初始化
  *
- * @author Shengzhao Li
+ * @author Wujun
  * @see SOSContextLoaderListener
  * @since 1.0
  */

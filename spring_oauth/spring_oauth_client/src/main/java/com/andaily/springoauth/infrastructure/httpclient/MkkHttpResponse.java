@@ -10,7 +10,7 @@ import java.io.Serializable;
  * Ext. CloseableHttpResponse actions.
  * Add more conversation methods
  *
- * @author Shengzhao Li
+ * @author Wujun
  */
 public class MkkHttpResponse implements Serializable {
 

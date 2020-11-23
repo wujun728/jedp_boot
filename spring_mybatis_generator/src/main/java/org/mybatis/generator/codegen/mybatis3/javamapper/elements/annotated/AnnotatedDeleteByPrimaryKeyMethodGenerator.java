@@ -30,7 +30,7 @@ import org.mybatis.generator.codegen.mybatis3.javamapper.elements.DeleteByPrimar
 
 /**
  * 
- * @author Jeff Butler
+ * @author Wujun
  */
 public class AnnotatedDeleteByPrimaryKeyMethodGenerator extends
         DeleteByPrimaryKeyMethodGenerator {

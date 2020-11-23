@@ -33,7 +33,7 @@ import com.baomidou.kisso.common.util.RandomUtil;
  * 图片验证码
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2018-08-11
  */
 public class ImageCaptcha extends AbstractCaptcha {

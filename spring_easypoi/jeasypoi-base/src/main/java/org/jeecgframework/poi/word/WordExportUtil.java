@@ -23,7 +23,7 @@ import org.jeecgframework.poi.word.parse.ParseWord07;
 /**
  * Word使用模板导出工具类
  * 
- * @author JueYue
+ * @author Wujun
  * @date 2013-11-16
  * @version 1.0
  */

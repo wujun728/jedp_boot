@@ -14,7 +14,7 @@ import java.util.List;
  * Create Date: 2017/10/31
  * Description: 员工操作接口
  *
- * @author kiwipeach [1099501218@qq.com]
+ * @author Wujun
  */
 @Datasource("oracleDatasource")
 public interface EmployMapper {

@@ -21,7 +21,7 @@ import org.springframework.util.StringUtils;
 /**
  *
  * 验证码工具类
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年7月12日 下午9:21:54
  */
 public class RandomCodeUtils {

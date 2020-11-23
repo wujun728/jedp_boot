@@ -3,7 +3,7 @@ package com.ssm.dubbo.util;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 /**
- * @author 13
+ * @author Wujun
  * @project_name ssm-dubbo
  * @date 2019-01-02
  */

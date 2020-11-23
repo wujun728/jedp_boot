@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 
 /**
  *
- * @author Long, E-mail:jyl0401@163.com
+ * @author Wujun
  * @date 2016年7月26日 下午4:52:30
  */
 @Component

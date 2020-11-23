@@ -28,7 +28,7 @@ import java.util.TreeSet;
 /**
  * The Class TopLevelEnumeration.
  *
- * @author Jeff Butler
+ * @author Wujun
  */
 public class TopLevelEnumeration extends InnerEnum implements CompilationUnit {
     

@@ -20,7 +20,7 @@ package com.baomidou.kisso.annotation;
  * SSO 执行状态
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-11-10
  */
 public enum Action {

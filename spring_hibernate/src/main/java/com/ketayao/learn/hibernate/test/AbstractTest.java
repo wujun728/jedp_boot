@@ -14,7 +14,7 @@ package com.ketayao.learn.hibernate.test;
 
 /** 
  * 	
- * @author 	<a href="mailto:ketayao@gmail.com">ketayao</a>
+ * @author Wujun
  * Version  1.1.0
  * @since   2012-9-5 上午11:46:32 
  */

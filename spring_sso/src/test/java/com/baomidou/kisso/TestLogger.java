@@ -25,7 +25,7 @@ import java.util.logging.Logger;
  * java.util.logging.Logger
  * </p>
  *
- * @author hubin
+ * @author Wujun
  * @since 2015-11-24
  */
 public class TestLogger {

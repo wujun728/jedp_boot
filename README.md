@@ -6,7 +6,6 @@
 #### `笔者其他项目` 功能实现&使用
 - jun_springboot：[点击查看](https://github.com/wujun728/jun_springboot) 
 - jun_springcloud：[点击查看](https://github.com/wujun728/jun_springcloud) 
-- jedp：[点击查看](https://github.com/wujun728/jedp) 
 
 #### 基础篇(组件)：企业级应用开发组件功能列表（jun_spring）
 - 【spring_activity】[工作流：通过Spring集成activity工作流完成流程发起、待办会签等操作](https://github.com/wujun728/jun_spring)

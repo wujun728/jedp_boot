@@ -2,7 +2,6 @@ package com.smq.controller;
 
 import com.smq.entity.Email;
 import com.smq.service.ProducerService;
-import oracle.jvm.hotspot.jfr.Producer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jms.core.JmsTemplate;

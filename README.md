@@ -1,12 +1,11 @@
 ### `jun_spring` 项目
-
+1
 #### 项目说明
 多个Java常用的lib的组件项目，主要是详尽的了解项目里面的每个lib组件及功能，为个人及项目实际开发提供助力，帮组项目快速开发，本项目是maven项目，每个组件均可以独立运行且不依赖第三方框架，具体见项目明细。
 
 #### `笔者其他项目` 功能实现&使用
 - jun_springboot：[点击查看](https://github.com/wujun728/jun_springboot) 
 - jun_springcloud：[点击查看](https://github.com/wujun728/jun_springcloud) 
-- jedp：[点击查看](https://github.com/wujun728/jedp) 
 
 #### 基础篇(组件)：企业级应用开发组件功能列表（jun_spring）
 - 【spring_activity】[工作流：通过Spring集成activity工作流完成流程发起、待办会签等操作](https://github.com/wujun728/jun_spring)
@@ -89,12 +88,11 @@ jun_plugin
 	8、所有共享jar包版本
 	9、删除全部项目重新导入；
 	10、补充每个项目的测试用例及readme.md
-1
+
 TODO
 Jun_fontend
 	https://github.com/Soliman/jqGrid.bootstrap
 	treegrid
-
 
 TODO
 jun_spring
@@ -102,6 +100,6 @@ jun_spring
 jun_spring\spring_dbutil\README.md  优化步骤文档
 com.jun.plugin
         
- 	          
+ 1	          
 mybatis+spring+springmvc+vue+easyui实现
 来自 <https://github.com/Ftine/Ajie-Forever-God_snack> 

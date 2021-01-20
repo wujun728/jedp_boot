@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
+    "http://struts.apache.org/dtds/struts-2.3.dtd">  
+      
+<struts>  
+    <constant name="struts.action.extension" value="action" />  
+      
+    <package name="s2sh" namespace="/user" extends="struts-default">
+    	<action name="user_*" method="{1}" class="com.java1234.action.UserAction">
+    		<result name="success">/success.jsp</result>
+    		<result name="error">/index.jsp</result>
+    	</action>
+    </package>
+      
+</struts>   

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.hibernate.domain">
+
+	<class name="Department">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="name"/>
+
+		<set name="emps" inverse="true">
+			<key column="depart_id"/>
+			<one-to-many class="Employee" />
+		</set>
+		
+		<!--  
+			<list name="emps">
+			<key column="depart_id" />
+			<list-index column="order_col" />
+			<one-to-many class="Employee" />
+			</list>
+		-->
+		
+		<!--  
+		<bag name="emps">
+			<key column="depart_id" />
+			<one-to-many class="Employee" />
+		</bag>
+		-->
+		<!--  
+		<map name="emps">
+			<key column="depart_id" />
+			<map-key type="string" column="name"/>
+			<one-to-many class="Employee" />
+		</map>
+		-->
+	</class>
+
+</hibernate-mapping>

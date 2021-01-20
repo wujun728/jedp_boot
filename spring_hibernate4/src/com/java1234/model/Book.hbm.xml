@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.java1234.model">
+
+	<class name="Book" table="t_book">
+		<id name="id" column="bookId">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="bookName" column="bookName" length="40"></property>
+		<property name="price" column="price" type="float"></property>
+		<property name="specialPrice" column="specialPrice" type="boolean"></property>
+		<property name="publishDate" column="publishDate" type="date"></property>
+		<property name="author" column="author" length="20"></property>
+		<property name="introduction" column="introduction" type="text"></property>
+		<property name="bookPic" column="bookPic" type="blob"></property>
+	</class>
+	
+</hibernate-mapping>

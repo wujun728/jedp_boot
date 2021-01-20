@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.java1234.model">
+
+	<class name="Course" table="t_course">
+		<id name="id" column="courseId">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="name" column="courseName"></property>
+		
+	</class>
+
+
+</hibernate-mapping>

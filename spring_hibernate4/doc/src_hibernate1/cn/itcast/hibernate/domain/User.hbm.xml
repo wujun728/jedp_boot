@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.hibernate.domain">
+
+	<class name="User" table="user">
+		<id name="id">
+			<generator class="hilo" />
+		</id>
+		<version name="ver"/>
+		<!--  
+		<property name="name"/>
+		-->
+		<component name="name">
+			<property name="firstName" column="first_name"/>
+			<property name="lastName" column="last_name" />
+		</component>
+		<property name="birthday" />
+		<query name="getUserByBirthday1">
+		<![CDATA[from User where birthday=:birthday]]>
+	</query>
+	</class>
+	
+	<query name="getUserByBirthday">
+		<![CDATA[from User where birthday=:birthday]]>
+	</query>
+</hibernate-mapping>

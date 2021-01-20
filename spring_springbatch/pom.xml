@@ -223,29 +223,5 @@
         </plugins>
     </build>
     
-    <!-- 使用开源中国的maven仓库 -->
-    <profiles>
-        <profile>
-            <id>osc</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>osc</id>
-                    <url>http://maven.oschina.net/content/groups/public/</url>
-                </repository>
-                <repository>
-                    <id>osc_thirdparty</id>
-                    <url>http://maven.oschina.net/content/repositories/thirdparty/</url>
-                </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>osc</id>
-                    <url>http://maven.oschina.net/content/groups/public/</url>
-                </pluginRepository>
-            </pluginRepositories>
-        </profile>
-    </profiles>
+     
 </project>

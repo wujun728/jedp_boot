@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="cn.itcast.hibernate.domain">
+
+	<class name="Sales" >
+		<id name="id">
+			<generator class="hilo"/>
+		</id>
+		<property name="name" unique="true"/>
+		<many-to-one name="depart" column="depart_id"/>
+		<property name="sell"/>
+	</class>
+	
+</hibernate-mapping>

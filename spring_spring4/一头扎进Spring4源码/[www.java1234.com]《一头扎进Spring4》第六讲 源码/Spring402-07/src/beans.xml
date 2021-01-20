@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="dog" class="com.java1234.entity.Dog">
+		<property name="name" value="jack"></property>
+	</bean>
+	
+	<bean id="abstractPeople" class="com.java1234.entity.People" abstract="true">
+		<property name="className" value="高三5班"></property>
+		<property name="age" value="19"></property>
+	</bean>
+	
+	<bean id="zhangsan" parent="abstractPeople" depends-on="autority">
+		<property name="id" value="1"></property>
+		<property name="name" value="张三"></property>
+	</bean>
+	
+	<bean id="lisi" parent="abstractPeople">
+		<property name="id" value="2"></property>
+		<property name="name" value="李四"></property>
+		<property name="age" value="20"></property>
+		<property name="dog" ref="dog"></property>
+	</bean>
+	
+	
+	<bean id="autority" class="com.java1234.service.Authority"></bean>
+</beans>

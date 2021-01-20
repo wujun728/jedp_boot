@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.java1234.model">
+
+	<class name="Node" table="t_node">
+		<id name="id" column="nodeId">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="name" column="nodeName"></property>
+		
+		<many-to-one name="parentNode" column="parentId" class="com.java1234.model.Node" cascade="save-update"></many-to-one>
+		
+		<set name="childNodes"  inverse="true">
+			<key column="parentId"></key>
+			<one-to-many class="com.java1234.model.Node"/>
+		</set>
+	</class>
+	
+	
+</hibernate-mapping>

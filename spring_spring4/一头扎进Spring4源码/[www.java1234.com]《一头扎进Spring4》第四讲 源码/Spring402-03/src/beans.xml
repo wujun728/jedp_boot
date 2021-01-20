@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<bean id="people1" class="com.java1234.entity.People">
+		<property name="id" value="1"></property>
+		<property name="name" value="张三"></property>
+		<property name="age" value="11"></property>
+	</bean>
+	
+	<bean id="dog1" class="com.java1234.entity.Dog">
+		<property name="name" value="Jack"></property>
+	</bean>
+	
+	<bean id="people2" class="com.java1234.entity.People">
+		<property name="id" value="1"></property>
+		<property name="name" value="张三"></property>
+		<property name="age" value="11"></property>
+		<property name="dog" ref="dog1"></property>
+	</bean>
+	
+	<bean id="people3" class="com.java1234.entity.People">
+		<property name="id" value="1"></property>
+		<property name="name" value="张三"></property>
+		<property name="age" value="11"></property>
+		<property name="dog">
+			<bean class="com.java1234.entity.Dog">
+				<property name="name" value="Tom"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="people4" class="com.java1234.entity.People">
+		<property name="id" value="1"></property>
+		<property name="name" value="张三"></property>
+		<property name="age" value="11"></property>
+		<property name="dog">
+			<null></null>
+		</property>
+	</bean>
+	
+	<!-- <bean id="people5" class="com.java1234.entity.People">
+		<property name="id" value="1"></property>
+		<property name="name" value="张三"></property>
+		<property name="age" value="11"></property>
+		<property name="dog.name" value="Jack2"></property>
+	</bean> -->
+	
+	<bean id="people6" class="com.java1234.entity.People">
+		<property name="id" value="1"></property>
+		<property name="name" value="张三"></property>
+		<property name="age" value="11"></property>
+		<property name="dog" ref="dog1"></property>
+		<property name="hobbies">
+			<list>
+				<value>唱歌</value>
+				<value>跳舞</value>
+			</list>
+		</property>
+		<property name="loves">
+			<set>
+				<value>唱歌2</value>
+				<value>跳舞2</value>
+			</set>
+		</property>
+		<property name="works">
+			<map>
+				<entry>
+					<key><value>上午</value></key>
+					<value>写代码</value>
+				</entry>
+				<entry>
+					<key><value>下午</value></key>
+					<value>测试代码</value>
+				</entry>
+			</map>
+		</property>
+		<property name="addresses">
+			<props>
+				<prop key="address1">aaaaa</prop>
+				<prop key="address2">bbbbb</prop>
+			</props>
+		</property>
+	</bean>
+	
+</beans>

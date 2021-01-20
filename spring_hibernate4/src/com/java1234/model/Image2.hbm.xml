@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.java1234.model">
+
+	<class name="Image2" table="t_image2">
+		<id name="id" column="imageId">
+			<generator class="native"></generator>
+		</id>
+		
+		<discriminator column="imageType" type="string"></discriminator>
+		<property name="imageName" column="imageName"></property>
+		
+		<many-to-one name="student" column="stuId" class="com.java1234.model.Student2"></many-to-one>
+		
+		<subclass name="com.java1234.model.LifeImage2" discriminator-value="li"></subclass>
+		<subclass name="com.java1234.model.WorkImage2" discriminator-value="wi"></subclass>
+	</class>
+
+
+</hibernate-mapping>

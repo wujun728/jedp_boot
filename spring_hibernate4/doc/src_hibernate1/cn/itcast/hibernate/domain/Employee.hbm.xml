@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="cn.itcast.hibernate.domain">
+
+	<class name="Employee" discriminator-value="0">
+		<id name="id">
+			<generator class="hilo"/>
+		</id>
+		<!--  
+		<discriminator column="type" type="int"/>
+		-->
+		
+		<property name="name" unique="true"/>
+		<many-to-one name="depart" column="depart_id"/>
+		<!--  
+		<subclass name="Skiller" discriminator-value="1">
+			<property name="skill"/>
+		</subclass>
+		<subclass name="Sales" discriminator-value="2">
+			<property name="sell"/>
+		</subclass>
+		-->
+		<!--  
+		<joined-subclass name="Skiller" table="skiller">
+			<key column="emp_id"/>
+			<property name="skill"/>
+		</joined-subclass>
+		<joined-subclass name="Sales" table="sales">
+			<key column="emp_id"/>
+			<property name="sell"/>
+		</joined-subclass>
+		-->
+		<!--  
+		<subclass name="Skiller" discriminator-value="1">
+			<property name="skill"/>
+		</subclass>
+		
+		<subclass name="Sales" discriminator-value="2">
+			<join table="sales">
+				<key column="emp_id"/>
+				<property name="sell"/>
+			</join>
+		</subclass>
+		-->
+		
+		<union-subclass name="Skiller" table="skiller">
+			<property name="skill"/>
+		</union-subclass>
+		<union-subclass name="Sales" table="sales">
+			<property name="sell"/>
+		</union-subclass>
+	</class>
+	
+</hibernate-mapping>

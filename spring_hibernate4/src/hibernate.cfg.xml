@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--数据库连接设置 -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">mysqladmin</property>
+        <!-- 方言 -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <!-- 控制台显示SQL -->
+        <property name="show_sql">true</property>
+        <!-- 自动更新表结构 -->
+        <property name="hbm2ddl.auto">update</property>
+        
+        <!-- 最小连接数 --> 
+ 		<property name="c3p0.min_size">10</property> 
+ 		<!-- 最大连接数 -->   
+ 		<property name="c3p0.max_size">80</property> 
+ 		<!-- 获得连接的超时时间,如果超过这个时间,会抛出异常，单位毫秒 -->  
+ 		<property name="c3p0.timeout">1800</property> 
+ 		<!-- 最大的PreparedStatement的数量 -->   
+ 		<property name="c3p0.max_statements">50</property> 
+ 		
+ 		        
+         <!-- 启用二级缓存 -->
+		<property name="cache.use_second_level_cache">true</property>
+    	<!-- 配置使用的二级缓存的产品 -->
+    	<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+    	<!-- 配置启用查询缓存 -->
+    	<property name="cache.use_query_cache">true</property>
+ 		
+ 		
+  		<mapping resource="com/java1234/model/Student6.hbm.xml"/>
+  		<mapping resource="com/java1234/model/Student2.hbm.xml"/>
+  		<mapping resource="com/java1234/model/Student3.hbm.xml"/>
+  		<mapping resource="com/java1234/model/Student4.hbm.xml"/>
+  		<mapping resource="com/java1234/model/Class.hbm.xml"/>
+  		<mapping resource="com/java1234/model/Node.hbm.xml"/>
+  		
+  		<mapping resource="com/java1234/model/Student.hbm.xml"/>
+  		<mapping resource="com/java1234/model/LifeImage.hbm.xml"/>
+  		<mapping resource="com/java1234/model/WorkImage.hbm.xml"/>
+  		<mapping resource="com/java1234/model/Image2.hbm.xml"/>
+  		<mapping resource="com/java1234/model/Image3.hbm.xml"/>
+  		
+		<mapping class="com.java1234.model.Teacher"/>
+		
+		
+    </session-factory>
+    
+    
+    
+</hibernate-configuration>

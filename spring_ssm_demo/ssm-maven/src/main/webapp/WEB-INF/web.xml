@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+        xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+        version="3.0"
+        metadata-complete="true">
+
+    <display-name>ssm-maven-demo</display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring-context.xml</param-value>
+    </context-param>
+
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <!-- spring请求配置，指向springmvc的核心配置文件，定义所有以.do结尾的请求都被springmvc拦截 -->
+    <servlet>
+        <servlet-name>springMVC</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring-context-mvc.xml</param-value>
+        </init-param>
+        <!--加载顺序为1 -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>springMVC</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+    <!--错误页面配置,这里只是简单的配置了一下 -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/main.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/main.jsp</location>
+    </error-page>
+    <!--错误页面配置 -->
+
+    <!--druid监控页面 -->
+    <servlet>
+        <servlet-name>DruidStatView</servlet-name>
+        <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+        <init-param>
+            <!-- 不允许清空统计数据 -->
+            <param-name>resetEnable</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <init-param>
+            <!-- 用户名 -->
+            <param-name>loginUsername</param-name>
+            <param-value>yourname</param-value>
+        </init-param>
+        <init-param>
+            <!-- 密码 -->
+            <param-name>loginPassword</param-name>
+            <param-value>yourpassword</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DruidStatView</servlet-name>
+        <url-pattern>/druid/*</url-pattern>
+    </servlet-mapping>
+    <!-- 添加Web应用等监控-->
+    <filter>
+        <filter-name>DruidWebStatFilter</filter-name>
+        <filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>
+        <init-param>
+            <param-name>exclusions</param-name>
+            <param-value>*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*</param-value>
+        </init-param>
+        <init-param>
+            <param-name>profileEnable</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>principalCookieName</param-name>
+            <param-value>ssm-admin</param-value>
+        </init-param>
+        <init-param>
+            <param-name>principalSessionName</param-name>
+            <param-value>ssm-admin-session</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>DruidWebStatFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- 添加Web应用等监控-->
+    <!--druid监控页面 -->
+
+</web-app>
